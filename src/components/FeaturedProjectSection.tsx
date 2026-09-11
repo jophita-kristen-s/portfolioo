@@ -128,7 +128,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
               </div>
 
               {/* Action row */}
-              <div className="flex items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
                   type="button"
                   onClick={() => onOpenProjectModal(drProject.id)}
@@ -148,6 +148,9 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                   </span>
                   <span>{simulating ? 'Scanning...' : 'Rerun Triage'}</span>
                 </button>
+                <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#11121f] border border-[#333441] text-xs font-medium text-[#948e9e] select-none">
+                  <span>Private Repository 🔒</span>
+                </span>
               </div>
             </div>
 

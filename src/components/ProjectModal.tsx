@@ -117,10 +117,26 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
         </div>
 
         {/* Footer Actions */}
-        <div className="mt-8 pt-6 border-t border-[#333441] flex items-center justify-between">
-          <span className="font-label-handwritten text-lg text-[#ffb1c3]">
-            Verified Portfolio Entry ✦
-          </span>
+        <div className="mt-8 pt-6 border-t border-[#333441] flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="font-label-handwritten text-lg text-[#ffb1c3]">
+              Verified Portfolio Entry ✦
+            </span>
+            {project.githubRepoType === 'public' && project.githubUrl ? (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors"
+              >
+                <span>View on GitHub ↗</span>
+              </a>
+            ) : project.githubRepoType === 'private' ? (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#11121f] border border-[#333441] text-[#948e9e] text-xs font-medium select-none">
+                <span>Private Repository 🔒</span>
+              </span>
+            ) : null}
+          </div>
           <button
             type="button"
             onClick={onClose}

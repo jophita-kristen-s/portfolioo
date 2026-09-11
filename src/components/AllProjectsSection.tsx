@@ -144,19 +144,41 @@ export const AllProjectsSection: React.FC<AllProjectsSectionProps> = ({ onOpenPr
                 </div>
               </div>
 
-              {/* Action Button */}
-              <div className="pt-5 mt-4 border-t border-[#333441]/60 flex items-center justify-between">
-                <button
-                  type="button"
-                  onClick={() => onOpenProjectModal(project.id)}
-                  className="text-xs font-semibold text-[#cfbdff] hover:text-[#66d9ca] flex items-center gap-1.5 transition-colors"
-                >
-                  <span>Inspect System Architecture</span>
-                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                </button>
-                <span className="material-symbols-outlined text-[#948e9e] text-[18px]">
-                  {project.iconName}
-                </span>
+              {/* Action Button & GitHub Repo Info */}
+              <div className="pt-4 mt-4 border-t border-[#333441]/60 flex flex-col gap-3">
+                {project.githubRepoType === 'public' && project.githubUrl ? (
+                  <div>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <span>View on GitHub ↗</span>
+                    </a>
+                  </div>
+                ) : project.githubRepoType === 'private' ? (
+                  <div>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#11121f] border border-[#333441] text-[#948e9e] text-xs font-medium select-none">
+                      <span>Private Repository 🔒</span>
+                    </span>
+                  </div>
+                ) : null}
+
+                <div className="flex items-center justify-between">
+                  <button
+                    type="button"
+                    onClick={() => onOpenProjectModal(project.id)}
+                    className="text-xs font-semibold text-[#cfbdff] hover:text-[#66d9ca] flex items-center gap-1.5 transition-colors"
+                  >
+                    <span>Inspect System Architecture</span>
+                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </button>
+                  <span className="material-symbols-outlined text-[#948e9e] text-[18px]">
+                    {project.iconName}
+                  </span>
+                </div>
               </div>
             </div>
           ))}

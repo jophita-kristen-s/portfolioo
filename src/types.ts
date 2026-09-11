@@ -30,6 +30,7 @@ export interface Project {
   longOverview?: string;
   technicalHighlights?: string[];
   githubUrl?: string;
+  githubRepoType?: 'public' | 'private';
   liveDemoUrl?: string;
 }
 

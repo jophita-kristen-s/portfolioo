@@ -196,7 +196,8 @@ export const ALL_PROJECTS: Project[] = [
       'Granular lesion localization targeting microaneurysms, hard/soft exudates, and retinal hemorrhages',
       'Level 0–4 severity staging coupled with Grad-CAM feature attribution maps',
       'Automated report generation streamlining screening reviews for medical assistants'
-    ]
+    ],
+    githubRepoType: 'private'
   },
   {
     id: 'smart-hospital-ai',
@@ -228,7 +229,9 @@ export const ALL_PROJECTS: Project[] = [
       'Hybrid persistence layer utilizing PostgreSQL relational schemas alongside MongoDB/Firebase for flexible records',
       'Integrated Google Maps Distance API for real-time proximity-based emergency triage routing',
       'Implemented secure JWT authentication and QR-coded identity tokenization'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/SmartHospitalAI_CareFlow-MediCareConnect.git',
+    githubRepoType: 'public'
   },
   {
     id: 'resumatch-ultra',
@@ -255,7 +258,9 @@ export const ALL_PROJECTS: Project[] = [
       'Deep textual extraction and entity normalization from unstructured resume documents',
       'Targeted skill matching algorithm evaluating core frameworks, tools, and technical areas',
       'Skill gap breakdown providing concrete improvement recommendations'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/RESUMATCH-ULTRA.git',
+    githubRepoType: 'public'
   },
   {
     id: 'scanline',
@@ -283,7 +288,8 @@ export const ALL_PROJECTS: Project[] = [
       'Multi-format support for scanned PDFs, PNGs, and TIFF documents',
       'Custom bounding box template alignment for recurring invoice and receipt layouts',
       'Export engine for instant CSV and JSON generation'
-    ]
+    ],
+    githubRepoType: 'private'
   },
   {
     id: 'encrowatch',
@@ -311,7 +317,8 @@ export const ALL_PROJECTS: Project[] = [
       'Dynamic SVG spatial polygon rendering with localized coordinate scaling',
       'Layer toggle subsystem isolating coastal regulation zones and water bodies',
       'Structured audit logging enabling officers to submit visual incident reports'
-    ]
+    ],
+    githubRepoType: 'private'
   },
   {
     id: 'voter-epic',
@@ -338,7 +345,8 @@ export const ALL_PROJECTS: Project[] = [
       'Morphological operations and bilateral filtering to neutralize background security grids',
       'Coordinate-based bounding box extraction for EPIC number, holder name, and relation fields',
       'Custom regex post-processor and error debugging rules to rectify character confusion (0 vs O, 1 vs I)'
-    ]
+    ],
+    githubRepoType: 'private'
   },
   {
     id: 'aurelia-gems',
@@ -644,7 +652,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'Configured text/event-stream headers for non-buffering data transmission',
       'Client-side EventSource API integration handling reconnections and message parsing'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/sse.git',
+    githubRepoType: 'public'
   }
 ];
 
