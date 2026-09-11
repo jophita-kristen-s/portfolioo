@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-playfair: 'Playfair Display', serif;
+    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+    --font-caveat: 'Caveat', cursive;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #11121f;
+    color: #e2e1f3;
+  }
+
+  /* Material symbols helper */
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-display-hero {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-headline-lg {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-headline-md {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-title-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-label-handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+.font-label-handwritten-sm {
+  font-family: 'Caveat', cursive;
+}
+
+.font-label-code {
+  font-family: 'Plus Jakarta Sans', monospace, sans-serif;
+}
+
+.font-headline-sm,
+.font-body-lg,
+.font-body-md,
+.font-body-sm {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.cosmic-gradient {
+  background-color: #11121f;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(156, 124, 246, 0.15), rgba(17, 18, 31, 0) 70%),
+    radial-gradient(circle at 85% 30%, rgba(102, 217, 202, 0.08), transparent 45%),
+    radial-gradient(circle at 15% 75%, rgba(255, 177, 195, 0.06), transparent 45%);
+}
+
+@keyframes orbit-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-orbit {
+  animation: orbit-slow 90s linear infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-subtle-pulse {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
