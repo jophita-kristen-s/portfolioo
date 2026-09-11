@@ -148,9 +148,14 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                   </span>
                   <span>{simulating ? 'Scanning...' : 'Rerun Triage'}</span>
                 </button>
-                <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#11121f] border border-[#333441] text-xs font-medium text-[#948e9e] select-none">
-                  <span>Private Repository 🔒</span>
-                </span>
+                <a
+                  href="https://github.com/jophita-kristen-s/Explainable-AI-for-Diabetic-Retinopathy-Screening.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-sm font-medium transition-colors"
+                >
+                  <span>View on GitHub ↗</span>
+                </a>
               </div>
             </div>
 

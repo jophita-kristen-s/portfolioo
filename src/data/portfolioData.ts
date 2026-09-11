@@ -197,7 +197,8 @@ export const ALL_PROJECTS: Project[] = [
       'Level 0–4 severity staging coupled with Grad-CAM feature attribution maps',
       'Automated report generation streamlining screening reviews for medical assistants'
     ],
-    githubRepoType: 'private'
+    githubUrl: 'https://github.com/jophita-kristen-s/Explainable-AI-for-Diabetic-Retinopathy-Screening.git',
+    githubRepoType: 'public'
   },
   {
     id: 'smart-hospital-ai',
@@ -289,7 +290,8 @@ export const ALL_PROJECTS: Project[] = [
       'Custom bounding box template alignment for recurring invoice and receipt layouts',
       'Export engine for instant CSV and JSON generation'
     ],
-    githubRepoType: 'private'
+    githubUrl: 'https://github.com/jophita-kristen-s/Scanline.git',
+    githubRepoType: 'public'
   },
   {
     id: 'encrowatch',
@@ -318,7 +320,8 @@ export const ALL_PROJECTS: Project[] = [
       'Layer toggle subsystem isolating coastal regulation zones and water bodies',
       'Structured audit logging enabling officers to submit visual incident reports'
     ],
-    githubRepoType: 'private'
+    githubUrl: 'https://github.com/jophita-kristen-s/EncroWatch.git',
+    githubRepoType: 'public'
   },
   {
     id: 'voter-epic',
@@ -346,7 +349,8 @@ export const ALL_PROJECTS: Project[] = [
       'Coordinate-based bounding box extraction for EPIC number, holder name, and relation fields',
       'Custom regex post-processor and error debugging rules to rectify character confusion (0 vs O, 1 vs I)'
     ],
-    githubRepoType: 'private'
+    githubUrl: 'https://github.com/jophita-kristen-s/Voter-EPIC-Extraction-Pipeline.git',
+    githubRepoType: 'public'
   },
   {
     id: 'aurelia-gems',
@@ -374,7 +378,8 @@ export const ALL_PROJECTS: Project[] = [
       'Built a scalable component system with comprehensive auto-layout variants in Figma',
       'Engineered an accessible high-contrast palette suited for luxury lifestyle branding',
       'Standardized 8pt spacing grid and typographic scaling'
-    ]
+    ],
+    figmaUrl: 'https://www.figma.com/design/KnF1N8tKX4m7ibGckToqEi/Aurelia-Gems-%E2%80%93-Jewellery-E-Commerce-App?node-id=23-308&t=owbKW9ZWxBvQGNl7-0'
   },
   {
     id: 'atm-simulation',
@@ -400,7 +405,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'Strict transaction validation guarding against overdrafts and invalid currency denominations',
       'Structured JSON serialization for persistent account state across application sessions'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/ATM-Simulation.git',
+    githubRepoType: 'public'
   },
   {
     id: 'calculator-pyqt5',
@@ -425,7 +432,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'Qt signal-and-slot architecture ensuring non-blocking event-loop handling',
       'Graceful error handling for division-by-zero and malformed syntax strings'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/Calculator.git',
+    githubRepoType: 'public'
   },
   {
     id: 'regression-ml-comparison',
@@ -451,7 +460,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'Standardized preprocessing pipelines with feature scaling, imputation, and encoding',
       'K-fold cross-validation protocol to eliminate sampling bias'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/Regression-Based-ML-Comparison.git',
+    githubRepoType: 'public'
   },
   {
     id: 'classification-ml-comparison',
@@ -477,7 +488,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'Multi-metric evaluation tracking Precision-Recall curves and Confusion Matrices',
       'Hyperparameter grid searching across tree depths, kernels, and regularization factors'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/Classification-Based-ML-Comparison.git',
+    githubRepoType: 'public'
   },
   {
     id: 'upi-transactions-prediction',
@@ -502,7 +515,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'Engineered temporal frequency and transaction deviation features from raw payment logs',
       'Ensemble decision tree optimization using feature importance ranking'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/UPI-Payment-Transactions-Prediction.git',
+    githubRepoType: 'public'
   },
   {
     id: 'credit-card-fraud-detection',
@@ -527,7 +542,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'Standardized feature scaling on PCA-transformed transactional components',
       'Precision-Recall and ROC curve tuning for mission-critical fraud isolation'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/Credit-Card-Fraud-Detection.git',
+    githubRepoType: 'public'
   },
   {
     id: 'mnist-digit-recognition',
@@ -552,7 +569,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'ImageDataGenerator integration for dynamic rotation and translation shifts during training',
       'Training convergence profiling with loss curves and confusion matrix validation'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/MNIST-Digit-Recognition.git',
+    githubRepoType: 'public'
   },
   {
     id: 'stock-market-prediction',
@@ -577,7 +596,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'Time-series chronological split preventing future data leakage during training',
       'Quantitative comparison of residual error metrics between linear and non-linear regressors'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/Stock-Market-Prediction-.git',
+    githubRepoType: 'public'
   },
   {
     id: 'cheque-fraud-detection',
@@ -602,7 +623,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'Adaptive Gaussian thresholding to isolate handwritten pen strokes from patterned cheque backgrounds',
       'Keras CNN training for binary legitimate vs fraudulent cheque classification'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/Cheque-Fraud-Detection-.git',
+    githubRepoType: 'public'
   },
   {
     id: 'customer-satisfaction-prediction',
@@ -627,7 +650,9 @@ export const ALL_PROJECTS: Project[] = [
     technicalHighlights: [
       'Comprehensive missing-value imputation and ordinal encoding across customer categories',
       'Extracted feature importance rankings highlighting online boarding as the primary driver'
-    ]
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/Customer-Satisfaction-Prediction-.git',
+    githubRepoType: 'public'
   },
   {
     id: 'sse-realtime-messaging',

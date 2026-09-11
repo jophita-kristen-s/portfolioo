@@ -144,9 +144,21 @@ export const AllProjectsSection: React.FC<AllProjectsSectionProps> = ({ onOpenPr
                 </div>
               </div>
 
-              {/* Action Button & GitHub Repo Info */}
+              {/* Action Button & Repo / Design Link */}
               <div className="pt-4 mt-4 border-t border-[#333441]/60 flex flex-col gap-3">
-                {project.githubRepoType === 'public' && project.githubUrl ? (
+                {project.figmaUrl ? (
+                  <div>
+                    <a
+                      href={project.figmaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <span>View Design ↗</span>
+                    </a>
+                  </div>
+                ) : project.githubUrl ? (
                   <div>
                     <a
                       href={project.githubUrl}
@@ -157,12 +169,6 @@ export const AllProjectsSection: React.FC<AllProjectsSectionProps> = ({ onOpenPr
                     >
                       <span>View on GitHub ↗</span>
                     </a>
-                  </div>
-                ) : project.githubRepoType === 'private' ? (
-                  <div>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#11121f] border border-[#333441] text-[#948e9e] text-xs font-medium select-none">
-                      <span>Private Repository 🔒</span>
-                    </span>
                   </div>
                 ) : null}
 

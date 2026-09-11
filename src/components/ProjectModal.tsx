@@ -122,7 +122,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
             <span className="font-label-handwritten text-lg text-[#ffb1c3]">
               Verified Portfolio Entry ✦
             </span>
-            {project.githubRepoType === 'public' && project.githubUrl ? (
+            {project.figmaUrl ? (
+              <a
+                href={project.figmaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors"
+              >
+                <span>View Design ↗</span>
+              </a>
+            ) : project.githubUrl ? (
               <a
                 href={project.githubUrl}
                 target="_blank"
@@ -131,10 +140,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
               >
                 <span>View on GitHub ↗</span>
               </a>
-            ) : project.githubRepoType === 'private' ? (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#11121f] border border-[#333441] text-[#948e9e] text-xs font-medium select-none">
-                <span>Private Repository 🔒</span>
-              </span>
             ) : null}
           </div>
           <button

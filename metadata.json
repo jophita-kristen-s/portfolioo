@@ -2,5 +2,7 @@
   "name": "Jophita Kristen S - Cosmic Portfolio",
   "description": "Cosmic portfolio and interactive engineering universe of Jophita Kristen S, Information Science & Engineering student, AI developer, and polymath.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
