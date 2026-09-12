@@ -1,28 +1,138 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
+// ============================================================================
+// CONTACT FORM CONFIGURATION
+// Configure your Formspree endpoint below or via VITE_FORMSPREE_ENDPOINT in .env
+// Placeholder: YOUR_FORMSPREE_ENDPOINT
+// When set to YOUR_FORMSPREE_ENDPOINT, submissions are delivered directly to
+// the portfolio destination email (jophitakristens@gmail.com) via FormSubmit AJAX.
+// ============================================================================
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || 'YOUR_FORMSPREE_ENDPOINT';
+const DESTINATION_EMAIL = 'jophitakristens@gmail.com';
+
 interface ContactSectionProps {
   onOpenResumeModal: () => void;
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModal }) => {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    subject: '',
     message: ''
   });
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [sending, setSending] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validate = (): boolean => {
+    const errors: FormErrors = {};
+
+    if (!formState.name.trim()) {
+      errors.name = 'Please enter your name.';
+    }
+
+    if (!formState.email.trim()) {
+      errors.email = 'Please enter your email address.';
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formState.email.trim())) {
+        errors.email = 'Please enter a valid email address (e.g. name@example.com).';
+      }
+    }
+
+    if (!formState.message.trim()) {
+      errors.message = 'Please enter your message.';
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending) return;
+
+    if (!validate()) {
+      return;
+    }
+
+    setErrorMessage(null);
     setSending(true);
-    setTimeout(() => {
+
+    try {
+      const isFormspreeConfigured =
+        FORMSPREE_ENDPOINT &&
+        FORMSPREE_ENDPOINT !== 'YOUR_FORMSPREE_ENDPOINT' &&
+        !FORMSPREE_ENDPOINT.includes('YOUR_FORMSPREE_ENDPOINT');
+
+      const endpoint = isFormspreeConfigured
+        ? (FORMSPREE_ENDPOINT.startsWith('http')
+            ? FORMSPREE_ENDPOINT
+            : `https://formspree.io/f/${FORMSPREE_ENDPOINT}`)
+        : `https://formsubmit.co/ajax/${encodeURIComponent(DESTINATION_EMAIL)}`;
+
+      const payload: Record<string, string> = {
+        name: formState.name.trim(),
+        email: formState.email.trim(),
+        _replyto: formState.email.trim(),
+        message: formState.message.trim(),
+        _subject: `[Portfolio Message] From ${formState.name.trim()}`,
+        _captcha: 'false',
+        _template: 'table'
+      };
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json().catch(() => null);
+
+      if (
+        response.ok &&
+        (result?.success === 'true' ||
+          result?.success === true ||
+          result?.ok === true ||
+          (!result?.error && !result?.errors))
+      ) {
+        setSubmitted(true);
+        setFormState({ name: '', email: '', message: '' });
+        setFormErrors({});
+      } else if (result?.message && typeof result.message === 'string') {
+        if (result.message.toLowerCase().includes('activation')) {
+          setErrorMessage(
+            `Activation required: FormSubmit has dispatched a one-time activation confirmation to ${DESTINATION_EMAIL}. Once confirmed, messages will be delivered directly.`
+          );
+        } else {
+          setErrorMessage(result.message);
+        }
+      } else if (result?.errors && Array.isArray(result.errors) && result.errors.length > 0) {
+        setErrorMessage(
+          result.errors.map((err: { message?: string }) => err.message || 'Validation failed').join(', ')
+        );
+      } else {
+        throw new Error(`Submission failed with status: ${response.status}`);
+      }
+    } catch (err: unknown) {
+      console.error('Contact form submission error:', err);
+      setErrorMessage(
+        `Unable to send message at this time. Please check your network connection or email directly at ${DESTINATION_EMAIL}`
+      );
+    } finally {
       setSending(false);
-      setSubmitted(true);
-      setFormState({ name: '', email: '', subject: '', message: '' });
-    }, 900);
+    }
   };
 
   return (
@@ -140,21 +250,34 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                   <span className="material-symbols-outlined text-[32px]">check</span>
                 </div>
                 <h3 className="font-title-editorial text-2xl text-[#e2e1f3]">
-                  Message Dispatched!
+                  Message Sent Successfully!
                 </h3>
                 <p className="text-sm text-[#cbc3d5] max-w-sm font-light">
-                  Thank you! Your message has been sent to Jophita Kristen S.
+                  Thank you! Your message has been sent to Jophita Kristen S. ({DESTINATION_EMAIL}).
                 </p>
                 <button
                   type="button"
-                  onClick={() => setSubmitted(false)}
-                  className="mt-2 text-xs text-[#cfbdff] underline hover:text-[#e2e1f3]"
+                  onClick={() => {
+                    setSubmitted(false);
+                    setErrorMessage(null);
+                    setFormErrors({});
+                  }}
+                  className="mt-2 text-xs text-[#cfbdff] underline hover:text-[#e2e1f3] cursor-pointer"
                 >
-                  Send another transmission
+                  Send another message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-4">
+              <form onSubmit={handleSubmit} noValidate className="mt-6 flex flex-col gap-4">
+                {errorMessage && (
+                  <div className="p-3.5 rounded-xl bg-[#ffb4ab]/10 border border-[#ffb4ab]/30 text-[#ffb4ab] text-xs sm:text-sm flex items-start gap-2.5 animate-in fade-in">
+                    <span className="material-symbols-outlined text-[18px] shrink-0 text-[#ffb4ab] mt-0.5">
+                      error
+                    </span>
+                    <span className="leading-relaxed">{errorMessage}</span>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs font-medium text-[#cbc3d5] uppercase tracking-wider">
@@ -162,40 +285,57 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                     </label>
                     <input
                       type="text"
-                      required
+                      disabled={sending}
                       placeholder="e.g., Prof. Srinivasan / Recruiter"
                       value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border border-[#333441] text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none focus:border-[#cfbdff] transition-colors"
+                      onChange={(e) => {
+                        setFormState({ ...formState, name: e.target.value });
+                        if (formErrors.name) {
+                          setFormErrors((prev) => ({ ...prev, name: undefined }));
+                        }
+                      }}
+                      className={`px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed ${
+                        formErrors.name
+                          ? 'border-[#ffb4ab] focus:border-[#ffb4ab]'
+                          : 'border-[#333441] focus:border-[#cfbdff]'
+                      }`}
                     />
+                    {formErrors.name && (
+                      <span className="text-xs text-[#ffb4ab] flex items-center gap-1 mt-0.5 animate-in fade-in">
+                        <span className="material-symbols-outlined text-[14px]">error</span>
+                        {formErrors.name}
+                      </span>
+                    )}
                   </div>
+
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs font-medium text-[#cbc3d5] uppercase tracking-wider">
                       Email Address
                     </label>
                     <input
                       type="email"
-                      required
+                      disabled={sending}
                       placeholder="e.g., contact@organization.org"
                       value={formState.email}
-                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border border-[#333441] text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none focus:border-[#cfbdff] transition-colors"
+                      onChange={(e) => {
+                        setFormState({ ...formState, email: e.target.value });
+                        if (formErrors.email) {
+                          setFormErrors((prev) => ({ ...prev, email: undefined }));
+                        }
+                      }}
+                      className={`px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed ${
+                        formErrors.email
+                          ? 'border-[#ffb4ab] focus:border-[#ffb4ab]'
+                          : 'border-[#333441] focus:border-[#cfbdff]'
+                      }`}
                     />
+                    {formErrors.email && (
+                      <span className="text-xs text-[#ffb4ab] flex items-center gap-1 mt-0.5 animate-in fade-in">
+                        <span className="material-symbols-outlined text-[14px]">error</span>
+                        {formErrors.email}
+                      </span>
+                    )}
                   </div>
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-medium text-[#cbc3d5] uppercase tracking-wider">
-                    Subject / Discussion Topic
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g., Machine Learning Project / Engineering Inquiry"
-                    value={formState.subject}
-                    onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                    className="px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border border-[#333441] text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none focus:border-[#cfbdff] transition-colors"
-                  />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
@@ -203,24 +343,39 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                     Message
                   </label>
                   <textarea
-                    required
                     rows={4}
+                    disabled={sending}
                     placeholder="Write your message or inquiry here..."
                     value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border border-[#333441] text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none focus:border-[#cfbdff] transition-colors resize-none"
+                    onChange={(e) => {
+                      setFormState({ ...formState, message: e.target.value });
+                      if (formErrors.message) {
+                        setFormErrors((prev) => ({ ...prev, message: undefined }));
+                      }
+                    }}
+                    className={`px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none transition-colors resize-none disabled:opacity-60 disabled:cursor-not-allowed ${
+                      formErrors.message
+                        ? 'border-[#ffb4ab] focus:border-[#ffb4ab]'
+                        : 'border-[#333441] focus:border-[#cfbdff]'
+                    }`}
                   ></textarea>
+                  {formErrors.message && (
+                    <span className="text-xs text-[#ffb4ab] flex items-center gap-1 mt-0.5 animate-in fade-in">
+                      <span className="material-symbols-outlined text-[14px]">error</span>
+                      {formErrors.message}
+                    </span>
+                  )}
                 </div>
 
                 <button
                   type="submit"
                   disabled={sending}
-                  className="mt-2 py-3 px-6 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm sm:text-base flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[#9c7cf6]/35 transition-all duration-300 disabled:opacity-75"
+                  className="mt-2 py-3 px-6 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm sm:text-base flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[#9c7cf6]/35 transition-all duration-300 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  <span className="material-symbols-outlined text-[18px]">
+                  <span className={`material-symbols-outlined text-[18px] ${sending ? 'animate-spin' : ''}`}>
                     {sending ? 'sync' : 'send'}
                   </span>
-                  <span>{sending ? 'Dispatching message...' : 'Send Message'}</span>
+                  <span>{sending ? 'Sending message...' : 'Send Message'}</span>
                 </button>
               </form>
             )}
@@ -238,3 +393,4 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
     </section>
   );
 };
+
