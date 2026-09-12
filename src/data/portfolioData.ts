@@ -167,27 +167,37 @@ export const ALL_PROJECTS: Project[] = [
     number: '01',
     title: 'Explainable AI for Diabetic Retinopathy Screening',
     subtitle: 'Rural Healthcare Triage with MATLAB & Simulink',
-    description: 'An explainable AI system for diabetic retinopathy screening focused on rural healthcare. Features image quality assessment, retinal enhancement, microaneurysm, exudate, and hemorrhage detection, Level 0–4 severity grading, Grad-CAM explainability, and automated report generation.',
+    description: 'An explainable screening pipeline for diabetic retinopathy in rural healthcare triage, incorporating lesion detection and Level 0–4 severity grading.',
     category: 'ai-ml',
     badgeCategory: 'SIH 2026',
     bannerTitle: 'DIABETIC RETINOPATHY',
     bannerDetail: 'Level 0–4 Severity Grading',
     bannerSubtext: 'MATLAB • Simulink • Grad-CAM',
     iconName: 'visibility',
-    tags: ['MATLAB', 'Simulink', 'Explainable AI', 'Grad-CAM', 'Computer Vision', 'Healthcare AI'],
+    tags: ['MATLAB', 'Simulink', 'Explainable AI', 'Grad-CAM', 'Computer Vision'],
     statusLabel: 'SIH 2026 Nominee',
     eventOrContext: 'Smart India Hackathon 2026',
     teamSize: '6-member team',
+    problem: 'Rural primary health centers lack on-site ophthalmologists for early diabetic retinopathy screening, leading to preventable vision loss and non-explainable black-box triage.',
+    solution: 'Engineered an explainable screening workflow in MATLAB and Simulink that assesses fundus image quality, localizes microaneurysms and exudates, assigns clinical severity stages (Level 0–4), and renders Grad-CAM feature heatmaps.',
+    contribution: {
+      role: 'ML & Signal Processing Engineer',
+      team: '6-member team (Smart India Hackathon 2026 Nominee)',
+      contributions: [
+        'Image quality assessment & illumination enhancement preprocessing in MATLAB',
+        'Lesion feature extraction for microaneurysm and exudate localization',
+        'Simulink workflow design for Level 0–4 clinical severity staging',
+        'Grad-CAM heatmap feature attribution visualization for clinical interpretability',
+        'Automated diagnostic summary generation for health workers'
+      ],
+      teamContext: 'Dataset curation, clinical protocol research, and validation review were conducted collaboratively with team members.'
+    },
     features: [
-      'Retinal image quality assessment',
-      'Image quality enhancement',
-      'Lesion detection',
-      'Microaneurysm detection',
-      'Exudate detection',
-      'Hemorrhage detection',
-      'Diabetic retinopathy severity grading from Level 0–4',
-      'Grad-CAM explainability maps',
-      'Automated diagnostic report generation'
+      'Dual-phase preprocessing (contrast equalization & illumination filtering)',
+      'Granular lesion detection (microaneurysms, exudates, hemorrhages)',
+      'Grad-CAM visual interpretability heatmaps',
+      'Level 0–4 clinical NPDR severity staging',
+      'Automated diagnostic screening report generation'
     ],
     longOverview: 'Developed as part of a 6-member team for Smart India Hackathon 2026, this system provides an explainable AI workflow for diabetic retinopathy screening tailored for rural healthcare settings. Built using MATLAB and Simulink, it takes retinal fundus imagery through rigorous preprocessing, detects microaneurysms, exudates, and hemorrhages, assigns clinical severity from Level 0 to Level 4, visualizes localized decision regions via Grad-CAM, and generates automated diagnostic reports. Note: System designed as an engineering prototype; not clinically deployed or medically validated.',
     technicalHighlights: [
@@ -198,31 +208,50 @@ export const ALL_PROJECTS: Project[] = [
       'Automated report generation streamlining screening reviews for medical assistants'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/Explainable-AI-for-Diabetic-Retinopathy-Screening.git',
-    githubRepoType: 'public'
+    githubRepoType: 'public',
+    evidence: {
+      githubUrl: 'https://github.com/jophita-kristen-s/Explainable-AI-for-Diabetic-Retinopathy-Screening.git',
+      readmeUrl: 'https://github.com/jophita-kristen-s/Explainable-AI-for-Diabetic-Retinopathy-Screening#readme',
+      repoStatus: 'available',
+      demoStatus: 'unavailable'
+    }
   },
   {
     id: 'smart-hospital-ai',
     number: '02',
     title: 'Smart Hospital AI — CareFlow + MediCareConnect',
     subtitle: 'Integrated Patient Portal & Hospital Management Ecosystem',
-    description: 'A comprehensive smart hospital ecosystem encompassing a patient web application and central hospital management dashboard. Implemented AI emergency routing, QR medical identity, digital prescriptions, and admission tracking. Contributed backend development and API testing.',
+    description: 'Integrated healthcare management ecosystem combining a patient portal (CareFlow) and central hospital administration dashboard (MediCareConnect).',
     category: 'web-app',
     badgeCategory: 'Full-Stack Ecosystem',
     bannerTitle: 'SMART HOSPITAL AI',
     bannerDetail: 'CareFlow + MediCareConnect',
     bannerSubtext: 'React • Node.js • PostgreSQL • MongoDB',
     iconName: 'local_hospital',
-    tags: ['React', 'Tailwind', 'Node.js', 'PostgreSQL', 'MongoDB / Firebase', 'REST APIs', 'Python', 'JWT'],
+    tags: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Python', 'REST APIs', 'JWT'],
     statusLabel: 'Team of 5',
     eventOrContext: 'Engineering Project',
-    teamSize: '5-member team (My work: Backend Development & Testing)',
+    teamSize: '5-member team',
+    problem: 'Fragmented hospital intake workflows, delayed emergency ambulance routing, and siloed patient records cause critical care bottlenecks.',
+    solution: 'Unified healthcare ecosystem integrating distance-matrix ambulance transit routing, QR-encoded patient identity tokens, and live hospital bed occupancy tracking.',
+    contribution: {
+      role: 'Backend Developer & API Testing',
+      team: '5-member team',
+      contributions: [
+        'Backend REST API architecture and endpoints using Node.js, Express, and Python',
+        'Hybrid persistence schemas across PostgreSQL and MongoDB/Firebase',
+        'Integration with Google Maps Distance API for proximity-based emergency triage routing',
+        'JWT authentication and secure QR-coded medical identity token generation',
+        'Comprehensive API latency and end-to-end integration testing'
+      ],
+      teamContext: 'Frontend patient portal, admin UI design, and client-side layouts were designed and built by fellow team members.'
+    },
     features: [
-      'Patient web application',
-      'Hospital administration dashboard',
       'AI emergency routing using Google Maps Distance API',
-      'QR medical identity generator',
+      'QR medical identity generator for rapid patient intake',
+      'Real-time bed and admission telemetry',
       'Digital prescription issuance & verification',
-      'Real-time bed & admission tracking'
+      'Role-based clinician and administrative access control'
     ],
     longOverview: 'A full-scale hospital management ecosystem built with a 5-member team. The platform combines CareFlow (the patient portal) and MediCareConnect (the administrative hospital dashboard). Features intelligent emergency transit routing powered by distance matrices, QR-encoded patient identity cards for rapid check-in, secure digital prescription issuance, and admission telemetry. My core contribution centered on backend architecture, database schema design, and end-to-end REST API testing.',
     technicalHighlights: [
@@ -232,7 +261,13 @@ export const ALL_PROJECTS: Project[] = [
       'Implemented secure JWT authentication and QR-coded identity tokenization'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/SmartHospitalAI_CareFlow-MediCareConnect.git',
-    githubRepoType: 'public'
+    githubRepoType: 'public',
+    evidence: {
+      githubUrl: 'https://github.com/jophita-kristen-s/SmartHospitalAI_CareFlow-MediCareConnect.git',
+      readmeUrl: 'https://github.com/jophita-kristen-s/SmartHospitalAI_CareFlow-MediCareConnect#readme',
+      repoStatus: 'available',
+      demoStatus: 'unavailable'
+    }
   },
   {
     id: 'resumatch-ultra',
@@ -246,13 +281,26 @@ export const ALL_PROJECTS: Project[] = [
     bannerDetail: 'Skill Gap & Semantic Match',
     bannerSubtext: 'Python • NLP • Resume Analytics',
     iconName: 'badge',
-    tags: ['Python', 'NLP', 'Machine Learning', 'Skill Matching', 'Data Analysis'],
+    tags: ['Python', 'NLP', 'Machine Learning', 'Text Analytics', 'Scikit-learn'],
     statusLabel: 'Engineered System',
+    teamSize: 'Solo Project',
+    problem: 'Job candidates struggle to identify missing competencies for target roles, while hiring teams face manual, inconsistent resume screening.',
+    solution: 'Algorithmic parsing and natural language processing engine that extracts technical competencies, benchmarks candidates against role requirements, and delivers actionable skill gap analysis.',
+    contribution: {
+      role: 'Lead Developer (Solo Project)',
+      team: 'Solo Project',
+      contributions: [
+        'Document text extraction and entity normalization routines in Python',
+        'Multi-dimensional skill matching algorithms against target job requirements',
+        'Semantic gap analyzer generating structured competency improvement recommendations',
+        'Candidate scoring output with categorized proficiency ratings'
+      ]
+    },
     features: [
-      'Automated resume parsing',
-      'Multi-dimensional skill matching',
-      'Actionable skill gap analysis',
-      'Structured candidate recommendation output'
+      'Automated resume text parsing and entity normalization',
+      'Multi-dimensional technical skill matching',
+      'Actionable skill gap breakdown and hiring fit analysis',
+      'Structured recruiter-ready candidate assessment outputs'
     ],
     longOverview: 'ResuMatch Ultra evaluates career resumes against target job specifications using algorithmic parsing and natural language processing. The system analyzes technical proficiencies, identifies missing prerequisite competencies, and highlights specific areas of skill divergence to assist candidates and technical screeners.',
     technicalHighlights: [
@@ -261,7 +309,13 @@ export const ALL_PROJECTS: Project[] = [
       'Skill gap breakdown providing concrete improvement recommendations'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/RESUMATCH-ULTRA.git',
-    githubRepoType: 'public'
+    githubRepoType: 'public',
+    evidence: {
+      githubUrl: 'https://github.com/jophita-kristen-s/RESUMATCH-ULTRA.git',
+      readmeUrl: 'https://github.com/jophita-kristen-s/RESUMATCH-ULTRA#readme',
+      repoStatus: 'available',
+      demoStatus: 'unavailable'
+    }
   },
   {
     id: 'scanline',
@@ -275,13 +329,26 @@ export const ALL_PROJECTS: Project[] = [
     bannerDetail: 'Client-Side Document OCR',
     bannerSubtext: 'JavaScript • pdf.js • Tesseract.js',
     iconName: 'document_scanner',
-    tags: ['JavaScript', 'pdf.js', 'Tesseract.js', 'HTML/CSS', 'OCR'],
+    tags: ['JavaScript', 'Tesseract.js', 'pdf.js', 'HTML5 Canvas', 'CSS3'],
     statusLabel: 'Privacy-First Web App',
+    teamSize: 'Solo Project',
+    problem: 'Sending sensitive financial documents, invoices, or identity records to third-party cloud OCR APIs poses severe data privacy and compliance risks.',
+    solution: 'In-browser WebAssembly-powered OCR pipeline using pdf.js and Tesseract.js that extracts text locally on the user\'s device without any external server transmission.',
+    contribution: {
+      role: 'Lead Developer (Solo Project)',
+      team: 'Solo Project',
+      contributions: [
+        'Integration of Tesseract.js WebAssembly engine and pdf.js rendering pipeline',
+        'Drag-and-drop document upload and canvas preview interface',
+        'Customizable bounding box template extraction rules for receipts and invoices',
+        'Client-side tabular data export generators for CSV and JSON'
+      ]
+    },
     features: [
-      'Client-side in-browser OCR processing',
-      'Drag-and-drop document upload interface',
-      'Reusable extraction template system',
-      'One-click CSV and JSON data export'
+      '100% private, client-side in-browser OCR processing',
+      'Drag-and-drop ingestion of scanned PDFs, PNGs, and TIFF documents',
+      'Configurable bounding box extraction templates for invoices and receipts',
+      'Instant one-click CSV and JSON data export'
     ],
     longOverview: 'Scanline performs document extraction directly in the client browser without sending confidential documents to external servers. By leveraging pdf.js and Tesseract.js WebAssembly bindings, documents are parsed locally, formatted according to defined templates, and converted directly into structured tabular data.',
     technicalHighlights: [
@@ -291,7 +358,13 @@ export const ALL_PROJECTS: Project[] = [
       'Export engine for instant CSV and JSON generation'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/Scanline.git',
-    githubRepoType: 'public'
+    githubRepoType: 'public',
+    evidence: {
+      githubUrl: 'https://github.com/jophita-kristen-s/Scanline.git',
+      readmeUrl: 'https://github.com/jophita-kristen-s/Scanline#readme',
+      repoStatus: 'available',
+      demoStatus: 'unavailable'
+    }
   },
   {
     id: 'encrowatch',
@@ -305,14 +378,27 @@ export const ALL_PROJECTS: Project[] = [
     bannerDetail: 'Puducherry Geospatial Audit',
     bannerSubtext: 'JavaScript • SVG • Spatial Layers',
     iconName: 'map',
-    tags: ['JavaScript', 'SVG', 'GIS', 'HTML/CSS', 'Spatial Data'],
+    tags: ['JavaScript', 'SVG', 'GIS', 'HTML5', 'CSS3', 'Spatial Data'],
     statusLabel: 'Team of 5',
-    teamSize: '5-member team (My work: Maps, Layers & Reporting)',
+    teamSize: '5-member team',
+    problem: 'Civic authorities lack a consolidated, real-time spatial tool to monitor, catalog, and respond to unauthorized municipal and coastal land encroachments across Puducherry.',
+    solution: 'Interactive vector map dashboard providing severity-coded spatial zones, layer toggles for coastal and agricultural reserves, and a standardized incident reporting workflow.',
+    contribution: {
+      role: 'Geospatial UI & Reporting Developer',
+      team: '5-member team',
+      contributions: [
+        'Dynamic SVG spatial polygon rendering for Puducherry zonal boundaries',
+        'Interactive multi-layer toggles for coastal regulation zones, water bodies, and municipal land',
+        'Client-side severity color-coding and localized coordinate scaling',
+        'Standardized incident reporting module and data export workflow'
+      ],
+      teamContext: 'Backend database integration, GIS data collection, and field satellite imagery sourcing were handled by fellow team members.'
+    },
     features: [
-      'Severity-coded interactive SVG maps of Puducherry',
+      'Severity-coded interactive SVG maps of Puducherry taluks',
       'Multi-layer toggles for coastal, agricultural, and municipal zones',
-      'Standardized incident reporting workflow',
-      'Satellite-data references for temporal audit comparison'
+      'Standardized civic incident reporting workflow',
+      'Spatial telemetry display with zone-specific risk indicators'
     ],
     longOverview: 'EncroWatch was engineered with a 5-member team to aid civic administration in monitoring and cataloging land boundary encroachments across the Union Territory of Puducherry. As the developer responsible for maps, layers, and reporting, I built interactive vector-based map projections with severity indicators, category filters, and municipal dispatch reporting tools.',
     technicalHighlights: [
@@ -321,7 +407,13 @@ export const ALL_PROJECTS: Project[] = [
       'Structured audit logging enabling officers to submit visual incident reports'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/EncroWatch.git',
-    githubRepoType: 'public'
+    githubRepoType: 'public',
+    evidence: {
+      githubUrl: 'https://github.com/jophita-kristen-s/EncroWatch.git',
+      readmeUrl: 'https://github.com/jophita-kristen-s/EncroWatch#readme',
+      repoStatus: 'available',
+      demoStatus: 'unavailable'
+    }
   },
   {
     id: 'voter-epic',
@@ -666,12 +758,26 @@ export const ALL_PROJECTS: Project[] = [
     bannerDetail: 'Server-Sent Events Stream',
     bannerSubtext: 'SSE • Node.js • JavaScript',
     iconName: 'send_time_extension',
-    tags: ['Server-Sent Events', 'JavaScript', 'Node.js', 'Real-time Applications'],
+    tags: ['Server-Sent Events (SSE)', 'JavaScript', 'Node.js', 'Express', 'EventSource API'],
     statusLabel: 'Real-Time System',
+    teamSize: 'Solo Project',
+    problem: 'Full-duplex WebSockets introduce excessive server state complexity, persistent socket daemon overhead, and firewall traversal friction when an application only needs server-to-client streaming.',
+    solution: 'Engineered a lightweight real-time stream using Server-Sent Events (SSE) over standard HTTP connections with built-in automatic client reconnection and event dispatching.',
+    contribution: {
+      role: 'Backend & Systems Developer (Solo Project)',
+      team: 'Solo Project',
+      contributions: [
+        'Node.js SSE streaming server using text/event-stream response protocol',
+        'Client connection pool lifecycle management and heartbeat keep-alives',
+        'Native EventSource browser client integration with automatic reconnection handling',
+        'Timestamped event message buffers and event type dispatching'
+      ]
+    },
     features: [
       'Server-Sent Events (SSE) event stream architecture',
-      'Real-time text dispatch with automatic connection recovery',
-      'Lightweight unidirectional HTTP transport'
+      'Browser-native EventSource API integration with automatic reconnection',
+      'Lightweight unidirectional HTTP transport with minimal overhead',
+      'Real-time text dispatch with automatic connection recovery'
     ],
     longOverview: 'Engineered to examine alternatives to WebSockets for real-time applications where server-to-client broadcast is the primary requirement. Built using Server-Sent Events (SSE) on Node.js, establishing a single persistent HTTP connection with automatic reconnection handling.',
     technicalHighlights: [
@@ -679,7 +785,144 @@ export const ALL_PROJECTS: Project[] = [
       'Client-side EventSource API integration handling reconnections and message parsing'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/sse.git',
-    githubRepoType: 'public'
+    githubRepoType: 'public',
+    evidence: {
+      githubUrl: 'https://github.com/jophita-kristen-s/sse.git',
+      readmeUrl: 'https://github.com/jophita-kristen-s/sse#readme',
+      repoStatus: 'available',
+      demoStatus: 'unavailable'
+    }
+  }
+];
+
+export const FEATURED_PROJECT_IDS = [
+  'dr-screening',
+  'smart-hospital-ai',
+  'resumatch-ultra',
+  'encrowatch',
+  'scanline',
+  'sse-realtime-messaging'
+] as const;
+
+export interface SecondaryProjectSummary {
+  id: string;
+  name: string;
+  chipLabel: string;
+  oneLiner: string;
+  technology: string;
+  category: string;
+  githubUrl?: string;
+  figmaUrl?: string;
+}
+
+export const SECONDARY_PROJECTS: SecondaryProjectSummary[] = [
+  {
+    id: 'atm-simulation',
+    name: 'ATM Simulation',
+    chipLabel: 'ATM Simulation',
+    oneLiner: 'Object-oriented banking terminal simulation managing PIN verification, balance inquiries, and cash transactions.',
+    technology: 'Java • OOP',
+    category: 'Software Engineering',
+    githubUrl: 'https://github.com/jophita-kristen-s/ATM-Simulation.git'
+  },
+  {
+    id: 'scientific-calculator',
+    name: 'Scientific Calculator',
+    chipLabel: 'Calculator',
+    oneLiner: 'Scientific calculation application supporting multi-stage expression evaluation and trigonometric math routines.',
+    technology: 'Java • Swing',
+    category: 'Software Engineering',
+    githubUrl: 'https://github.com/jophita-kristen-s/Scientific-Calculator.git'
+  },
+  {
+    id: 'regression-ml',
+    name: 'Regression-Based ML Comparison',
+    chipLabel: 'Regression-Based ML Comparison',
+    oneLiner: 'Empirical benchmark comparing linear, polynomial, and ensemble regressors on residual error and R² fit.',
+    technology: 'Python • Scikit-learn',
+    category: 'Machine Learning',
+    githubUrl: 'https://github.com/jophita-kristen-s/Regression-Based-Comparison-of-Machine-Learning-Algorithms-.git'
+  },
+  {
+    id: 'classification-ml',
+    name: 'Classification-Based ML Comparison',
+    chipLabel: 'Classification-Based ML Comparison',
+    oneLiner: 'Supervised classification benchmark evaluating decision trees, random forests, and SVMs across ROC-AUC metrics.',
+    technology: 'Python • Scikit-learn',
+    category: 'Machine Learning',
+    githubUrl: 'https://github.com/jophita-kristen-s/Classification-Based-Comparison-of-Machine-Learning-Algorithms-.git'
+  },
+  {
+    id: 'upi-fraud',
+    name: 'UPI Payment Transactions Prediction',
+    chipLabel: 'UPI Payment Transactions Prediction',
+    oneLiner: 'Anomaly detection model analyzing transaction frequencies and velocity indicators to identify anomalous UPI payments.',
+    technology: 'Python • ML Models',
+    category: 'Machine Learning',
+    githubUrl: 'https://github.com/jophita-kristen-s/Predicting-UPI-Payment-Transactions-.git'
+  },
+  {
+    id: 'credit-fraud',
+    name: 'Credit Card Fraud Detection',
+    chipLabel: 'Credit Card Fraud Detection',
+    oneLiner: 'Fraud classification system using SMOTE resampled transaction data and cost-sensitive ensemble trees.',
+    technology: 'Python • Scikit-learn',
+    category: 'Machine Learning',
+    githubUrl: 'https://github.com/jophita-kristen-s/Credit-Card-Fraud-Detection-.git'
+  },
+  {
+    id: 'mnist-digits',
+    name: 'MNIST Digit Recognition',
+    chipLabel: 'MNIST Digit Recognition',
+    oneLiner: 'Computer vision neural network classifying 28x28 handwritten grayscale digits with high accuracy.',
+    technology: 'Python • Keras / TF',
+    category: 'Computer Vision',
+    githubUrl: 'https://github.com/jophita-kristen-s/MNIST-Digit-Recognition-.git'
+  },
+  {
+    id: 'stock-market',
+    name: 'Stock Market Prediction',
+    chipLabel: 'Stock Market Prediction',
+    oneLiner: 'Historical time-series predictive modeling comparing autoregressive baselines against regression models.',
+    technology: 'Python • Pandas',
+    category: 'Data Analytics',
+    githubUrl: 'https://github.com/jophita-kristen-s/Stock-Market-Prediction-.git'
+  },
+  {
+    id: 'cheque-fraud-detection',
+    name: 'Cheque Fraud Detection',
+    chipLabel: 'Cheque Fraud Detection',
+    oneLiner: 'Financial security pipeline combining OpenCV image enhancement with a CNN to detect forged bank cheques.',
+    technology: 'Python • OpenCV • Keras',
+    category: 'Computer Vision',
+    githubUrl: 'https://github.com/jophita-kristen-s/Cheque-Fraud-Detection-.git'
+  },
+  {
+    id: 'customer-satisfaction-prediction',
+    name: 'Customer Satisfaction Prediction',
+    chipLabel: 'Customer Satisfaction Prediction',
+    oneLiner: 'Random Forest analytics model identifying online boarding convenience as the primary driver of customer satisfaction.',
+    technology: 'Python • Random Forest',
+    category: 'Data Analytics',
+    githubUrl: 'https://github.com/jophita-kristen-s/Customer-Satisfaction-Prediction-.git'
+  },
+  {
+    id: 'voter-epic',
+    name: 'Voter EPIC Extraction Pipeline',
+    chipLabel: 'Voter EPIC Extraction Pipeline',
+    oneLiner: 'OCR and document parsing pipeline extracting alphanumeric voter identity card numbers from scanned records.',
+    technology: 'Python • OpenCV • Tesseract',
+    category: 'Document AI',
+    githubUrl: 'https://github.com/jophita-kristen-s/Voter-EPIC-Extraction-Pipeline-.git'
+  },
+  {
+    id: 'aurelia-gems',
+    name: 'Aurelia Gems',
+    chipLabel: 'Aurelia Gems',
+    oneLiner: 'Luxury jewelry eCommerce interface with bespoke typography, responsive catalog grids, and checkout design.',
+    technology: 'Figma • UI/UX Design',
+    category: 'Design Engineering',
+    figmaUrl: 'https://www.figma.com/proto/zJv1U8eG1a0v1l2?node-id=1-2'
   }
 ];
 

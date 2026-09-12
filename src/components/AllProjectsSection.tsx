@@ -1,196 +1,181 @@
 import React, { useState } from 'react';
-import { ALL_PROJECTS } from '../data/portfolioData';
+import { SECONDARY_PROJECTS } from '../data/portfolioData';
 
 interface AllProjectsSectionProps {
   onOpenProjectModal: (projectId: string) => void;
 }
 
 export const AllProjectsSection: React.FC<AllProjectsSectionProps> = ({ onOpenProjectModal }) => {
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'ai-ml' | 'web-app' | 'research' | 'design-tools'>('all');
+  const [experimentsModalOpen, setExperimentsModalOpen] = useState<boolean>(false);
+  const [selectedExperimentId, setSelectedExperimentId] = useState<string | null>(null);
 
-  const filteredProjects = selectedCategory === 'all'
-    ? ALL_PROJECTS
-    : ALL_PROJECTS.filter(p => p.category === selectedCategory);
-
-  const getCategoryCount = (cat: 'all' | 'ai-ml' | 'web-app' | 'research' | 'design-tools') => {
-    if (cat === 'all') return ALL_PROJECTS.length;
-    return ALL_PROJECTS.filter(p => p.category === cat).length;
+  const handleChipClick = (id: string) => {
+    setSelectedExperimentId(id);
+    setExperimentsModalOpen(true);
   };
 
   return (
-    <section id="all-projects" className="w-full px-4 md:px-8 lg:px-12 py-16 bg-[#0c0d19]/40 border-b border-[#1d1f2b]">
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-10">
+    <section id="other-projects" className="w-full px-4 md:px-8 lg:px-12 py-14 bg-[#0c0d19]/60 border-b border-[#1d1f2b]">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-6">
         
-        {/* Header & Filter Controls */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div>
-            <div className="text-xs font-mono uppercase tracking-widest text-[#cfbdff]">
-              CATALOG &amp; ARCHIVE
-            </div>
-            <h3 className="font-headline-md text-2xl sm:text-3xl text-[#e2e1f3] font-normal mt-1">
-              All 18 Engineered Projects
-            </h3>
+        {/* Section Heading */}
+        <div className="flex flex-col gap-2 max-w-2xl">
+          <div className="text-xs font-mono uppercase tracking-widest text-[#948e9e]">
+            ACADEMIC &amp; EXPLORATORY WORK
           </div>
-
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2">
-            {[
-              { id: 'all', label: 'All Projects', count: getCategoryCount('all') },
-              { id: 'ai-ml', label: 'AI, ML & Vision', count: getCategoryCount('ai-ml') },
-              { id: 'web-app', label: 'Web & Systems', count: getCategoryCount('web-app') },
-              { id: 'research', label: 'ML Benchmarks', count: getCategoryCount('research') },
-              { id: 'design-tools', label: 'UI / Design', count: getCategoryCount('design-tools') }
-            ].map((tab) => {
-              const isActive = selectedCategory === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setSelectedCategory(tab.id as 'all' | 'ai-ml' | 'web-app' | 'research' | 'design-tools')}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all ${
-                    isActive
-                      ? 'bg-[#cfbdff] text-[#11121f] font-semibold shadow-md shadow-[#cfbdff]/20'
-                      : 'bg-[#1d1f2b] text-[#cbc3d5] hover:bg-[#282936] hover:text-[#e2e1f3] border border-[#333441]'
-                  }`}
-                >
-                  <span>{tab.label}</span>
-                  <span className={`ml-1.5 text-[10px] ${isActive ? 'text-[#11121f]' : 'text-[#948e9e]'}`}>
-                    ({tab.count < 10 ? `0${tab.count}` : tab.count})
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+          <h3 className="font-headline-md text-2xl sm:text-3xl text-[#e2e1f3] font-normal">
+            Other Things I&apos;ve Built
+          </h3>
+          <p className="text-sm text-[#cbc3d5] font-light leading-relaxed">
+            Beyond my featured work, I&apos;ve explored a range of academic, ML, computer vision and software projects.
+          </p>
         </div>
 
-        {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
-            <div
+        {/* Compact List of Tags / Chips */}
+        <div className="flex flex-wrap items-center gap-2.5 pt-2">
+          {SECONDARY_PROJECTS.map((project) => (
+            <button
               key={project.id}
-              className="p-6 rounded-2xl bg-[#1d1f2b]/80 border border-[#333441] shadow-lg flex flex-col justify-between hover:border-[#cfbdff]/50 hover:bg-[#282936]/90 transition-all duration-300 group"
+              type="button"
+              onClick={() => handleChipClick(project.id)}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#1d1f2b]/90 hover:bg-[#282936] text-xs font-mono text-[#cbc3d5] hover:text-[#cfbdff] border border-[#282936] hover:border-[#cfbdff]/40 transition-all cursor-pointer shadow-sm group"
             >
-              <div className="flex flex-col gap-4">
-                {/* Banner / Visual Spec Box */}
-                <div className="relative p-4 rounded-xl bg-[#0c0d19] border border-[#282936] overflow-hidden">
-                  <div className="flex items-center justify-between text-[11px] font-mono">
-                    <span className="text-[#cfbdff] font-medium">{project.bannerTitle}</span>
-                    <span className="text-[#66d9ca] font-semibold">{project.statusLabel}</span>
-                  </div>
-                  <div className="mt-3">
-                    <div className="text-sm font-semibold text-[#e2e1f3]">{project.bannerDetail}</div>
-                    <div className="text-xs text-[#948e9e] mt-0.5">{project.bannerSubtext}</div>
-                  </div>
-                </div>
-
-                {/* Number & Category */}
-                <div className="flex items-center justify-between text-xs pt-1">
-                  <span className="font-mono text-[#948e9e] font-medium">{project.number}</span>
-                  <span className="text-[#cfbdff] uppercase tracking-wider font-semibold text-[11px]">
-                    {project.badgeCategory}
-                  </span>
-                </div>
-
-                {/* Title & Subtitle */}
-                <div>
-                  <h4 className="font-title-editorial text-xl text-[#e2e1f3] font-medium group-hover:text-[#cfbdff] transition-colors leading-snug">
-                    {project.title}
-                  </h4>
-                  <p className="text-xs text-[#66d9ca] font-medium mt-1">
-                    {project.subtitle}
-                  </p>
-                  {project.teamSize && (
-                    <div className="text-[11px] text-[#ffb1c3] font-mono mt-1">
-                      ✦ {project.teamSize}
-                    </div>
-                  )}
-                </div>
-
-                {/* Description */}
-                <p className="text-xs sm:text-sm text-[#cbc3d5] font-light leading-relaxed line-clamp-3">
-                  {project.description}
-                </p>
-
-                {/* Features list bullet points if available */}
-                {project.features && project.features.length > 0 && (
-                  <div className="space-y-1 pt-1">
-                    <div className="text-[11px] uppercase tracking-wider text-[#948e9e] font-semibold">
-                      Key Highlights:
-                    </div>
-                    {project.features.slice(0, 2).map((feat, idx) => (
-                      <div key={idx} className="text-xs text-[#cbc3d5] flex items-center gap-1.5 truncate">
-                        <span className="text-[#66d9ca]">▹</span>
-                        <span className="truncate">{feat}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 pt-1">
-                  {project.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 rounded-md bg-[#11121f] border border-[#333441] text-[11px] text-[#cbc3d5]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                  {project.tags.length > 3 && (
-                    <span className="px-2 py-0.5 rounded-md bg-[#11121f] text-[11px] text-[#948e9e]">
-                      +{project.tags.length - 3}
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* Action Button & Repo / Design Link */}
-              <div className="pt-4 mt-4 border-t border-[#333441]/60 flex flex-col gap-3">
-                {project.figmaUrl ? (
-                  <div>
-                    <a
-                      href={project.figmaUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <span>View Design ↗</span>
-                    </a>
-                  </div>
-                ) : project.githubUrl ? (
-                  <div>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <span>View on GitHub ↗</span>
-                    </a>
-                  </div>
-                ) : null}
-
-                <div className="flex items-center justify-between">
-                  <button
-                    type="button"
-                    onClick={() => onOpenProjectModal(project.id)}
-                    className="text-xs font-semibold text-[#cfbdff] hover:text-[#66d9ca] flex items-center gap-1.5 transition-colors"
-                  >
-                    <span>Inspect System Architecture</span>
-                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </button>
-                  <span className="material-symbols-outlined text-[#948e9e] text-[18px]">
-                    {project.iconName}
-                  </span>
-                </div>
-              </div>
-            </div>
+              <span className="text-[#66d9ca]/70 group-hover:text-[#66d9ca]">✦</span>
+              <span>{project.chipLabel}</span>
+            </button>
           ))}
         </div>
 
+        {/* Subtle Expansion Trigger */}
+        <div className="pt-2">
+          <button
+            type="button"
+            onClick={() => {
+              setSelectedExperimentId(null);
+              setExperimentsModalOpen(true);
+            }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1d1f2b] hover:bg-[#282936] border border-[#333441] text-xs font-medium text-[#cfbdff] hover:text-[#e2e1f3] transition-colors"
+          >
+            <span>View all experiments</span>
+            <span className="text-sm">→</span>
+          </button>
+        </div>
+
       </div>
+
+      {/* Simple, Text-Focused Experiments Modal / Drawer */}
+      {experimentsModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0c0d19]/85 backdrop-blur-xl animate-in fade-in duration-200">
+          <div className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl bg-[#1d1f2b] border border-[#494553] shadow-2xl p-6 sm:p-8 text-[#e2e1f3]">
+            {/* Close Button */}
+            <button
+              type="button"
+              onClick={() => setExperimentsModalOpen(false)}
+              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] flex items-center justify-center transition-colors"
+              aria-label="Close modal"
+            >
+              <span className="material-symbols-outlined text-[18px]">close</span>
+            </button>
+
+            {/* Modal Header */}
+            <div className="border-b border-[#333441] pb-4 mb-5">
+              <div className="text-xs font-mono uppercase tracking-wider text-[#948e9e]">
+                ARCHIVE DIRECTORY
+              </div>
+              <h4 className="font-headline-md text-2xl font-normal text-[#e2e1f3] mt-0.5">
+                All Exploratory Projects &amp; Experiments
+              </h4>
+              <p className="text-xs sm:text-sm text-[#cbc3d5] font-light mt-1">
+                Foundational implementations, empirical ML comparisons, algorithms, and academic coursework.
+              </p>
+            </div>
+
+            {/* Text-Focused Projects List */}
+            <div className="divide-y divide-[#282936]">
+              {SECONDARY_PROJECTS.map((item, index) => {
+                const isHighlighted = selectedExperimentId === item.id;
+
+                return (
+                  <div
+                    key={item.id}
+                    className={`py-3.5 px-3 rounded-lg transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
+                      isHighlighted ? 'bg-[#282936]/80 border border-[#cfbdff]/30' : 'hover:bg-[#282936]/40'
+                    }`}
+                  >
+                    <div className="flex flex-col gap-1 max-w-xl">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-xs text-[#948e9e]">
+                          {index + 1 < 10 ? `0${index + 1}` : index + 1}.
+                        </span>
+                        <span className="text-sm font-medium text-[#e2e1f3]">
+                          {item.name}
+                        </span>
+                        <span className="px-2 py-0.5 rounded bg-[#11121f] text-[10px] font-mono text-[#948e9e] border border-[#282936]">
+                          {item.category}
+                        </span>
+                      </div>
+                      <p className="text-xs text-[#cbc3d5] font-light leading-relaxed pl-6">
+                        {item.oneLiner}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-3 pl-6 sm:pl-0 self-start sm:self-center shrink-0">
+                      <span className="text-[11px] font-mono text-[#cfbdff] bg-[#11121f] px-2.5 py-1 rounded border border-[#333441]">
+                        {item.technology}
+                      </span>
+
+                      {item.githubUrl && (
+                        <a
+                          href={item.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-mono text-[#66d9ca] hover:text-[#cfbdff] transition-colors"
+                        >
+                          GitHub ↗
+                        </a>
+                      )}
+
+                      {item.figmaUrl && (
+                        <a
+                          href={item.figmaUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-mono text-[#66d9ca] hover:text-[#cfbdff] transition-colors"
+                        >
+                          Figma ↗
+                        </a>
+                      )}
+
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setExperimentsModalOpen(false);
+                          onOpenProjectModal(item.id);
+                        }}
+                        className="text-[11px] font-mono text-[#948e9e] hover:text-[#e2e1f3] transition-colors"
+                      >
+                        Specs →
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="mt-6 pt-4 border-t border-[#333441] flex items-center justify-between text-xs font-mono text-[#948e9e]">
+              <span>12 secondary exploratory entries</span>
+              <button
+                type="button"
+                onClick={() => setExperimentsModalOpen(false)}
+                className="px-4 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] text-[#e2e1f3] text-xs font-medium transition-colors"
+              >
+                Close List
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

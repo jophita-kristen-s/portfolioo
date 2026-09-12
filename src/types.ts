@@ -10,6 +10,23 @@ export interface UniverseNode {
   tagColors: string[];
 }
 
+export interface ProjectContribution {
+  role: string;
+  team: string;
+  contributions: string[];
+  teamContext?: string;
+}
+
+export interface ProjectEvidence {
+  githubUrl?: string;
+  readmeUrl?: string;
+  screenshotsAvailable?: boolean;
+  architectureAvailable?: boolean;
+  liveDemoUrl?: string;
+  repoStatus?: 'available' | 'coming-soon' | 'not-available';
+  demoStatus?: 'available' | 'coming-soon' | 'unavailable';
+}
+
 export interface Project {
   id: string;
   number: string;
@@ -33,6 +50,11 @@ export interface Project {
   figmaUrl?: string;
   githubRepoType?: 'public' | 'private';
   liveDemoUrl?: string;
+  // Enhanced verification & credibility fields
+  problem?: string;
+  solution?: string;
+  contribution?: ProjectContribution;
+  evidence?: ProjectEvidence;
 }
 
 export interface EducationItem {

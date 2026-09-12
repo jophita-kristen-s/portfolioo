@@ -6,11 +6,19 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) => {
-  const scrollToUniverse = (e: React.MouseEvent) => {
+  const scrollToProjects = (e: React.MouseEvent) => {
     e.preventDefault();
-    const universeSection = document.getElementById('universe');
-    if (universeSection) {
-      universeSection.scrollIntoView({ behavior: 'smooth' });
+    const target = document.getElementById('projects');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const target = document.getElementById('contact');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -24,94 +32,116 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#ffb1c3]/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        {/* Left Column: Typography & Polymath Narrative */}
-        <div className="lg:col-span-7 flex flex-col items-start gap-6 z-10">
+        {/* Left Column: Focused Professional Identity & Intro Hierarchy */}
+        <div className="lg:col-span-7 flex flex-col items-start gap-5 z-10">
           
           {/* Greeting Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#282936]/80 text-[#cfbdff] text-xs font-semibold tracking-wider uppercase border border-[#494553]/50 shadow-sm backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-[#66d9ca] animate-pulse"></span>
-            <span>Hello, I'm ✨</span>
+            <span>Portfolio &amp; Engineering Journal ✨</span>
           </div>
 
-          {/* Expressive Editorial Name */}
+          {/* 1. Name */}
           <div className="flex flex-col gap-1">
-            <h1 className="font-display-hero text-4xl sm:text-5xl lg:text-[58px] leading-[1.15] text-[#e2e1f3] tracking-tight font-normal">
-              Jophita Kristen{' '}
+            <h1 className="font-display-hero text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] text-[#e2e1f3] tracking-tight font-normal">
+              JOPHITA KRISTEN{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#cfbdff] via-[#ffb1c3] to-[#66d9ca]">
-                S
+                S.
               </span>
             </h1>
-            <p className="font-headline-sm text-xl sm:text-2xl text-[#66d9ca] font-medium tracking-wide mt-1">
-              Information Science &amp; Engineering
-            </p>
-            <div className="flex items-center gap-2 text-[#cbc3d5] text-sm mt-1">
-              <span className="material-symbols-outlined text-[#cfbdff] text-[18px]">
-                school
+
+            {/* 2. Professional Identity / Field */}
+            <div className="flex flex-col gap-1 mt-1">
+              <p className="font-headline-sm text-lg sm:text-xl md:text-2xl text-[#66d9ca] font-medium tracking-wide">
+                Final-Year B.Tech Information Science &amp; Engineering Student
+              </p>
+              <div className="flex items-center gap-2 text-[#cbc3d5] text-xs sm:text-sm">
+                <span className="material-symbols-outlined text-[#cfbdff] text-[17px]">
+                  school
+                </span>
+                <span>Women's Engineering College, Lawspet, Puducherry • CGPA 8.99</span>
+              </div>
+            </div>
+
+            {/* Primary Positioning Badges */}
+            <div className="flex flex-wrap items-center gap-2 pt-2">
+              <span className="px-3 py-1 rounded-full bg-[#1d1f2b] border border-[#cfbdff]/40 text-[#cfbdff] text-xs font-mono font-medium tracking-wide shadow-sm">
+                AI/ML
               </span>
-              <span>Women's Engineering College, Lawspet, Puducherry</span>
+              <span className="text-[#494553]">•</span>
+              <span className="px-3 py-1 rounded-full bg-[#1d1f2b] border border-[#66d9ca]/40 text-[#66d9ca] text-xs font-mono font-medium tracking-wide shadow-sm">
+                Computer Vision
+              </span>
+              <span className="text-[#494553]">•</span>
+              <span className="px-3 py-1 rounded-full bg-[#1d1f2b] border border-[#ffb1c3]/40 text-[#ffb1c3] text-xs font-mono font-medium tracking-wide shadow-sm">
+                Full-Stack Development
+              </span>
+              <span className="text-[#494553]">•</span>
+              <span className="px-3 py-1 rounded-full bg-[#1d1f2b] border border-[#e8ddff]/40 text-[#e8ddff] text-xs font-mono font-medium tracking-wide shadow-sm">
+                Explainable AI
+              </span>
             </div>
           </div>
 
-          {/* 4 Personality Badges */}
-          <div className="flex flex-wrap gap-2.5 pt-1">
-            <span className="px-3 py-1 rounded-full bg-[#1d1f2b]/80 border border-[#333441] text-[#cfbdff] text-xs font-semibold tracking-wider uppercase shadow-sm hover:border-[#cfbdff]/50 transition-colors">
-              ✦ Polymath
-            </span>
-            <span className="px-3 py-1 rounded-full bg-[#1d1f2b]/80 border border-[#333441] text-[#66d9ca] text-xs font-semibold tracking-wider uppercase shadow-sm hover:border-[#66d9ca]/50 transition-colors">
-              ✦ Problem Solver
-            </span>
-            <span className="px-3 py-1 rounded-full bg-[#1d1f2b]/80 border border-[#333441] text-[#ffb1c3] text-xs font-semibold tracking-wider uppercase shadow-sm hover:border-[#ffb1c3]/50 transition-colors">
-              ✦ Dreamer
-            </span>
-            <span className="px-3 py-1 rounded-full bg-[#1d1f2b]/80 border border-[#333441] text-[#e8ddff] text-xs font-semibold tracking-wider uppercase shadow-sm hover:border-[#e8ddff]/50 transition-colors">
-              ✦ Doer
-            </span>
-          </div>
-
-          {/* Large Handwritten Script Quote */}
-          <div className="relative pl-4 my-1">
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#cfbdff] via-[#ffb1c3] to-[#66d9ca] rounded-full"></div>
-            <p className="font-label-handwritten text-2xl sm:text-3xl text-[#ffb1c3] tracking-wide select-none leading-tight py-1">
-              “Give me a problem. I'll figure it out. ♡”
-            </p>
-          </div>
-
-          {/* Bio Paragraph */}
+          {/* 3. Short 2–3 sentence introduction */}
           <p className="text-base sm:text-lg text-[#cbc3d5] max-w-xl leading-relaxed font-light">
-            I'm a curious mind with a passion for technology, creativity, and continuous learning. I love building solutions, solving complex puzzles, exploring interstellar ideas, and turning pure concepts into real-world impact.
+            I’m a final-year Information Science &amp; Engineering student who enjoys turning complex problems into practical, explainable systems. My work spans AI/ML, computer vision, backend development, real-time applications, and robotics simulation.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          {/* 4. Tagline & Journal Personality */}
+          <div className="w-full max-w-xl p-3.5 sm:p-4 rounded-xl bg-[#1d1f2b]/90 border border-[#333441] shadow-md flex flex-col gap-2 relative overflow-hidden">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-6 rounded-full bg-gradient-to-b from-[#cfbdff] via-[#ffb1c3] to-[#66d9ca]"></span>
+              <p className="font-headline-sm text-base sm:text-lg text-[#e2e1f3] font-normal tracking-wide">
+                “Give me a problem. I'll figure it out.”
+              </p>
+            </div>
+            <div className="pl-3.5 flex items-center gap-2">
+              <span className="font-label-handwritten text-lg sm:text-xl text-[#ffb1c3] tracking-wide select-none">
+                Currently building, learning &amp; figuring things out ✦
+              </span>
+            </div>
+          </div>
+
+          {/* 5 & 6. Primary CTA (“View my work”) and Secondary CTA (“Get in touch”) */}
+          <div className="flex flex-wrap items-center gap-3.5 pt-1">
             <a
-              href="#universe"
-              onClick={scrollToUniverse}
+              href="#projects"
+              onClick={scrollToProjects}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm sm:text-base shadow-xl shadow-[#9c7cf6]/25 hover:shadow-[#9c7cf6]/40 hover:-translate-y-0.5 transition-all duration-300"
             >
-              <span>Explore My World</span>
+              <span>View my work</span>
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+            <a
+              href="#contact"
+              onClick={scrollToContact}
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-[#282936]/90 border border-[#494553]/80 text-[#e2e1f3] text-sm sm:text-base shadow-md hover:bg-[#373846] hover:text-[#cfbdff] hover:border-[#cfbdff]/40 transition-all duration-300"
+            >
+              <span className="material-symbols-outlined text-[18px]">mail</span>
+              <span>Get in touch</span>
             </a>
             <button
               type="button"
               onClick={onOpenResumeModal}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#282936]/90 border border-[#494553]/60 text-[#e2e1f3] text-sm sm:text-base shadow-md hover:bg-[#373846] hover:text-[#cfbdff] hover:border-[#cfbdff]/40 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-lg text-[#cbc3d5] hover:text-[#cfbdff] text-xs sm:text-sm transition-colors"
             >
-              <span className="material-symbols-outlined text-[18px]">description</span>
-              <span>View Resume</span>
+              <span className="material-symbols-outlined text-[17px]">description</span>
+              <span>Resume</span>
             </button>
           </div>
 
           {/* Telemetry Metric Strip */}
-          <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-4 w-full max-w-md">
-            <div className="bg-[#191b27]/80 border border-[#282936] p-3.5 rounded-xl shadow-sm">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-2 w-full max-w-md">
+            <div className="bg-[#191b27]/80 border border-[#282936] p-3 rounded-xl shadow-sm">
               <div className="font-display-hero text-2xl sm:text-3xl font-bold text-[#cfbdff]">8.99</div>
               <div className="text-[11px] text-[#948e9e] uppercase tracking-wider font-semibold mt-0.5">Overall CGPA</div>
             </div>
-            <div className="bg-[#191b27]/80 border border-[#282936] p-3.5 rounded-xl shadow-sm">
+            <div className="bg-[#191b27]/80 border border-[#282936] p-3 rounded-xl shadow-sm">
               <div className="font-display-hero text-2xl sm:text-3xl font-bold text-[#66d9ca]">18</div>
-              <div className="text-[11px] text-[#948e9e] uppercase tracking-wider font-semibold mt-0.5">Engineered Projects</div>
+              <div className="text-[11px] text-[#948e9e] uppercase tracking-wider font-semibold mt-0.5">Projects</div>
             </div>
-            <div className="bg-[#191b27]/80 border border-[#282936] p-3.5 rounded-xl shadow-sm">
+            <div className="bg-[#191b27]/80 border border-[#282936] p-3 rounded-xl shadow-sm">
               <div className="font-display-hero text-2xl sm:text-3xl font-bold text-[#ffb1c3]">SIH '26</div>
               <div className="text-[11px] text-[#948e9e] uppercase tracking-wider font-semibold mt-0.5">Hackathon Team</div>
             </div>

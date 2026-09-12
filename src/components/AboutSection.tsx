@@ -32,7 +32,7 @@ export const AboutSection: React.FC = () => {
             
             <div className="space-y-4 text-base sm:text-lg text-[#cbc3d5] leading-relaxed font-light">
               <p>
-                Hello! I am an <strong className="text-[#e2e1f3] font-medium">Information Science &amp; Engineering</strong> undergraduate at <strong className="text-[#e2e1f3] font-medium">Women’s Engineering College, Lawspet, Puducherry</strong>. My engineering journey is driven by an insatiable curiosity about how complex algorithms and computer systems behave under the hood.
+                Hello! I am a <strong className="text-[#e2e1f3] font-medium">final-year Information Science &amp; Engineering</strong> student at <strong className="text-[#e2e1f3] font-medium">Women’s Engineering College, Lawspet, Puducherry</strong>. My engineering journey is driven by an insatiable curiosity about how complex algorithms and computer systems behave under the hood.
               </p>
               <p>
                 From building explainable AI systems for diabetic retinopathy screening and OCR document pipelines to developing hospital management backends and conducting empirical ML benchmarks across datasets, I treat each problem as a puzzle waiting for an elegant, robust solution.
@@ -51,7 +51,7 @@ export const AboutSection: React.FC = () => {
                 </span>
               </div>
               <span className="font-label-handwritten text-xl text-[#ffb1c3]">
-                “From Puducherry to the cosmos ✦”
+                “Currently building, learning &amp; figuring things out ✦”
               </span>
             </div>
           </div>
