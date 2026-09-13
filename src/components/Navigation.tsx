@@ -24,7 +24,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
   // ScrollSpy to update active section
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'universe', 'about', 'education', 'skills', 'projects', 'achievements', 'leadership', 'certifications', 'interests', 'sudoku', 'contact'];
+      const sections = ['home', 'about', 'education', 'skills', 'projects', 'achievements', 'leadership', 'certifications', 'universe', 'interests', 'sudoku', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -32,11 +32,11 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
         const el = document.getElementById(sectionId);
         if (el && el.offsetTop <= scrollPosition) {
           // Map sub-sections to their primary navigation item
-          if (sectionId === 'universe' || sectionId === 'education') {
+          if (sectionId === 'education') {
             setActiveSection('about');
           } else if (sectionId === 'leadership' || sectionId === 'certifications') {
             setActiveSection('achievements');
-          } else if (sectionId === 'sudoku') {
+          } else if (sectionId === 'universe' || sectionId === 'sudoku') {
             setActiveSection('interests');
           } else {
             setActiveSection(sectionId);
@@ -193,7 +193,6 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
           <div className="relative z-50 lg:hidden bg-[#0c0d19]/95 backdrop-blur-2xl border-b border-[#282936] px-5 sm:px-6 py-4 flex flex-col gap-2 max-h-[calc(100vh-5rem)] overflow-y-auto animate-in slide-in-from-top-2 duration-200 shadow-2xl">
             {[
               { id: 'home', label: 'Home' },
-              { id: 'universe', label: 'Explore Universe' },
               { id: 'about', label: 'About' },
               { id: 'education', label: 'Education' },
               { id: 'skills', label: 'Skills' },
@@ -201,6 +200,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
               { id: 'achievements', label: 'Achievements' },
               { id: 'leadership', label: 'Leadership' },
               { id: 'certifications', label: 'Certifications' },
+              { id: 'universe', label: 'Explore Universe' },
               { id: 'interests', label: 'Interests' },
               { id: 'sudoku', label: 'Interactive Sudoku' },
               { id: 'contact', label: 'Contact' }

@@ -31,40 +31,40 @@ export function App() {
         {/* Section 1: Home / Hero */}
         <HeroSection onOpenResumeModal={() => setResumeModalOpen(true)} />
 
-        {/* Section 2: Explore My Universe */}
-        <UniverseSection />
-
-        {/* Section 3: About Me */}
+        {/* Section 2: About Me */}
         <AboutSection />
 
-        {/* Section 4: Education */}
+        {/* Section 3: Education & Foundations */}
         <EducationSection />
 
-        {/* Section 5: Skills */}
+        {/* Section 4: Technical Toolkit & Skills */}
         <SkillsSection />
 
-        {/* Section 6: Featured Projects */}
+        {/* Section 5: Featured Projects (Crown Jewel) */}
         <FeaturedProjectSection onOpenProjectModal={(id) => setActiveProjectId(id)} />
 
-        {/* Section 7: All Projects */}
+        {/* Section 6: Other Things I've Built (Minimal Notice) */}
         <AllProjectsSection onOpenProjectModal={(id) => setActiveProjectId(id)} />
 
-        {/* Section 8: Achievements */}
+        {/* Section 7: Honors & Achievements */}
         <AchievementsSection />
 
-        {/* Section 9: Leadership */}
+        {/* Section 8: Leadership (Supporting Evidence) */}
         <LeadershipSection />
 
-        {/* Section 10: Certifications */}
+        {/* Section 9: Certifications & Workshops (Supporting Evidence) */}
         <CertificationsSection />
 
-        {/* Section 11: Interests ("Beyond The Terminal") */}
+        {/* Section 10: Explore My Universe (Supporting Creative Identity) */}
+        <UniverseSection />
+
+        {/* Section 11: Interests ("Beyond The Terminal" - Personality) */}
         <InterestsSection />
 
-        {/* Section 12: Interactive Sudoku */}
+        {/* Section 12: Interactive Sudoku (Playful Personality) */}
         <SudokuSection />
 
-        {/* Section 13: Contact */}
+        {/* Section 13: Contact & Resume */}
         <ContactSection onOpenResumeModal={() => setResumeModalOpen(true)} />
       </main>
 

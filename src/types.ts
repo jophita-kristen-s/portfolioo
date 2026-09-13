@@ -24,7 +24,7 @@ export interface ProjectEvidence {
   screenshotsAvailable?: boolean;
   architectureAvailable?: boolean;
   liveDemoUrl?: string;
-  repoStatus?: 'available' | 'coming-soon' | 'not-available';
+  repoStatus?: 'available' | 'coming-soon' | 'not-available' | 'limited';
   demoStatus?: 'available' | 'coming-soon' | 'unavailable';
 }
 

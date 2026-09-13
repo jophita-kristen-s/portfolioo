@@ -27,15 +27,15 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#282936] pb-6">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#ffb1c3] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px]">verified</span>
-              <span>Engineering Evidence &amp; Verification</span>
+              <span className="material-symbols-outlined text-[16px]">code</span>
+              <span>Engineering Evidence &amp; Repositories</span>
             </div>
             <h2 className="font-headline-lg text-3xl md:text-4xl lg:text-5xl text-[#e2e1f3] mt-1 font-normal">
               Featured Projects
             </h2>
           </div>
           <p className="text-sm md:text-base text-[#cbc3d5] max-w-lg font-light">
-            Six verified systems across clinical triage, distributed healthcare, candidate intelligence, geospatial monitoring, client-side OCR, and real-time streaming.
+            Six engineering systems across clinical triage, healthcare management, candidate intelligence, geospatial monitoring, document OCR, and real-time streaming.
           </p>
         </div>
 
@@ -153,7 +153,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
 
                 {/* Card Footer: EVIDENCE & "View project" Action */}
                 <div className="pt-5 mt-5 border-t border-[#282936] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 relative z-10">
-                  {/* Verified Evidence Links */}
+                  {/* Evidence Links */}
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[10px] font-mono uppercase tracking-wider text-[#948e9e]">
                       EVIDENCE:
@@ -170,19 +170,39 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                       </a>
                     ) : null}
 
-                    {project.evidence?.readmeUrl ? (
-                      <a
-                        href={project.evidence.readmeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
-                        title="View Project README"
-                      >
-                        <span>README ↗</span>
-                      </a>
-                    ) : null}
+                    {project.evidence?.repoStatus === 'limited' ? (
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#11121f] text-[11px] text-[#948e9e] font-mono border border-[#282936]">
+                        Limited public evidence
+                      </span>
+                    ) : (
+                      <>
+                        {project.evidence?.readmeUrl ? (
+                          <a
+                            href={project.evidence.readmeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
+                            title="View Project README"
+                          >
+                            <span>README ↗</span>
+                          </a>
+                        ) : null}
 
-                    {!project.githubUrl && !project.evidence?.readmeUrl && (
+                        {project.liveDemoUrl ? (
+                          <a
+                            href={project.liveDemoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#66d9ca]/20 hover:bg-[#66d9ca]/30 border border-[#66d9ca]/40 text-[#66d9ca] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
+                            title="View Live Demo"
+                          >
+                            <span>Live Demo ↗</span>
+                          </a>
+                        ) : null}
+                      </>
+                    )}
+
+                    {!project.githubUrl && !project.evidence?.readmeUrl && project.evidence?.repoStatus !== 'limited' && (
                       <span className="px-2.5 py-1 rounded-lg bg-[#11121f] text-[11px] text-[#948e9e] font-mono border border-[#282936]">
                         Evidence coming soon
                       </span>

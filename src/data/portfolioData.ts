@@ -227,40 +227,38 @@ export const ALL_PROJECTS: Project[] = [
     badgeCategory: 'Full-Stack Ecosystem',
     bannerTitle: 'SMART HOSPITAL AI',
     bannerDetail: 'CareFlow + MediCareConnect',
-    bannerSubtext: 'React • Node.js • PostgreSQL • MongoDB',
+    bannerSubtext: 'Node.js • Express • MongoDB • REST APIs',
     iconName: 'local_hospital',
-    tags: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Python', 'REST APIs', 'JWT'],
+    tags: ['Node.js', 'Express', 'MongoDB', 'REST APIs', 'JWT'],
     statusLabel: 'Team of 5',
     eventOrContext: 'Engineering Project',
     teamSize: '5-member team',
-    problem: 'Fragmented hospital intake workflows, delayed emergency ambulance routing, and siloed patient records cause critical care bottlenecks.',
-    solution: 'Unified healthcare ecosystem integrating distance-matrix ambulance transit routing, QR-encoded patient identity tokens, and live hospital bed occupancy tracking.',
+    problem: 'Fragmented hospital intake records, uncoordinated patient scheduling, and siloed administrative records create operational bottlenecks across facilities.',
+    solution: 'Unified healthcare ecosystem providing modular RESTful APIs for patient record intake, appointment scheduling, and structured bed occupancy tracking.',
     contribution: {
       role: 'Backend Developer & API Testing',
       team: '5-member team',
-      summaryLine: 'Backend REST APIs • Hybrid DB schemas • Proximity emergency routing • JWT & QR auth',
+      summaryLine: 'Backend REST APIs • MongoDB schema design • Authentication & routing • End-to-end API testing',
       contributions: [
-        'Backend REST API architecture and endpoints using Node.js, Express, and Python',
-        'Hybrid persistence schemas across PostgreSQL and MongoDB/Firebase',
-        'Integration with Google Maps Distance API for proximity-based emergency triage routing',
-        'JWT authentication and secure QR-coded medical identity token generation',
-        'Comprehensive API latency and end-to-end integration testing'
+        'Backend REST API architecture and endpoints using Node.js and Express',
+        'Database schema design and document modeling in MongoDB for patient records',
+        'User authentication handling and protected route middleware',
+        'Comprehensive API validation and request-response integration testing'
       ],
       teamContext: 'Frontend patient portal, admin UI design, and client-side layouts were designed and built by fellow team members.'
     },
     features: [
-      'AI emergency routing using Google Maps Distance API',
-      'QR medical identity generator for rapid patient intake',
-      'Real-time bed and admission telemetry',
-      'Digital prescription issuance & verification',
-      'Role-based clinician and administrative access control'
+      'Modular REST API endpoints for patient records and appointments',
+      'Document-oriented database persistence in MongoDB',
+      'Role-based administrative and staff access control',
+      'Structured intake and admission status tracking'
     ],
-    longOverview: 'A full-scale hospital management ecosystem built with a 5-member team. The platform combines CareFlow (the patient portal) and MediCareConnect (the administrative hospital dashboard). Features intelligent emergency transit routing powered by distance matrices, QR-encoded patient identity cards for rapid check-in, secure digital prescription issuance, and admission telemetry. My core contribution centered on backend architecture, database schema design, and end-to-end REST API testing.',
+    longOverview: 'A full-scale hospital management ecosystem built with a 5-member team. The platform combines CareFlow (the patient portal) and MediCareConnect (the administrative hospital dashboard) to organize intake, appointments, and facility records. My core contribution centered on backend architecture with Node.js and Express, database schema design in MongoDB, authentication handling, and end-to-end REST API testing.',
     technicalHighlights: [
-      'Engineered backend endpoints using Node.js, Express, and Python services',
-      'Hybrid persistence layer utilizing PostgreSQL relational schemas alongside MongoDB/Firebase for flexible records',
-      'Integrated Google Maps Distance API for real-time proximity-based emergency triage routing',
-      'Implemented secure JWT authentication and QR-coded identity tokenization'
+      'Engineered backend endpoints using Node.js and Express services',
+      'Structured MongoDB document schemas for flexible record storage',
+      'Implemented secure JWT authentication and route protection middleware',
+      'Validated API contracts with systematic integration testing'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/SmartHospitalAI_CareFlow-MediCareConnect.git',
     githubRepoType: 'public',
@@ -275,41 +273,41 @@ export const ALL_PROJECTS: Project[] = [
     id: 'resumatch-ultra',
     number: '03',
     title: 'ResuMatch Ultra',
-    subtitle: 'AI-Based Resume Analysis & Job Intelligence System',
-    description: 'An AI-powered resume intelligence application that parses applicant profiles, performs semantically grounded skill matching against job descriptions, and provides structured skill gap analysis.',
+    subtitle: 'Resume Parsing & Skill-Matching Analytics Engine',
+    description: 'An automated resume analysis pipeline that parses resume text, computes TF-IDF vector representations, and calculates cosine similarity match scores against job requirements to identify skill proficiencies and gaps.',
     category: 'ai-ml',
     badgeCategory: 'AI Job Intelligence',
     bannerTitle: 'RESUMATCH ULTRA',
     bannerDetail: 'Skill Gap & Semantic Match',
-    bannerSubtext: 'Python • NLP • Resume Analytics',
+    bannerSubtext: 'Python • Scikit-learn • TF-IDF',
     iconName: 'badge',
-    tags: ['Python', 'NLP', 'Machine Learning', 'Text Analytics', 'Scikit-learn'],
+    tags: ['Python', 'Scikit-learn', 'TF-IDF', 'Cosine Similarity', 'NLP'],
     statusLabel: 'Engineered System',
     teamSize: 'Solo Project',
     problem: 'Job candidates struggle to identify missing competencies for target roles, while hiring teams face manual, inconsistent resume screening.',
-    solution: 'Algorithmic parsing and natural language processing engine that extracts technical competencies, benchmarks candidates against role requirements, and delivers actionable skill gap analysis.',
+    solution: 'Implemented text extraction and TF-IDF vectorization with cosine similarity in Python and Scikit-learn to benchmark resumes against role requirements and deliver structured skill gap breakdowns.',
     contribution: {
       role: 'Lead Developer (Solo Project)',
       team: 'Solo Project',
-      summaryLine: 'Document text extraction • Semantic skill matching algorithm • Gap analysis • Proficiency scoring',
+      summaryLine: 'Document text extraction • TF-IDF vectorization • Cosine similarity scoring • Skill gap breakdown',
       contributions: [
-        'Document text extraction and entity normalization routines in Python',
-        'Multi-dimensional skill matching algorithms against target job requirements',
-        'Semantic gap analyzer generating structured competency improvement recommendations',
-        'Candidate scoring output with categorized proficiency ratings'
+        'Document text extraction and token normalization routines in Python',
+        'TF-IDF vectorization pipeline transforming unstructured resume and job description text',
+        'Cosine similarity calculation measuring candidate-to-role semantic alignment',
+        'Structured skill gap output reporting categorized proficiencies'
       ]
     },
     features: [
-      'Automated resume text parsing and entity normalization',
-      'Multi-dimensional technical skill matching',
-      'Actionable skill gap breakdown and hiring fit analysis',
-      'Structured recruiter-ready candidate assessment outputs'
+      'Automated resume text parsing and token normalization',
+      'TF-IDF vector representation of resumes and job descriptions',
+      'Cosine similarity scoring to quantify candidate-role alignment',
+      'Structured skill gap breakdown highlighting matching and missing skills'
     ],
-    longOverview: 'ResuMatch Ultra evaluates career resumes against target job specifications using algorithmic parsing and natural language processing. The system analyzes technical proficiencies, identifies missing prerequisite competencies, and highlights specific areas of skill divergence to assist candidates and technical screeners.',
+    longOverview: 'ResuMatch Ultra evaluates career resumes against target job specifications using TF-IDF vectorization and cosine similarity in Python with Scikit-learn. The system parses unstructured resume documents, normalizes technical terminology, evaluates semantic alignment against job description requirements, and generates a structured analysis of matching skills and competency gaps.',
     technicalHighlights: [
-      'Deep textual extraction and entity normalization from unstructured resume documents',
-      'Targeted skill matching algorithm evaluating core frameworks, tools, and technical areas',
-      'Skill gap breakdown providing concrete improvement recommendations'
+      'Text extraction and token normalization routines for unstructured resume files',
+      'TF-IDF matrix generation and cosine similarity calculation via Scikit-learn',
+      'Competency comparison algorithm isolating matching proficiencies and missing requirements'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/RESUMATCH-ULTRA.git',
     githubRepoType: 'public',
@@ -324,49 +322,46 @@ export const ALL_PROJECTS: Project[] = [
     id: 'scanline',
     number: '04',
     title: 'Scanline',
-    subtitle: 'Browser-Based Document Parsing & In-Browser OCR',
-    description: 'A client-side document parsing and optical character recognition web application. Implemented in-browser OCR, drag-and-drop document processing, customizable extraction templates, and export options in CSV and JSON formats.',
-    category: 'web-app',
-    badgeCategory: 'In-Browser OCR',
+    subtitle: 'Document Edge Detection & OCR Pipeline',
+    description: 'A document image processing and optical character recognition pipeline developed with Python, OpenCV, and Tesseract OCR. Implements document contour detection, perspective correction, and text extraction from document scans.',
+    category: 'ai-ml',
+    badgeCategory: 'Computer Vision & OCR',
     bannerTitle: 'SCANLINE',
-    bannerDetail: 'Client-Side Document OCR',
-    bannerSubtext: 'JavaScript • pdf.js • Tesseract.js',
+    bannerDetail: 'Document Preprocessing & OCR',
+    bannerSubtext: 'Python • OpenCV • Tesseract OCR',
     iconName: 'document_scanner',
-    tags: ['JavaScript', 'Tesseract.js', 'pdf.js', 'HTML5 Canvas', 'CSS3'],
-    statusLabel: 'Privacy-First Web App',
+    tags: ['Python', 'OpenCV', 'Tesseract OCR', 'Image Processing'],
+    statusLabel: 'Engineered Pipeline',
     teamSize: 'Solo Project',
-    problem: 'Sending sensitive financial documents, invoices, or identity records to third-party cloud OCR APIs poses severe data privacy and compliance risks.',
-    solution: 'In-browser WebAssembly-powered OCR pipeline using pdf.js and Tesseract.js that extracts text locally on the user\'s device without any external server transmission.',
+    problem: 'Scanned and photographed documents often suffer from skewed angles, irregular borders, and variable lighting that degrade text extraction accuracy.',
+    solution: 'Engineered an image preprocessing pipeline using OpenCV for edge detection and perspective transformation, followed by Tesseract OCR for text extraction.',
     contribution: {
-      role: 'Lead Developer (Solo Project)',
+      role: 'Developer (Solo Project)',
       team: 'Solo Project',
-      summaryLine: 'In-browser WebAssembly OCR • pdf.js canvas pipeline • Extraction templates • CSV/JSON export',
+      summaryLine: 'OpenCV image preprocessing • Perspective correction • Tesseract OCR text extraction',
       contributions: [
-        'Integration of Tesseract.js WebAssembly engine and pdf.js rendering pipeline',
-        'Drag-and-drop document upload and canvas preview interface',
-        'Customizable bounding box template extraction rules for receipts and invoices',
-        'Client-side tabular data export generators for CSV and JSON'
+        'Implemented image preprocessing routines including grayscale conversion, Gaussian blur, and Canny edge detection',
+        'Applied contour detection and perspective transformation to obtain rectified document scans',
+        'Integrated Tesseract OCR engine for text extraction from processed document images'
       ]
     },
     features: [
-      '100% private, client-side in-browser OCR processing',
-      'Drag-and-drop ingestion of scanned PDFs, PNGs, and TIFF documents',
-      'Configurable bounding box extraction templates for invoices and receipts',
-      'Instant one-click CSV and JSON data export'
+      'Document edge detection and contour isolation using OpenCV',
+      'Four-point perspective transformation for rectified document orientation',
+      'Adaptive thresholding for stroke clarity and noise reduction',
+      'Optical character recognition via Tesseract'
     ],
-    longOverview: 'Scanline performs document extraction directly in the client browser without sending confidential documents to external servers. By leveraging pdf.js and Tesseract.js WebAssembly bindings, documents are parsed locally, formatted according to defined templates, and converted directly into structured tabular data.',
+    longOverview: 'Scanline is a document scanning and text extraction utility developed in Python using OpenCV and Tesseract OCR. The pipeline detects document contours from raw input images, applies a four-point perspective transform to rectify skewed angles, enhances image contrast, and extracts text using Tesseract.',
     technicalHighlights: [
-      'Completely client-side pipeline keeping document data private and local',
-      'Multi-format support for scanned PDFs, PNGs, and TIFF documents',
-      'Custom bounding box template alignment for recurring invoice and receipt layouts',
-      'Export engine for instant CSV and JSON generation'
+      'Canny edge detection and contour analysis to locate document perimeters',
+      'Perspective warping to produce flattened top-down document scans',
+      'Tesseract OCR integration for downstream text recognition'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/Scanline.git',
     githubRepoType: 'public',
     evidence: {
       githubUrl: 'https://github.com/jophita-kristen-s/Scanline.git',
-      readmeUrl: 'https://github.com/jophita-kristen-s/Scanline#readme',
-      repoStatus: 'available',
+      repoStatus: 'limited',
       demoStatus: 'unavailable'
     }
   },
@@ -374,42 +369,42 @@ export const ALL_PROJECTS: Project[] = [
     id: 'encrowatch',
     number: '05',
     title: 'EncroWatch',
-    subtitle: 'Geospatial Encroachment Dashboard for Puducherry',
-    description: 'A geospatial encroachment monitoring dashboard built for the Puducherry region. Incorporates severity-coded vector maps, multi-layer toggles, incident reporting workflows, and references to satellite data. Contributed map rendering, layer management, and reporting modules.',
+    subtitle: 'Geospatial Encroachment Monitoring for Puducherry',
+    description: 'A geospatial encroachment monitoring application for the Puducherry region built with Python, Flask, and Google Earth Engine. Analyzes multi-temporal satellite imagery to detect land cover changes, monitor municipal boundaries, and support civic incident reporting.',
     category: 'web-app',
     badgeCategory: 'GovTech GIS',
     bannerTitle: 'ENCROWATCH',
     bannerDetail: 'Puducherry Geospatial Audit',
-    bannerSubtext: 'JavaScript • SVG • Spatial Layers',
+    bannerSubtext: 'Python • Flask • Google Earth Engine',
     iconName: 'map',
-    tags: ['JavaScript', 'SVG', 'GIS', 'HTML5', 'CSS3', 'Spatial Data'],
+    tags: ['Python', 'Flask', 'Google Earth Engine', 'GIS', 'Satellite Imagery'],
     statusLabel: 'Team of 5',
     teamSize: '5-member team',
-    problem: 'Civic authorities lack a consolidated, real-time spatial tool to monitor, catalog, and respond to unauthorized municipal and coastal land encroachments across Puducherry.',
-    solution: 'Interactive vector map dashboard providing severity-coded spatial zones, layer toggles for coastal and agricultural reserves, and a standardized incident reporting workflow.',
+    problem: 'Civic authorities lack an automated remote-sensing workflow to detect, catalog, and respond to unauthorized municipal and coastal land encroachments across Puducherry.',
+    solution: 'Engineered a Python and Flask backend integrated with Google Earth Engine to access and process satellite imagery, evaluate land cover changes over time, and log civic encroachment reports.',
     contribution: {
-      role: 'Geospatial UI & Reporting Developer',
+      role: 'Backend & Geospatial Analysis Developer',
       team: '5-member team',
-      summaryLine: 'Dynamic SVG spatial boundary rendering • Multi-layer toggles • Severity styling • Civic incident reporting',
+      summaryLine: 'Flask backend services • Google Earth Engine API integration • Satellite imagery processing • Incident reporting',
       contributions: [
-        'Dynamic SVG spatial polygon rendering for Puducherry zonal boundaries',
-        'Interactive multi-layer toggles for coastal regulation zones, water bodies, and municipal land',
-        'Client-side severity color-coding and localized coordinate scaling',
-        'Standardized incident reporting module and data export workflow'
+        'Developed Flask backend services and endpoints for geospatial queries',
+        'Integrated Google Earth Engine API to ingest and process multi-temporal satellite data for Puducherry',
+        'Implemented spatial comparison logic to identify land cover shifts across monitored zones',
+        'Built structured incident reporting and logging workflows for municipal audits'
       ],
-      teamContext: 'Backend database integration, GIS data collection, and field satellite imagery sourcing were handled by fellow team members.'
+      teamContext: 'Frontend interface, GIS boundary datasets, and municipal field validation were developed collaboratively with fellow team members.'
     },
     features: [
-      'Severity-coded interactive SVG maps of Puducherry taluks',
-      'Multi-layer toggles for coastal, agricultural, and municipal zones',
-      'Standardized civic incident reporting workflow',
-      'Spatial telemetry display with zone-specific risk indicators'
+      'Google Earth Engine integration for multi-temporal satellite imagery analysis',
+      'Flask web service handling spatial data queries and incident records',
+      'Land cover change detection across municipal and coastal zones',
+      'Structured encroachment audit logging and incident documentation'
     ],
-    longOverview: 'EncroWatch was engineered with a 5-member team to aid civic administration in monitoring and cataloging land boundary encroachments across the Union Territory of Puducherry. As the developer responsible for maps, layers, and reporting, I built interactive vector-based map projections with severity indicators, category filters, and municipal dispatch reporting tools.',
+    longOverview: 'EncroWatch was engineered with a 5-member team to assist civic administration in monitoring and cataloging land boundary encroachments across the Union Territory of Puducherry. Built using Python, Flask, and Google Earth Engine, the system processes satellite imagery and geospatial data to identify unauthorized developments, evaluate temporal vegetative and land cover shifts, and support structured civic audit reporting.',
     technicalHighlights: [
-      'Dynamic SVG spatial polygon rendering with localized coordinate scaling',
-      'Layer toggle subsystem isolating coastal regulation zones and water bodies',
-      'Structured audit logging enabling officers to submit visual incident reports'
+      'Google Earth Engine API integration for processing remote sensing and satellite data collections',
+      'Flask application architecture managing spatial queries and incident record persistence',
+      'Temporal imagery comparison workflows isolating changes against baseline municipal zone boundaries'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/EncroWatch.git',
     githubRepoType: 'public',
@@ -755,40 +750,40 @@ export const ALL_PROJECTS: Project[] = [
     id: 'sse-realtime-messaging',
     number: '18',
     title: 'SSE Real-Time Messaging App',
-    subtitle: 'Lightweight Unidirectional Streaming via Server-Sent Events',
-    description: 'A real-time messaging application engineered with Server-Sent Events (SSE). Delivers persistent low-latency server-to-client message streaming over standard HTTP connections without the overhead of full duplex WebSockets.',
+    subtitle: 'Lightweight Unidirectional Streaming via Python & Flask',
+    description: 'A real-time messaging application engineered with Python, Flask, and Server-Sent Events (SSE). Delivers persistent low-latency server-to-client message streaming over standard HTTP connections without the overhead of full duplex WebSockets.',
     category: 'web-app',
     badgeCategory: 'Real-Time Systems',
     bannerTitle: 'SSE MESSAGING APP',
     bannerDetail: 'Server-Sent Events Stream',
-    bannerSubtext: 'SSE • Node.js • JavaScript',
+    bannerSubtext: 'Python • Flask • Server-Sent Events (SSE)',
     iconName: 'send_time_extension',
-    tags: ['Server-Sent Events (SSE)', 'JavaScript', 'Node.js', 'Express', 'EventSource API'],
+    tags: ['Python', 'Flask', 'Server-Sent Events (SSE)', 'EventSource API'],
     statusLabel: 'Real-Time System',
     teamSize: 'Solo Project',
     problem: 'Full-duplex WebSockets introduce excessive server state complexity, persistent socket daemon overhead, and firewall traversal friction when an application only needs server-to-client streaming.',
-    solution: 'Engineered a lightweight real-time stream using Server-Sent Events (SSE) over standard HTTP connections with built-in automatic client reconnection and event dispatching.',
+    solution: 'Engineered a lightweight real-time stream using Python, Flask, and Server-Sent Events (SSE) over standard HTTP connections with built-in automatic client reconnection and event dispatching.',
     contribution: {
-      role: 'Backend & Systems Developer (Solo Project)',
+      role: 'Backend Developer (Solo Project)',
       team: 'Solo Project',
-      summaryLine: 'Node.js SSE streaming server • Client connection pool & keep-alives • Native EventSource client • Auto-reconnect',
+      summaryLine: 'Flask streaming backend • text/event-stream response protocol • EventSource client • Connection lifecycle',
       contributions: [
-        'Node.js SSE streaming server using text/event-stream response protocol',
-        'Client connection pool lifecycle management and heartbeat keep-alives',
-        'Native EventSource browser client integration with automatic reconnection handling',
-        'Timestamped event message buffers and event type dispatching'
+        'Flask streaming server utilizing text/event-stream HTTP response protocol',
+        'Generator-based event streaming and real-time message dispatching',
+        'Browser EventSource API integration with automatic reconnection handling',
+        'Stateless, low-overhead unidirectional broadcast pipeline'
       ]
     },
     features: [
-      'Server-Sent Events (SSE) event stream architecture',
+      'Server-Sent Events (SSE) stream implementation over standard HTTP',
       'Browser-native EventSource API integration with automatic reconnection',
-      'Lightweight unidirectional HTTP transport with minimal overhead',
-      'Real-time text dispatch with automatic connection recovery'
+      'Lightweight unidirectional transport without WebSocket daemon overhead',
+      'Live message streaming and event dispatching'
     ],
-    longOverview: 'Engineered to examine alternatives to WebSockets for real-time applications where server-to-client broadcast is the primary requirement. Built using Server-Sent Events (SSE) on Node.js, establishing a single persistent HTTP connection with automatic reconnection handling.',
+    longOverview: 'Engineered to examine alternatives to WebSockets for real-time applications where server-to-client broadcast is the primary requirement. Built using Python, Flask, and Server-Sent Events (SSE), establishing a persistent HTTP connection with automatic reconnection handling and event stream parsing.',
     technicalHighlights: [
-      'Configured text/event-stream headers for non-buffering data transmission',
-      'Client-side EventSource API integration handling reconnections and message parsing'
+      'Configured text/event-stream headers and Python generator yield functions for streaming data',
+      'Client-side EventSource API integration handling reconnections and message events'
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/sse.git',
     githubRepoType: 'public',
@@ -1243,8 +1238,8 @@ export const UNIVERSE_NODES: UniverseNode[] = [
     emoji: '💻',
     title: 'Full-Stack & Real-Time Engineering',
     shortSubtitle: 'Robust Backends & Responsive Frontends',
-    description: 'Building end-to-end applications: hospital management ecosystems, geospatial GIS dashboards, and low-latency Server-Sent Events (SSE) streaming apps with Node, React, and SQL.',
-    tags: ['Node.js', 'React.js', 'PostgreSQL', 'SSE', 'REST APIs'],
+    description: 'Building end-to-end applications: hospital management ecosystems, geospatial GIS dashboards, and low-latency Server-Sent Events (SSE) streaming apps with Node, Python, and REST APIs.',
+    tags: ['Node.js', 'Python', 'Flask', 'SSE', 'REST APIs'],
     footer: 'Committed to clean schema design and low-latency APIs',
     tagColors: ['text-[#cfbdff]', 'text-[#66d9ca]', 'text-[#ffb1c3]']
   },

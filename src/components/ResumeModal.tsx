@@ -84,24 +84,24 @@ Technologies: MATLAB, Simulink, ResNet-50, Grad-CAM
 Automated retinal screening and lesion localization pipeline with visual heatmaps for accessible clinical triage.
 
 2. Smart Hospital AI — CareFlow + MediCareConnect
-Technologies: Node.js, Express, MongoDB, Socket.IO, Tailwind CSS
-Real-time clinical hospital suite with synchronized triage boards, patient scheduling, and vital alerts.
+Technologies: Node.js, Express, MongoDB, REST APIs
+Healthcare management ecosystem providing modular RESTful APIs for patient intake, appointment scheduling, and record management.
 
 3. ResuMatch Ultra — Candidate Scoring Pipeline
-Technologies: Python, TF-IDF, Scikit-learn, Streamlit
-Automated ATS resume parser extracting skills and computing semantic cosine match scores against job descriptions.
+Technologies: Python, Scikit-learn, TF-IDF, Cosine Similarity
+Automated resume parsing pipeline computing TF-IDF representations and cosine similarity match scores against job criteria.
 
 4. EncroWatch — Satellite Land Analysis
-Technologies: Python, OpenCV, GIS Datasets, Flask
-Computer vision pipeline for detecting temporal vegetative shifts and unauthorized boundary encroachment.
+Technologies: Python, Flask, Google Earth Engine, GIS
+Geospatial monitoring application utilizing Google Earth Engine and Flask to evaluate multi-temporal satellite data for land encroachments.
 
 5. Scanline — Document Scanner & OCR Engine
-Technologies: Python, OpenCV, Tesseract OCR, Tkinter
-Document perspective correction, adaptive thresholding, and multi-language optical character recognition.
+Technologies: Python, OpenCV, Tesseract OCR
+Document image preprocessing pipeline performing edge detection, perspective correction, and optical character recognition.
 
 6. SSE Real-Time Messaging Architecture
-Technologies: Node.js, Express, Server-Sent Events, Vanilla JS
-Lightweight server-to-client real-time communication pipeline with automatic reconnection handling.
+Technologies: Python, Flask, Server-Sent Events (SSE), EventSource API
+Lightweight unidirectional real-time streaming pipeline utilizing HTTP persistent connections with automatic reconnection handling.
 
 ==================================================
 ACADEMIC & TECHNICAL ACHIEVEMENTS
@@ -390,10 +390,10 @@ ${CERTIFICATIONS_DATA.map(
                         </span>
                       </div>
                       <div className="text-[11px] text-slate-600 font-medium">
-                        Technologies: Node.js, Express, MongoDB, Socket.IO, Tailwind CSS
+                        Technologies: Node.js, Express, MongoDB, REST APIs, JWT
                       </div>
                       <p className="text-slate-700 mt-1 leading-normal">
-                        Engineered clinical workflow platform synchronizing emergency triage queues, automated patient appointment pipelines, and telemetry-triggered nurse call alerts with sub-second WebSocket updates.
+                        Engineered healthcare backend services providing modular RESTful APIs for patient intake, appointment scheduling, and admission tracking with MongoDB document storage.
                       </p>
                     </div>
 
@@ -407,10 +407,10 @@ ${CERTIFICATIONS_DATA.map(
                         </span>
                       </div>
                       <div className="text-[11px] text-slate-600 font-medium">
-                        Technologies: Python, TF-IDF, Scikit-learn, PyPDF2, Streamlit
+                        Technologies: Python, Scikit-learn, TF-IDF, Cosine Similarity
                       </div>
                       <p className="text-slate-700 mt-1 leading-normal">
-                        Built candidate scoring pipeline extracting resumes, parsing skill entities, and computing cosine similarity against job descriptions to provide automated relevance grading and gap analysis.
+                        Built candidate scoring pipeline extracting resume text, generating TF-IDF vector representations, and computing cosine similarity against job descriptions to provide automated relevance grading and skill gap analysis.
                       </p>
                     </div>
 
@@ -424,10 +424,10 @@ ${CERTIFICATIONS_DATA.map(
                         </span>
                       </div>
                       <div className="text-[11px] text-slate-600 font-medium">
-                        Technologies: Python, OpenCV, GIS Datasets, Flask
+                        Technologies: Python, Flask, Google Earth Engine, GIS Datasets
                       </div>
                       <p className="text-slate-700 mt-1 leading-normal">
-                        Created computer vision workflow to detect illegal property encroachment and vegetative degradation across multi-temporal satellite imagery using edge detection and contour segmentation.
+                        Developed geospatial analysis application integrating Google Earth Engine and Flask to evaluate multi-temporal satellite imagery, monitor sensitive municipal boundaries, and log encroachment reports.
                       </p>
                     </div>
                   </div>

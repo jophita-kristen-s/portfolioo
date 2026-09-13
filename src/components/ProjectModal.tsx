@@ -188,14 +188,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
             </div>
           </div>
 
-          {/* 7. EVIDENCE & VERIFICATION */}
+          {/* 7. EVIDENCE & REPOSITORY */}
           <div className="p-4 sm:p-5 rounded-xl bg-[#11121f] border border-[#333441]">
             <div className="flex items-center justify-between pb-3 border-b border-[#282936] mb-3">
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#66d9ca] font-bold">
-                <span className="material-symbols-outlined text-[16px]">verified</span>
+                <span className="material-symbols-outlined text-[16px]">code</span>
                 <span>EVIDENCE</span>
               </div>
-              <span className="text-[11px] text-[#948e9e] font-mono">Public Verification</span>
+              <span className="text-[11px] text-[#948e9e] font-mono">
+                {project.evidence?.repoStatus === 'limited' ? 'Repository — limited public code' : 'Public Repository'}
+              </span>
             </div>
 
             <div className="flex flex-wrap items-center gap-2.5">
@@ -210,37 +212,45 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
                 </a>
               )}
 
-              {readmeHref && hasGithub && (
-                <a
-                  href={readmeHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-semibold transition-colors min-h-[44px]"
-                >
-                  <span>Technical README ↗</span>
-                </a>
-              )}
+              {project.evidence?.repoStatus === 'limited' ? (
+                <span className="inline-flex items-center px-3.5 py-2 rounded-lg bg-[#1d1f2b] border border-[#282936] text-xs text-[#948e9e] font-mono min-h-[44px]">
+                  Limited public evidence
+                </span>
+              ) : (
+                <>
+                  {readmeHref && hasGithub && (
+                    <a
+                      href={readmeHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-semibold transition-colors min-h-[44px]"
+                    >
+                      <span>Technical README ↗</span>
+                    </a>
+                  )}
 
-              {hasFigma && project.figmaUrl && (
-                <a
-                  href={project.figmaUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-semibold transition-colors min-h-[44px]"
-                >
-                  <span>Figma Design ↗</span>
-                </a>
-              )}
+                  {hasFigma && project.figmaUrl && (
+                    <a
+                      href={project.figmaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-semibold transition-colors min-h-[44px]"
+                    >
+                      <span>Figma Design ↗</span>
+                    </a>
+                  )}
 
-              {hasLiveDemo && liveDemoHref && (
-                <a
-                  href={liveDemoHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#66d9ca]/20 hover:bg-[#66d9ca]/30 border border-[#66d9ca]/40 text-[#66d9ca] text-xs font-semibold transition-colors min-h-[44px]"
-                >
-                  <span>Live Demo ↗</span>
-                </a>
+                  {hasLiveDemo && liveDemoHref && (
+                    <a
+                      href={liveDemoHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#66d9ca]/20 hover:bg-[#66d9ca]/30 border border-[#66d9ca]/40 text-[#66d9ca] text-xs font-semibold transition-colors min-h-[44px]"
+                    >
+                      <span>Live Demo ↗</span>
+                    </a>
+                  )}
+                </>
               )}
 
               {!hasGithub && !hasFigma && !hasLiveDemo && (
@@ -251,7 +261,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
             </div>
 
             <p className="text-[11px] text-[#948e9e] font-light mt-3">
-              Only verified public repositories and artifacts are linked above. Prototype code is hosted on GitHub for technical audit.
+              {project.evidence?.repoStatus === 'limited'
+                ? 'Repository available — documentation/code being updated.'
+                : 'Public repository and technical artifacts hosted on GitHub for code inspection.'}
             </p>
           </div>
 

@@ -62,83 +62,83 @@ export const InterestsSection: React.FC = () => {
   return (
     <section
       id="interests"
-      className="w-full px-4 md:px-8 lg:px-12 py-20 bg-[#0c0d19]/80 border-t border-[#1d1f2b]"
+      className="w-full px-4 md:px-8 lg:px-12 py-10 sm:py-12 bg-[#0c0d19]/80 border-t border-[#1d1f2b]"
     >
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-12">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-6 sm:gap-7">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#ffb1c3] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px]">palette</span>
+              <span className="material-symbols-outlined text-[15px]">palette</span>
               <span>Offline Frequency</span>
             </div>
-            <h2 className="font-headline-lg text-3xl md:text-4xl lg:text-5xl text-[#e2e1f3] mt-1 font-normal">
+            <h2 className="font-headline-sm text-2xl sm:text-3xl text-[#e2e1f3] mt-1 font-normal">
               Beyond The Terminal
             </h2>
           </div>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            <p className="text-sm md:text-base text-[#cbc3d5] max-w-md font-light">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+            <p className="text-xs sm:text-sm text-[#cbc3d5] max-w-md font-light">
               Fragments of inspiration from racetracks, celestial spheres, 35mm film, and midnight notebooks.
             </p>
             {/* Interactive Ambient Sound Synthesizer */}
             <button
               type="button"
               onClick={toggleAmbientSound}
-              className={`px-4 py-2 rounded-full border flex items-center gap-2 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+              className={`px-3.5 py-1.5 rounded-full border flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 shrink-0 ${
                 isPlayingAmbient
-                  ? 'bg-[#9c7cf6] text-[#11121f] border-[#cfbdff] shadow-[0_0_15px_rgba(156,124,246,0.5)]'
+                  ? 'bg-[#9c7cf6] text-[#11121f] border-[#cfbdff] shadow-[0_0_12px_rgba(156,124,246,0.4)]'
                   : 'bg-[#1d1f2b] text-[#cbc3d5] border-[#333441] hover:text-[#e2e1f3]'
               }`}
             >
-              <span className="material-symbols-outlined text-[16px]">
+              <span className="material-symbols-outlined text-[15px]">
                 {isPlayingAmbient ? 'equalizer' : 'headphones'}
               </span>
-              <span>{isPlayingAmbient ? 'Cosmic Lo-Fi: ON' : 'Play Cosmic Ambient'}</span>
+              <span>{isPlayingAmbient ? 'Cosmic Lo-Fi: ON' : 'Play Ambient'}</span>
             </button>
           </div>
         </div>
 
         {/* Scrapbook Grid of 6 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 pt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 pt-2">
           {INTERESTS_SCRAPBOOK.map((item) => (
             <div
               key={item.id}
-              className={`relative p-5 sm:p-6 md:p-8 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group transform rotate-0 sm:${item.tapeRotation}`}
+              className={`relative p-4 sm:p-5 rounded-xl bg-[#1d1f2b]/90 border border-[#333441] shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 group`}
             >
               {/* Decorative Scrapbook Tape on top edge */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#333441]/70 border border-[#494553]/50 backdrop-blur-sm shadow-sm transform -rotate-1 rounded-sm pointer-events-none opacity-85"></div>
+              <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-16 h-4 bg-[#333441]/60 border border-[#494553]/40 backdrop-blur-sm shadow-xs rounded-xs pointer-events-none opacity-80"></div>
 
               {/* Top Row: Topic label & Emoji */}
               <div className="flex items-center justify-between">
-                <span className={`px-2.5 py-0.5 rounded-full text-xs font-mono border ${item.accentColor} bg-[#11121f]`}>
+                <span className={`px-2 py-0.5 rounded-full text-[11px] font-mono border ${item.accentColor} bg-[#11121f]`}>
                   {item.topicLabel}
                 </span>
-                <span className="text-3xl transition-transform group-hover:scale-125 duration-300">
+                <span className="text-2xl transition-transform group-hover:scale-110 duration-300">
                   {item.emoji}
                 </span>
               </div>
 
               {/* Title & Handwritten Scrapbook Note */}
-              <div className="my-4">
-                <h3 className="font-title-editorial text-2xl text-[#e2e1f3] font-medium leading-snug">
+              <div className="my-3">
+                <h3 className="font-title-editorial text-lg sm:text-xl text-[#e2e1f3] font-medium leading-snug">
                   {item.title}
                 </h3>
-                <div className={`font-label-handwritten text-xl ${item.noteColor} mt-1 font-semibold`}>
+                <div className={`font-label-handwritten text-base ${item.noteColor} mt-0.5 font-semibold`}>
                   “{item.handwrittenNote}”
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-xs sm:text-sm text-[#cbc3d5] font-light leading-relaxed">
+              <p className="text-xs text-[#cbc3d5] font-light leading-relaxed">
                 {item.description}
               </p>
 
               {/* Hashtag Footer */}
-              <div className="pt-4 mt-6 border-t border-[#333441]/60 flex items-center justify-between text-xs">
+              <div className="pt-3 mt-4 border-t border-[#333441]/60 flex items-center justify-between text-[11px]">
                 <span className="text-[#948e9e] font-mono">
                   {item.hashtag}
                 </span>
-                <span className="font-label-handwritten text-base text-[#ffb1c3]">
+                <span className="font-label-handwritten text-sm text-[#ffb1c3]">
                   Field Notes ✦
                 </span>
               </div>

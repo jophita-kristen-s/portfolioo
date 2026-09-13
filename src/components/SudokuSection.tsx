@@ -115,31 +115,31 @@ export const SudokuSection: React.FC = () => {
   return (
     <section
       id="sudoku"
-      className="w-full px-4 md:px-8 lg:px-12 py-20 bg-[#11121f]"
+      className="w-full px-4 md:px-8 lg:px-12 py-10 sm:py-12 bg-[#11121f] border-t border-[#1d1f2b]"
     >
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-12">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-5 sm:gap-6">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-[#282936] pb-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#66d9ca] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px]">extension</span>
+              <span className="material-symbols-outlined text-[15px]">extension</span>
               <span>Mind Sharpener</span>
             </div>
-            <h2 className="font-headline-lg text-3xl md:text-4xl lg:text-5xl text-[#e2e1f3] mt-1 font-normal">
+            <h2 className="font-headline-sm text-2xl sm:text-3xl text-[#e2e1f3] mt-1 font-normal">
               Solve a Mini Sudoku?
             </h2>
           </div>
-          <p className="text-sm md:text-base text-[#cbc3d5] max-w-md font-light">
+          <p className="text-xs sm:text-sm text-[#cbc3d5] max-w-md font-light">
             A 4x4 constraint-satisfaction puzzle. Each row, column, and 2x2 box must contain digits 1 through 4 exactly once.
           </p>
         </div>
 
         {/* Puzzle Interactive Console */}
-        <div className="max-w-xl mx-auto w-full p-4 sm:p-6 md:p-8 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-2xl backdrop-blur-xl flex flex-col items-center gap-5 sm:gap-6">
+        <div className="max-w-lg mx-auto w-full p-4 sm:p-5 rounded-xl bg-[#1d1f2b]/90 border border-[#333441] shadow-xl backdrop-blur-xl flex flex-col items-center gap-4">
           
           {/* Top instruction & Feedback pill */}
           <div
-            className={`w-full text-center py-2 px-4 rounded-xl text-xs sm:text-sm font-medium transition-all ${
+            className={`w-full text-center py-1.5 px-3 rounded-lg text-xs font-medium transition-all ${
               feedback.type === 'success'
                 ? 'bg-[#66d9ca]/20 text-[#66d9ca] border border-[#66d9ca]/40'
                 : feedback.type === 'error'
@@ -151,7 +151,7 @@ export const SudokuSection: React.FC = () => {
           </div>
 
           {/* 4x4 Grid Board */}
-          <div className="grid grid-cols-4 gap-2 sm:gap-3 p-2.5 sm:p-4 rounded-2xl bg-[#0c0d19] border-2 border-[#333441] shadow-inner">
+          <div className="grid grid-cols-4 gap-2 sm:gap-2.5 p-2 sm:p-3 rounded-xl bg-[#0c0d19] border border-[#333441] shadow-inner">
             {board.map((row, r) =>
               row.map((val, c) => {
                 const isLocked = isInitialCell(r, c);

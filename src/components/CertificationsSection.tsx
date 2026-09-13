@@ -5,33 +5,33 @@ export const CertificationsSection: React.FC = () => {
   return (
     <section
       id="certifications"
-      className="w-full px-4 md:px-8 lg:px-12 py-16 bg-[#11121f] border-t border-[#1d1f2b]"
+      className="w-full px-4 md:px-8 lg:px-12 py-10 sm:py-12 bg-[#11121f] border-t border-[#1d1f2b]"
     >
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-5 sm:gap-6">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#282936] pb-5">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-[#282936] pb-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#66d9ca] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px]">verified_user</span>
+              <span className="material-symbols-outlined text-[15px]">verified_user</span>
               <span>ACCREDITATIONS &amp; WORKSHOPS</span>
             </div>
-            <h2 className="font-headline-lg text-3xl md:text-4xl text-[#e2e1f3] mt-1 font-normal tracking-tight">
+            <h2 className="font-headline-sm text-xl sm:text-2xl text-[#e2e1f3] mt-1 font-normal tracking-tight">
               Certifications &amp; Workshops
             </h2>
           </div>
-          <div className="flex flex-col gap-1 max-w-md">
-            <p className="text-sm text-[#cbc3d5] font-light leading-relaxed">
+          <div className="flex flex-col gap-0.5 max-w-md">
+            <p className="text-xs sm:text-sm text-[#cbc3d5] font-light leading-relaxed">
               Targeted academic coursework, technical workshops, and professional development programs.
             </p>
-            <span className="font-label-handwritten text-sm text-[#cfbdff]">
+            <span className="font-label-handwritten text-xs text-[#cfbdff]">
               ✦ Completed programs &amp; institutional training
             </span>
           </div>
         </div>
 
         {/* Compact Credential Cards / List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5">
           {CERTIFICATIONS_DATA.map((cert) => (
             <div
               key={cert.id}

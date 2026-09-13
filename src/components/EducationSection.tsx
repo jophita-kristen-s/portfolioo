@@ -5,9 +5,9 @@ export const EducationSection: React.FC = () => {
   return (
     <section
       id="education"
-      className="relative w-full px-4 md:px-8 lg:px-12 py-20 bg-[#0c0d19]/80 border-t border-[#1d1f2b]"
+      className="relative w-full px-4 md:px-8 lg:px-12 py-12 sm:py-14 bg-[#0c0d19]/80 border-t border-[#1d1f2b]"
     >
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-12">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-8 sm:gap-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
@@ -15,11 +15,11 @@ export const EducationSection: React.FC = () => {
               <span className="material-symbols-outlined text-[16px]">school</span>
               <span>Academic Trajectory</span>
             </div>
-            <h2 className="font-headline-lg text-3xl md:text-4xl lg:text-5xl text-[#e2e1f3] mt-1 font-normal">
+            <h2 className="font-headline-lg text-3xl md:text-4xl text-[#e2e1f3] mt-1 font-normal">
               Education &amp; Foundations
             </h2>
           </div>
-          <p className="text-sm md:text-base text-[#cbc3d5] max-w-md font-light">
+          <p className="text-sm text-[#cbc3d5] max-w-md font-light">
             Formal engineering rigor built on algorithmic foundations, mathematics, systems architecture, and machine learning.
           </p>
         </div>
