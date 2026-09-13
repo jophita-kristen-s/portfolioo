@@ -34,8 +34,8 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
           // Map sub-sections to their primary navigation item
           if (sectionId === 'universe' || sectionId === 'education') {
             setActiveSection('about');
-          } else if (sectionId === 'achievements' || sectionId === 'leadership' || sectionId === 'certifications') {
-            setActiveSection('projects');
+          } else if (sectionId === 'leadership' || sectionId === 'certifications') {
+            setActiveSection('achievements');
           } else if (sectionId === 'sudoku') {
             setActiveSection('interests');
           } else {
@@ -71,14 +71,13 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
         </div>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
           {[
             { id: 'home', label: 'Home' },
             { id: 'about', label: 'About' },
             { id: 'skills', label: 'Skills' },
             { id: 'projects', label: 'Projects' },
-            { id: 'interests', label: 'Interests' },
-            { id: 'contact', label: 'Contact' }
+            { id: 'achievements', label: 'Achievements' },
           ].map((item) => {
             const isActive = activeSection === item.id;
             return (
@@ -97,6 +96,30 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
               </a>
             );
           })}
+
+          {/* Understated Professional Resume Nav Item */}
+          <button
+            type="button"
+            onClick={onOpenResumeModal}
+            className="text-sm tracking-wide transition-all py-1 px-3 rounded-md text-[#e2e1f3] hover:text-[#cfbdff] bg-[#1d1f2b]/70 border border-[#333441] hover:border-[#cfbdff]/40 hover:bg-[#282936] flex items-center gap-1.5 cursor-pointer"
+            title="View Resume"
+          >
+            <span className="material-symbols-outlined text-[15px] text-[#cfbdff]">description</span>
+            <span>Resume</span>
+          </button>
+
+          <a
+            href="#contact"
+            onClick={(e) => handleNavClick(e, 'contact')}
+            aria-current={activeSection === 'contact' ? 'page' : undefined}
+            className={`text-sm tracking-wide transition-all py-1 relative ${
+              activeSection === 'contact'
+                ? 'text-[#cfbdff] font-semibold after:content-[""] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-[#cfbdff] after:rounded-full after:shadow-[0_0_8px_#cfbdff]'
+                : 'text-[#cbc3d5] hover:text-[#e2e1f3]'
+            }`}
+          >
+            Contact
+          </a>
         </nav>
 
         {/* Action Controls & Avatar */}
@@ -183,23 +206,25 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
               <span className="material-symbols-outlined text-[18px] text-[#948e9e]">arrow_forward</span>
             </a>
           ))}
-          <div className="pt-2 flex gap-3">
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, 'contact')}
-              className="flex-1 text-center py-2.5 rounded-lg bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm"
-            >
-              Let's Connect
-            </a>
+          <div className="pt-2 flex flex-col sm:flex-row gap-3">
             <button
+              type="button"
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenResumeModal();
               }}
-              className="px-4 py-2.5 rounded-lg bg-[#282936] text-[#e2e1f3] text-sm font-medium"
+              className="w-full min-h-[44px] flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-[#1d1f2b] border border-[#cfbdff]/40 text-[#cfbdff] text-sm font-semibold hover:bg-[#282936] transition-colors"
             >
-              Resume
+              <span className="material-symbols-outlined text-[18px]">description</span>
+              <span>View Resume</span>
             </button>
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, 'contact')}
+              className="w-full min-h-[44px] flex items-center justify-center py-3 rounded-lg bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm"
+            >
+              Let's Connect
+            </a>
           </div>
         </div>
       )}

@@ -124,10 +124,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
             <button
               type="button"
               onClick={onOpenResumeModal}
-              className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-lg text-[#cbc3d5] hover:text-[#cfbdff] text-xs sm:text-sm transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#1d1f2b]/80 border border-[#333441] text-[#cbc3d5] hover:text-[#e2e1f3] hover:border-[#cfbdff]/40 hover:bg-[#282936] text-xs sm:text-sm font-medium transition-all shadow-sm"
+              title="View full Curriculum Vitae"
             >
-              <span className="material-symbols-outlined text-[17px]">description</span>
-              <span>Resume</span>
+              <span className="material-symbols-outlined text-[17px] text-[#cfbdff]">description</span>
+              <span>View Resume</span>
             </button>
           </div>
 

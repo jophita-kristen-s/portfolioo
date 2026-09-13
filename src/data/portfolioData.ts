@@ -183,6 +183,7 @@ export const ALL_PROJECTS: Project[] = [
     contribution: {
       role: 'ML & Signal Processing Engineer',
       team: '6-member team (Smart India Hackathon 2026 Nominee)',
+      summaryLine: 'Image preprocessing • Lesion localization • Simulink severity staging • Grad-CAM heatmaps',
       contributions: [
         'Image quality assessment & illumination enhancement preprocessing in MATLAB',
         'Lesion feature extraction for microaneurysm and exudate localization',
@@ -237,6 +238,7 @@ export const ALL_PROJECTS: Project[] = [
     contribution: {
       role: 'Backend Developer & API Testing',
       team: '5-member team',
+      summaryLine: 'Backend REST APIs • Hybrid DB schemas • Proximity emergency routing • JWT & QR auth',
       contributions: [
         'Backend REST API architecture and endpoints using Node.js, Express, and Python',
         'Hybrid persistence schemas across PostgreSQL and MongoDB/Firebase',
@@ -289,6 +291,7 @@ export const ALL_PROJECTS: Project[] = [
     contribution: {
       role: 'Lead Developer (Solo Project)',
       team: 'Solo Project',
+      summaryLine: 'Document text extraction • Semantic skill matching algorithm • Gap analysis • Proficiency scoring',
       contributions: [
         'Document text extraction and entity normalization routines in Python',
         'Multi-dimensional skill matching algorithms against target job requirements',
@@ -337,6 +340,7 @@ export const ALL_PROJECTS: Project[] = [
     contribution: {
       role: 'Lead Developer (Solo Project)',
       team: 'Solo Project',
+      summaryLine: 'In-browser WebAssembly OCR • pdf.js canvas pipeline • Extraction templates • CSV/JSON export',
       contributions: [
         'Integration of Tesseract.js WebAssembly engine and pdf.js rendering pipeline',
         'Drag-and-drop document upload and canvas preview interface',
@@ -386,6 +390,7 @@ export const ALL_PROJECTS: Project[] = [
     contribution: {
       role: 'Geospatial UI & Reporting Developer',
       team: '5-member team',
+      summaryLine: 'Dynamic SVG spatial boundary rendering • Multi-layer toggles • Severity styling • Civic incident reporting',
       contributions: [
         'Dynamic SVG spatial polygon rendering for Puducherry zonal boundaries',
         'Interactive multi-layer toggles for coastal regulation zones, water bodies, and municipal land',
@@ -766,6 +771,7 @@ export const ALL_PROJECTS: Project[] = [
     contribution: {
       role: 'Backend & Systems Developer (Solo Project)',
       team: 'Solo Project',
+      summaryLine: 'Node.js SSE streaming server • Client connection pool & keep-alives • Native EventSource client • Auto-reconnect',
       contributions: [
         'Node.js SSE streaming server using text/event-stream response protocol',
         'Client connection pool lifecycle management and heartbeat keep-alives',
@@ -1005,15 +1011,26 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
     icon: 'terminal'
   },
   {
-    id: 'puduvai-innovation-2026',
+    id: 'puduvai-top70-2026',
     title: 'Puduvai Innovation Competition 2026',
-    organization: 'Qualified Top 70 (Level 1), received ₹10,000 grant',
+    organization: 'Puduvai Innovation Competition',
     year: 'May 2026',
-    badge: 'Top 70 / ₹10,000 Grant',
-    metric: 'Top 70',
+    badge: 'Top 70, Level 1',
+    metric: 'Top 70 (Level 1)',
     highlight: true,
     description: '',
     icon: 'stars'
+  },
+  {
+    id: 'puduvai-grant-2026',
+    title: 'Puduvai Innovation Competition 2026',
+    organization: 'Puduvai Innovation Competition',
+    year: 'May 2026',
+    badge: '₹10,000 Grant',
+    metric: '₹10,000 Innovation Grant',
+    highlight: true,
+    description: '',
+    icon: 'payments'
   }
 ];
 

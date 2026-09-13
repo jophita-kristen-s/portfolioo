@@ -14,6 +14,7 @@ export interface ProjectContribution {
   role: string;
   team: string;
   contributions: string[];
+  summaryLine?: string;
   teamContext?: string;
 }
 

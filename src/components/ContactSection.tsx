@@ -138,49 +138,65 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
   return (
     <section
       id="contact"
-      className="relative w-full px-4 md:px-8 lg:px-12 py-20 bg-[#0c0d19]/80 border-t border-[#1d1f2b]"
+      className="relative w-full px-4 md:px-8 lg:px-12 py-20 bg-[#0c0d19] border-t border-[#1d1f2b] overflow-hidden"
     >
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-12">
+      {/* Subtle Cosmic Ambience Background Accents */}
+      <div className="absolute top-1/4 left-[-10%] w-[380px] h-[380px] rounded-full bg-[#9c7cf6]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 right-[-5%] w-[420px] h-[420px] rounded-full bg-[#66d9ca]/5 blur-[140px] pointer-events-none" />
+
+      <div className="relative max-w-[1280px] mx-auto flex flex-col gap-10 sm:gap-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 border-b border-[#282936] pb-6">
           <div>
-            <div className="inline-flex items-center gap-1.5 text-[#ffb1c3] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px]">satellite_alt</span>
-              <span>Open Frequency</span>
+            <div className="inline-flex items-center gap-2 text-[#cfbdff] text-xs font-semibold uppercase tracking-widest">
+              <span className="material-symbols-outlined text-[16px] text-[#cfbdff]">satellite_alt</span>
+              <span>GET IN TOUCH ✦ OPEN TRANSMISSION</span>
             </div>
-            <h2 className="font-headline-lg text-3xl md:text-4xl lg:text-5xl text-[#e2e1f3] mt-1 font-normal">
-              Let's connect &amp; build.
+            <h2 className="font-headline-lg text-3xl sm:text-4xl md:text-5xl text-[#e2e1f3] mt-2 font-normal tracking-tight">
+              Let's build something interesting.
             </h2>
           </div>
-          <p className="text-sm md:text-base text-[#cbc3d5] max-w-md font-light">
-            Whether discussing engineering projects, research collaborations, or software development opportunities — reach out through any channel below.
-          </p>
+          <div className="flex flex-col gap-1.5 max-w-md">
+            <p className="text-sm sm:text-base text-[#cbc3d5] font-light leading-relaxed">
+              Have a project, opportunity, idea, or problem worth solving? I'd love to hear about it.
+            </p>
+            <span className="font-label-handwritten text-sm text-[#ffb1c3]">
+              ✦ Inquiries, collaborations &amp; technical roles
+            </span>
+          </div>
         </div>
 
-        {/* Contact Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Contact Grid: Direct Options + Message Form */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           
-          {/* Left: Contact Channels & Credentials */}
+          {/* Left: Contact Channels (Email, LinkedIn, Quick Resume) */}
           <div className="lg:col-span-5 flex flex-col gap-4">
             
-            {/* Direct Transmission Email Card */}
+            {/* Direct Email Card */}
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="p-6 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-lg hover:border-[#cfbdff]/50 hover:bg-[#282936]/80 transition-all group flex items-start gap-4"
+              className="min-h-[76px] p-5 rounded-xl bg-[#161726]/90 border border-[#333441] shadow-md hover:border-[#cfbdff]/60 hover:bg-[#1d1f2b] transition-all duration-300 group flex items-center gap-4"
+              title={`Send an email to ${PERSONAL_INFO.email}`}
             >
-              <div className="w-12 h-12 rounded-xl bg-[#282936] text-[#cfbdff] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-[24px]">alternate_email</span>
+              <div className="w-12 h-12 rounded-lg bg-[#11121f] border border-[#282936] text-[#cfbdff] flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-[#cfbdff]/50 transition-all">
+                <span className="material-symbols-outlined text-[22px]">alternate_email</span>
               </div>
-              <div className="min-w-0">
-                <span className="text-xs uppercase tracking-wider text-[#948e9e] font-semibold">
-                  Direct Email
-                </span>
-                <h3 className="text-base sm:text-lg font-semibold text-[#e2e1f3] truncate mt-0.5 group-hover:text-[#cfbdff] transition-colors">
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between gap-1">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#948e9e]">
+                    Email
+                  </span>
+                  <span className="text-xs text-[#66d9ca] font-mono flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#66d9ca]"></span>
+                    <span>Primary</span>
+                  </span>
+                </div>
+                <h3 className="text-sm sm:text-base font-medium text-[#e2e1f3] truncate mt-0.5 group-hover:text-[#cfbdff] transition-colors">
                   {PERSONAL_INFO.email}
                 </h3>
-                <p className="text-xs text-[#cbc3d5] font-light mt-1">
-                  Primary contact channel • Inquiries &amp; collaborations
-                </p>
+                <span className="text-xs text-[#cbc3d5]/80 font-light block mt-0.5">
+                  Direct inquiries, project proposals &amp; engineering opportunities
+                </span>
               </div>
             </a>
 
@@ -189,59 +205,79 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
               href={PERSONAL_INFO.linkedInUrl}
               target="_blank"
               rel="noreferrer"
-              className="p-6 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-lg hover:border-[#66d9ca]/50 hover:bg-[#282936]/80 transition-all group flex items-start gap-4"
+              className="min-h-[76px] p-5 rounded-xl bg-[#161726]/90 border border-[#333441] shadow-md hover:border-[#66d9ca]/60 hover:bg-[#1d1f2b] transition-all duration-300 group flex items-center gap-4"
+              title="Open LinkedIn Profile"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#282936] text-[#66d9ca] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-[24px]">share</span>
+              <div className="w-12 h-12 rounded-lg bg-[#11121f] border border-[#282936] text-[#66d9ca] flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-[#66d9ca]/50 transition-all">
+                <span className="material-symbols-outlined text-[22px]">share</span>
               </div>
-              <div>
-                <span className="text-xs uppercase tracking-wider text-[#948e9e] font-semibold">
-                  Professional Network
-                </span>
-                <h3 className="text-base sm:text-lg font-semibold text-[#e2e1f3] mt-0.5 group-hover:text-[#66d9ca] transition-colors break-all">
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between gap-1">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#948e9e]">
+                    LinkedIn
+                  </span>
+                  <span className="material-symbols-outlined text-[16px] text-[#948e9e] group-hover:text-[#66d9ca] transition-colors">
+                    open_in_new
+                  </span>
+                </div>
+                <h3 className="text-sm sm:text-base font-medium text-[#e2e1f3] truncate mt-0.5 group-hover:text-[#66d9ca] transition-colors">
                   {PERSONAL_INFO.linkedInHandle}
                 </h3>
-                <p className="text-xs text-[#cbc3d5] font-light mt-1">
-                  Connect for engineering roles, technical networking &amp; discussions
-                </p>
+                <span className="text-xs text-[#cbc3d5]/80 font-light block mt-0.5">
+                  Professional network, industry connections &amp; updates
+                </span>
               </div>
             </a>
 
-            {/* Resume Trigger Card */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-[#1d1f2b] to-[#282936] border border-[#494553] shadow-xl flex flex-col gap-3">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-[#cfbdff] font-semibold">
-                  Curriculum Vitae
+            {/* Secondary Resume Quick Trigger (Understated) */}
+            <div className="p-5 rounded-xl bg-[#161726]/60 border border-[#282936] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex flex-col gap-0.5">
+                <span className="text-xs font-medium text-[#e2e1f3] flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-[16px] text-[#cfbdff]">description</span>
+                  <span>Curriculum Vitae</span>
                 </span>
-                <span className="font-label-handwritten text-lg text-[#ffb1c3]">
-                  Verified ✦
+                <span className="text-xs text-[#cbc3d5]/80 font-light">
+                  Academic coursework, CGPA {PERSONAL_INFO.overallCgpa}, verified projects
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[#cbc3d5] font-light">
-                Looking for verified academic coursework, technical skills breakdown, and full project records?
-              </p>
               <button
                 type="button"
                 onClick={onOpenResumeModal}
-                className="mt-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] text-sm font-semibold hover:shadow-lg hover:shadow-[#9c7cf6]/30 transition-all"
+                className="min-h-[40px] px-3.5 py-2 rounded-lg bg-[#1d1f2b] border border-[#333441] text-[#cfbdff] text-xs font-semibold hover:bg-[#282936] hover:border-[#cfbdff]/40 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer"
               >
-                <span className="material-symbols-outlined text-[18px]">description</span>
-                <span>View Full Resume</span>
+                <span>View Resume</span>
+                <span className="text-xs">→</span>
               </button>
+            </div>
+
+            {/* Personality Card & Cosmic Note */}
+            <div className="p-5 rounded-xl bg-[#161726]/40 border border-[#282936] flex flex-col gap-2">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#948e9e]">
+                <span className="text-[#66d9ca]">●</span>
+                <span>BASED IN PUDUCHERRY, INDIA</span>
+              </div>
+              <p className="text-xs text-[#cbc3d5] font-light leading-relaxed">
+                Open to full-time engineering roles, research fellowships, remote software engineering collaborations, and AI-focused projects.
+              </p>
             </div>
 
           </div>
 
-          {/* Right: Message Dispatcher Form */}
-          <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-2xl backdrop-blur-xl">
+          {/* Right: Functional Message Form Panel */}
+          <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-[#161726]/90 border border-[#333441] shadow-xl backdrop-blur-md relative overflow-hidden">
+            {/* Subtle Star Detail */}
+            <div className="absolute top-4 right-5 text-xs text-[#cfbdff]/40 pointer-events-none font-mono select-none">
+              ✦ ✦ ✦
+            </div>
+
             <div className="flex items-center justify-between pb-4 border-b border-[#282936]">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#66d9ca]"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#66d9ca] animate-pulse"></span>
                 <span className="text-xs font-mono uppercase tracking-wider text-[#e2e1f3]">
-                  MESSAGE TRANSMISSION
+                  Direct Message
                 </span>
               </div>
-              <span className="text-xs font-mono text-[#948e9e]">SIGNAL: ACTIVE</span>
+              <span className="text-xs font-mono text-[#948e9e]">Dispatches to {DESTINATION_EMAIL}</span>
             </div>
 
             {submitted ? (
@@ -279,14 +315,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                 )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Name Field */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-medium text-[#cbc3d5] uppercase tracking-wider">
-                      Your Name
+                    <label htmlFor="contact-name" className="text-xs font-semibold text-[#e2e1f3] uppercase tracking-wider">
+                      Name
                     </label>
                     <input
+                      id="contact-name"
                       type="text"
                       disabled={sending}
-                      placeholder="e.g., Prof. Srinivasan / Recruiter"
+                      placeholder="Your full name"
                       value={formState.name}
                       onChange={(e) => {
                         setFormState({ ...formState, name: e.target.value });
@@ -294,7 +332,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                           setFormErrors((prev) => ({ ...prev, name: undefined }));
                         }
                       }}
-                      className={`px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed ${
+                      className={`min-h-[44px] px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed ${
                         formErrors.name
                           ? 'border-[#ffb4ab] focus:border-[#ffb4ab]'
                           : 'border-[#333441] focus:border-[#cfbdff]'
@@ -308,14 +346,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                     )}
                   </div>
 
+                  {/* Email Field */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-medium text-[#cbc3d5] uppercase tracking-wider">
-                      Email Address
+                    <label htmlFor="contact-email" className="text-xs font-semibold text-[#e2e1f3] uppercase tracking-wider">
+                      Email
                     </label>
                     <input
+                      id="contact-email"
                       type="email"
                       disabled={sending}
-                      placeholder="e.g., contact@organization.org"
+                      placeholder="name@organization.com"
                       value={formState.email}
                       onChange={(e) => {
                         setFormState({ ...formState, email: e.target.value });
@@ -323,7 +363,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                           setFormErrors((prev) => ({ ...prev, email: undefined }));
                         }
                       }}
-                      className={`px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed ${
+                      className={`min-h-[44px] px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none transition-colors disabled:opacity-60 disabled:cursor-not-allowed ${
                         formErrors.email
                           ? 'border-[#ffb4ab] focus:border-[#ffb4ab]'
                           : 'border-[#333441] focus:border-[#cfbdff]'
@@ -338,14 +378,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                   </div>
                 </div>
 
+                {/* Message Field */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-medium text-[#cbc3d5] uppercase tracking-wider">
+                  <label htmlFor="contact-message" className="text-xs font-semibold text-[#e2e1f3] uppercase tracking-wider">
                     Message
                   </label>
                   <textarea
+                    id="contact-message"
                     rows={4}
                     disabled={sending}
-                    placeholder="Write your message or inquiry here..."
+                    placeholder="Tell me about your project, role, or ideas..."
                     value={formState.message}
                     onChange={(e) => {
                       setFormState({ ...formState, message: e.target.value });
@@ -353,7 +395,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                         setFormErrors((prev) => ({ ...prev, message: undefined }));
                       }
                     }}
-                    className={`px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none transition-colors resize-none disabled:opacity-60 disabled:cursor-not-allowed ${
+                    className={`min-h-[110px] px-3.5 py-2.5 rounded-xl bg-[#0c0d19] border text-sm text-[#e2e1f3] placeholder-[#948e9e] focus:outline-none transition-colors resize-none disabled:opacity-60 disabled:cursor-not-allowed ${
                       formErrors.message
                         ? 'border-[#ffb4ab] focus:border-[#ffb4ab]'
                         : 'border-[#333441] focus:border-[#cfbdff]'
@@ -367,10 +409,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                   )}
                 </div>
 
+                {/* Send Message CTA */}
                 <button
                   type="submit"
                   disabled={sending}
-                  className="mt-2 py-3 px-6 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm sm:text-base flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[#9c7cf6]/35 transition-all duration-300 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer"
+                  className="min-h-[48px] mt-2 py-3 px-6 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm sm:text-base flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[#9c7cf6]/30 transition-all duration-300 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer"
                 >
                   <span className={`material-symbols-outlined text-[18px] ${sending ? 'animate-spin' : ''}`}>
                     {sending ? 'sync' : 'send'}
@@ -380,10 +423,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
               </form>
             )}
 
-            {/* Cosmic Parting Note */}
-            <div className="pt-6 mt-6 border-t border-[#282936] text-center">
-              <span className="font-label-handwritten text-xl text-[#ffb1c3] select-none">
-                “From Puducherry to the cosmos ✦”
+            {/* Personality Closing Signature */}
+            <div className="pt-6 mt-6 border-t border-[#282936] text-center flex flex-col items-center gap-1">
+              <span className="font-label-handwritten text-xl sm:text-2xl text-[#ffb1c3] tracking-wide select-none">
+                “Give me a problem. I'll figure it out.”
+              </span>
+              <span className="text-[11px] font-mono text-[#948e9e]">
+                ✦ Jophita Kristen S. — Puducherry, India
               </span>
             </div>
           </div>
