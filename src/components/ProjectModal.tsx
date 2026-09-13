@@ -254,8 +254,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
               )}
 
               {!hasGithub && !hasFigma && !hasLiveDemo && (
-                <span className="px-3 py-2 rounded-lg bg-[#1d1f2b] border border-[#282936] text-xs text-[#948e9e] font-mono">
-                  Evidence coming soon
+                <span className="px-3.5 py-2 rounded-lg bg-[#1d1f2b] border border-[#282936] text-xs text-[#948e9e] font-mono min-h-[44px] flex items-center">
+                  {project.evidence?.repoStatus === 'coming-soon' ? 'GitHub repository coming soon' : 'Evidence coming soon'}
                 </span>
               )}
             </div>
@@ -263,6 +263,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
             <p className="text-[11px] text-[#948e9e] font-light mt-3">
               {project.evidence?.repoStatus === 'limited'
                 ? 'Repository available — documentation/code being updated.'
+                : project.evidence?.repoStatus === 'coming-soon' || !hasGithub
+                ? 'GitHub repository coming soon — source code is being prepared for public release.'
                 : 'Public repository and technical artifacts hosted on GitHub for code inspection.'}
             </p>
           </div>

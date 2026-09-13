@@ -357,11 +357,9 @@ export const ALL_PROJECTS: Project[] = [
       'Perspective warping to produce flattened top-down document scans',
       'Tesseract OCR integration for downstream text recognition'
     ],
-    githubUrl: 'https://github.com/jophita-kristen-s/Scanline.git',
-    githubRepoType: 'public',
+    githubRepoType: 'private',
     evidence: {
-      githubUrl: 'https://github.com/jophita-kristen-s/Scanline.git',
-      repoStatus: 'limited',
+      repoStatus: 'coming-soon',
       demoStatus: 'unavailable'
     }
   },

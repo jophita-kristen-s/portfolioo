@@ -204,7 +204,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
 
                     {!project.githubUrl && !project.evidence?.readmeUrl && project.evidence?.repoStatus !== 'limited' && (
                       <span className="px-2.5 py-1 rounded-lg bg-[#11121f] text-[11px] text-[#948e9e] font-mono border border-[#282936]">
-                        Evidence coming soon
+                        {project.evidence?.repoStatus === 'coming-soon' ? 'GitHub repository coming soon' : 'Evidence coming soon'}
                       </span>
                     )}
                   </div>
