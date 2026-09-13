@@ -27,10 +27,10 @@ export const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Main Story Narrative Card */}
-          <div className="lg:col-span-7 p-6 sm:p-10 rounded-2xl bg-[#1d1f2b]/80 border border-[#333441] shadow-xl flex flex-col justify-between relative overflow-hidden">
+          <div className="lg:col-span-7 p-5 sm:p-8 lg:p-10 rounded-2xl bg-[#1d1f2b]/80 border border-[#333441] shadow-xl flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#9c7cf6]/10 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div className="space-y-4 text-base sm:text-lg text-[#cbc3d5] leading-relaxed font-light">
+            <div className="space-y-4 text-sm sm:text-base lg:text-lg text-[#cbc3d5] leading-relaxed font-light">
               <p>
                 Hello! I am a <strong className="text-[#e2e1f3] font-medium">final-year Information Science &amp; Engineering</strong> student at <strong className="text-[#e2e1f3] font-medium">Women’s Engineering College, Lawspet, Puducherry</strong>. My engineering journey is driven by an insatiable curiosity about how complex algorithms and computer systems behave under the hood.
               </p>

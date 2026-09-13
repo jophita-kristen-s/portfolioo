@@ -40,7 +40,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
         </div>
 
         {/* 2-Column Grid of 6 High-Credibility Project Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {featuredProjects.map((project) => {
             if (!project) return null;
 
@@ -53,12 +53,12 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
             return (
               <div
                 key={project.id}
-                className="p-6 sm:p-8 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-2xl backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:border-[#cfbdff]/50 transition-all duration-300 group"
+                className="p-5 sm:p-6 lg:p-8 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-2xl backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:border-[#cfbdff]/50 transition-all duration-300 group"
               >
                 {/* Ambient Top Glow */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#9c7cf6]/5 rounded-full blur-3xl pointer-events-none group-hover:bg-[#9c7cf6]/10 transition-colors"></div>
 
-                <div className="flex flex-col gap-5 relative z-10">
+                <div className="flex flex-col gap-4 sm:gap-5 relative z-10">
                   
                   {/* Top Header Row: Number, Category, Status Badge */}
                   <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#282936] pb-3">
@@ -79,7 +79,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
 
                   {/* Project Title & Subtitle */}
                   <div>
-                    <h3 className="font-headline-md text-2xl sm:text-3xl font-normal text-[#e2e1f3] group-hover:text-[#cfbdff] transition-colors leading-tight">
+                    <h3 className="font-headline-md text-xl sm:text-2xl md:text-3xl font-normal text-[#e2e1f3] group-hover:text-[#cfbdff] transition-colors leading-tight">
                       {project.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#66d9ca] font-medium mt-1">
@@ -111,7 +111,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                   </div>
 
                   {/* MY CONTRIBUTION (Clearly Visible Recruiter Section) */}
-                  <div className="p-4 rounded-xl bg-[#11121f]/95 border border-[#cfbdff]/30 space-y-2.5 shadow-sm">
+                  <div className="p-3.5 sm:p-4 rounded-xl bg-[#11121f]/95 border border-[#cfbdff]/30 space-y-2.5 shadow-sm">
                     <div className="flex items-center justify-between gap-2 border-b border-[#282936] pb-2">
                       <div className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#cfbdff]">
                         <span className="material-symbols-outlined text-[16px]">person_check</span>
@@ -163,7 +163,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
                         title="View GitHub Repository"
                       >
                         <span>GitHub ↗</span>
@@ -175,7 +175,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                         href={project.evidence.readmeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
                         title="View Project README"
                       >
                         <span>README ↗</span>
@@ -193,7 +193,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                   <button
                     type="button"
                     onClick={() => onOpenProjectModal(project.id)}
-                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] hover:brightness-110 text-[#11121f] text-xs font-bold transition-all shadow-md shadow-[#9c7cf6]/20 cursor-pointer min-h-[44px] sm:min-h-0"
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] hover:brightness-110 text-[#11121f] text-xs font-bold transition-all shadow-md shadow-[#9c7cf6]/20 cursor-pointer min-h-[44px] w-full sm:w-auto"
                   >
                     <span>View project</span>
                     <span className="material-symbols-outlined text-[16px]">arrow_forward</span>

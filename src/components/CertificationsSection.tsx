@@ -35,7 +35,7 @@ export const CertificationsSection: React.FC = () => {
           {CERTIFICATIONS_DATA.map((cert) => (
             <div
               key={cert.id}
-              className="p-4 rounded-xl bg-[#1d1f2b]/80 border border-[#333441] shadow-sm hover:border-[#66d9ca]/40 hover:bg-[#282936]/60 transition-all duration-200 flex items-center justify-between gap-4 group"
+              className="p-3.5 sm:p-4 rounded-xl bg-[#1d1f2b]/80 border border-[#333441] shadow-sm hover:border-[#66d9ca]/40 hover:bg-[#282936]/60 transition-all duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 group"
             >
               {/* Left: Credential Icon & Details */}
               <div className="flex items-center gap-3.5 min-w-0">
@@ -50,19 +50,19 @@ export const CertificationsSection: React.FC = () => {
                     {cert.title}
                   </h3>
                   <div className="flex items-center gap-2 text-xs text-[#cbc3d5] font-light truncate">
-                    <span>{cert.issuer}</span>
-                    <span className="text-[#494553]">•</span>
-                    <span className="text-[#948e9e] font-mono text-[11px]">{cert.issuedDate}</span>
+                    <span className="truncate">{cert.issuer}</span>
+                    <span className="text-[#494553] shrink-0">•</span>
+                    <span className="text-[#948e9e] font-mono text-[11px] shrink-0">{cert.issuedDate}</span>
                   </div>
                 </div>
               </div>
 
               {/* Right: Compact Type Chip */}
-              <div className="shrink-0 flex items-center gap-2">
+              <div className="shrink-0 flex items-center justify-between sm:justify-end gap-2 pl-13 sm:pl-0">
                 <span className="px-2.5 py-1 rounded-md bg-[#11121f] text-[11px] font-mono text-[#cfbdff] border border-[#282936]">
                   {cert.type || 'Program'}
                 </span>
-                <span className="material-symbols-outlined text-[#66d9ca] text-[16px] hidden sm:inline-block">
+                <span className="material-symbols-outlined text-[#66d9ca] text-[16px]">
                   verified
                 </span>
               </div>

@@ -256,7 +256,7 @@ ${CERTIFICATIONS_DATA.map(
             </div>
           ) : (
             /* Authentic Professional Document Sheet (Clean, High-Readability, Standard Resume Aesthetic) */
-            <div className="resume-print-sheet max-w-3xl mx-auto bg-white text-slate-900 rounded-sm shadow-xl p-6 sm:p-10 md:p-12 font-sans border border-slate-200 print:border-none print:shadow-none print:p-0">
+            <div className="resume-print-sheet max-w-3xl mx-auto bg-white text-slate-900 rounded-sm shadow-xl p-4 sm:p-8 md:p-12 font-sans border border-slate-200 print:border-none print:shadow-none print:p-0">
               {/* Document Header */}
               <header className="border-b-2 border-slate-800 pb-4 mb-6">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">

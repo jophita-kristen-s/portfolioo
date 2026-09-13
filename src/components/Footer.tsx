@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-wrap items-center gap-6 text-xs sm:text-sm text-[#cbc3d5]">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2.5 text-xs sm:text-sm text-[#cbc3d5]">
             {[
               { id: 'home', label: 'Home' },
               { id: 'universe', label: 'Universe' },
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleNavClick(e, link.id)}
-                className="hover:text-[#cfbdff] transition-colors"
+                className="hover:text-[#cfbdff] transition-colors py-1 inline-block"
               >
                 {link.label}
               </a>
@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#1d1f2b] text-[#cfbdff] hover:bg-[#282936] text-xs font-semibold border border-[#333441] transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#1d1f2b] text-[#cfbdff] hover:bg-[#282936] text-xs font-semibold border border-[#333441] transition-all min-h-[44px] cursor-pointer"
           >
             <span>Top of Orbit</span>
             <span className="material-symbols-outlined text-[16px]">arrow_upward</span>

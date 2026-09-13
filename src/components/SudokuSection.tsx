@@ -135,7 +135,7 @@ export const SudokuSection: React.FC = () => {
         </div>
 
         {/* Puzzle Interactive Console */}
-        <div className="max-w-xl mx-auto w-full p-6 sm:p-8 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-2xl backdrop-blur-xl flex flex-col items-center gap-6">
+        <div className="max-w-xl mx-auto w-full p-4 sm:p-6 md:p-8 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-2xl backdrop-blur-xl flex flex-col items-center gap-5 sm:gap-6">
           
           {/* Top instruction & Feedback pill */}
           <div
@@ -151,7 +151,7 @@ export const SudokuSection: React.FC = () => {
           </div>
 
           {/* 4x4 Grid Board */}
-          <div className="grid grid-cols-4 gap-2 sm:gap-3 p-3 sm:p-4 rounded-2xl bg-[#0c0d19] border-2 border-[#333441] shadow-inner">
+          <div className="grid grid-cols-4 gap-2 sm:gap-3 p-2.5 sm:p-4 rounded-2xl bg-[#0c0d19] border-2 border-[#333441] shadow-inner">
             {board.map((row, r) =>
               row.map((val, c) => {
                 const isLocked = isInitialCell(r, c);
@@ -166,7 +166,7 @@ export const SudokuSection: React.FC = () => {
                     key={`${r}-${c}`}
                     type="button"
                     onClick={() => handleCellClick(r, c)}
-                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center font-title-editorial text-2xl sm:text-3xl font-semibold transition-all ${borderRight} ${borderBottom} ${
+                    className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center font-title-editorial text-xl sm:text-2xl md:text-3xl font-semibold transition-all ${borderRight} ${borderBottom} ${
                       isLocked
                         ? 'bg-[#282936] text-[#cfbdff] cursor-not-allowed shadow-inner'
                         : isSelected
@@ -184,13 +184,13 @@ export const SudokuSection: React.FC = () => {
           </div>
 
           {/* Touch Number Pad */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3">
             {[1, 2, 3, 4].map((num) => (
               <button
                 key={num}
                 type="button"
                 onClick={() => handleNumberInput(num)}
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#282936] hover:bg-[#373846] text-[#e2e1f3] hover:text-[#cfbdff] font-title-editorial text-xl font-semibold border border-[#333441] shadow-md transition-all active:scale-95"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#282936] hover:bg-[#373846] text-[#e2e1f3] hover:text-[#cfbdff] font-title-editorial text-xl font-semibold border border-[#333441] shadow-md transition-all active:scale-95 min-h-[44px] min-w-[44px]"
               >
                 {num}
               </button>
@@ -199,32 +199,32 @@ export const SudokuSection: React.FC = () => {
               type="button"
               onClick={() => handleNumberInput(null)}
               title="Clear Cell"
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#191b27] hover:bg-[#282936] text-[#ffb1c3] font-semibold text-xs border border-[#333441] flex items-center justify-center transition-all"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#191b27] hover:bg-[#282936] text-[#ffb1c3] font-semibold text-xs border border-[#333441] flex items-center justify-center transition-all min-h-[44px] min-w-[44px]"
             >
               <span className="material-symbols-outlined text-[20px]">backspace</span>
             </button>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2 w-full">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-3 pt-2 w-full">
             <button
               type="button"
               onClick={handleCheck}
-              className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] text-sm font-semibold shadow-lg hover:shadow-[#9c7cf6]/30 transition-all"
+              className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] text-sm font-semibold shadow-lg hover:shadow-[#9c7cf6]/30 transition-all min-h-[44px]"
             >
               Check Solution
             </button>
             <button
               type="button"
               onClick={handleHint}
-              className="px-4 py-2.5 rounded-lg bg-[#282936] hover:bg-[#373846] text-[#cfbdff] text-sm font-medium border border-[#494553] transition-all"
+              className="px-4 py-2.5 rounded-lg bg-[#282936] hover:bg-[#373846] text-[#cfbdff] text-sm font-medium border border-[#494553] transition-all min-h-[44px]"
             >
               Give Me a Hint
             </button>
             <button
               type="button"
               onClick={handleReset}
-              className="px-4 py-2.5 rounded-lg bg-[#191b27] hover:bg-[#282936] text-[#cbc3d5] text-sm font-medium border border-[#333441] transition-all"
+              className="px-4 py-2.5 rounded-lg bg-[#191b27] hover:bg-[#282936] text-[#cbc3d5] text-sm font-medium border border-[#333441] transition-all min-h-[44px]"
             >
               Reset Clues
             </button>

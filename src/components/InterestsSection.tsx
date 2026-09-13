@@ -99,11 +99,11 @@ export const InterestsSection: React.FC = () => {
         </div>
 
         {/* Scrapbook Grid of 6 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 pt-4">
           {INTERESTS_SCRAPBOOK.map((item) => (
             <div
               key={item.id}
-              className={`relative p-6 sm:p-8 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group ${item.tapeRotation}`}
+              className={`relative p-5 sm:p-6 md:p-8 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group transform rotate-0 sm:${item.tapeRotation}`}
             >
               {/* Decorative Scrapbook Tape on top edge */}
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#333441]/70 border border-[#494553]/50 backdrop-blur-sm shadow-sm transform -rotate-1 rounded-sm pointer-events-none opacity-85"></div>

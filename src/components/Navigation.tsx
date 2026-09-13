@@ -55,16 +55,16 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
       <div className="h-20 max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between gap-4">
         
         {/* Brand / Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 min-w-0">
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, 'home')}
             className="group flex items-center gap-2 text-[#e2e1f3] hover:text-[#cfbdff] transition-colors"
           >
-            <span className="text-[#cfbdff] font-headline-md text-2xl tracking-tight transition-transform group-hover:rotate-12 duration-300">
+            <span className="text-[#cfbdff] font-headline-md text-xl sm:text-2xl tracking-tight transition-transform group-hover:rotate-12 duration-300 shrink-0">
               ✦
             </span>
-            <span className="font-title-editorial text-xl md:text-2xl tracking-tight text-[#e2e1f3] group-hover:text-[#cfbdff] transition-colors">
+            <span className="font-title-editorial text-lg sm:text-xl md:text-2xl tracking-tight text-[#e2e1f3] group-hover:text-[#cfbdff] transition-colors truncate">
               Jophita Kristen S
             </span>
           </a>
@@ -179,54 +179,64 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu & Backdrop */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0c0d19]/95 backdrop-blur-2xl border-b border-[#282936] px-6 py-5 flex flex-col gap-4 animate-in slide-in-from-top-2 duration-200">
-          {[
-            { id: 'home', label: 'Home' },
-            { id: 'universe', label: 'Explore Universe' },
-            { id: 'about', label: 'About' },
-            { id: 'education', label: 'Education' },
-            { id: 'skills', label: 'Skills' },
-            { id: 'projects', label: 'Projects' },
-            { id: 'achievements', label: 'Achievements' },
-            { id: 'leadership', label: 'Leadership' },
-            { id: 'certifications', label: 'Certifications' },
-            { id: 'interests', label: 'Interests' },
-            { id: 'sudoku', label: 'Interactive Sudoku' },
-            { id: 'contact', label: 'Contact' }
-          ].map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => handleNavClick(e, item.id)}
-              className="text-base text-[#e2e1f3] hover:text-[#cfbdff] py-1.5 flex items-center justify-between border-b border-[#1d1f2b]"
-            >
-              <span>{item.label}</span>
-              <span className="material-symbols-outlined text-[18px] text-[#948e9e]">arrow_forward</span>
-            </a>
-          ))}
-          <div className="pt-2 flex flex-col sm:flex-row gap-3">
-            <button
-              type="button"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenResumeModal();
-              }}
-              className="w-full min-h-[44px] flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-[#1d1f2b] border border-[#cfbdff]/40 text-[#cfbdff] text-sm font-semibold hover:bg-[#282936] transition-colors"
-            >
-              <span className="material-symbols-outlined text-[18px]">description</span>
-              <span>View Resume</span>
-            </button>
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, 'contact')}
-              className="w-full min-h-[44px] flex items-center justify-center py-3 rounded-lg bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm"
-            >
-              Let's Connect
-            </a>
+        <>
+          {/* Tap-outside backdrop */}
+          <div
+            className="fixed inset-0 top-20 bg-[#0c0d19]/80 backdrop-blur-sm z-40 lg:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+
+          {/* Drawer content */}
+          <div className="relative z-50 lg:hidden bg-[#0c0d19]/95 backdrop-blur-2xl border-b border-[#282936] px-5 sm:px-6 py-4 flex flex-col gap-2 max-h-[calc(100vh-5rem)] overflow-y-auto animate-in slide-in-from-top-2 duration-200 shadow-2xl">
+            {[
+              { id: 'home', label: 'Home' },
+              { id: 'universe', label: 'Explore Universe' },
+              { id: 'about', label: 'About' },
+              { id: 'education', label: 'Education' },
+              { id: 'skills', label: 'Skills' },
+              { id: 'projects', label: 'Projects' },
+              { id: 'achievements', label: 'Achievements' },
+              { id: 'leadership', label: 'Leadership' },
+              { id: 'certifications', label: 'Certifications' },
+              { id: 'interests', label: 'Interests' },
+              { id: 'sudoku', label: 'Interactive Sudoku' },
+              { id: 'contact', label: 'Contact' }
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => handleNavClick(e, item.id)}
+                className="text-base text-[#e2e1f3] hover:text-[#cfbdff] min-h-[44px] flex items-center justify-between border-b border-[#1d1f2b] px-1 active:bg-[#1d1f2b]/40 rounded-sm"
+              >
+                <span>{item.label}</span>
+                <span className="material-symbols-outlined text-[18px] text-[#948e9e]">arrow_forward</span>
+              </a>
+            ))}
+            <div className="pt-3 pb-2 flex flex-col sm:flex-row gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenResumeModal();
+                }}
+                className="w-full min-h-[44px] flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-[#1d1f2b] border border-[#cfbdff]/40 text-[#cfbdff] text-sm font-semibold hover:bg-[#282936] transition-colors cursor-pointer"
+              >
+                <span className="material-symbols-outlined text-[18px]">description</span>
+                <span>View Resume</span>
+              </button>
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, 'contact')}
+                className="w-full min-h-[44px] flex items-center justify-center py-3 rounded-lg bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm"
+              >
+                Let's Connect
+              </a>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

@@ -69,7 +69,7 @@ export const AchievementsSection: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="p-5 rounded-xl bg-[#1d1f2b]/90 border border-[#333441] shadow-md hover:border-[#cfbdff]/40 hover:bg-[#282936]/70 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+                className="p-4 sm:p-5 rounded-xl bg-[#1d1f2b]/90 border border-[#333441] shadow-md hover:border-[#cfbdff]/40 hover:bg-[#282936]/70 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
               >
                 {/* Subtle cosmic constellation marker */}
                 <div className="flex flex-col gap-3">

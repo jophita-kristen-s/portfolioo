@@ -36,20 +36,20 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
   const hasFigma = Boolean(project.figmaUrl);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0c0d19]/85 backdrop-blur-xl animate-in fade-in duration-200">
-      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#1d1f2b] border border-[#494553] shadow-2xl p-6 sm:p-8 text-[#e2e1f3]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#0c0d19]/85 backdrop-blur-xl animate-in fade-in duration-200">
+      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl bg-[#1d1f2b] border border-[#494553] shadow-2xl p-4 sm:p-6 md:p-8 text-[#e2e1f3]">
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] flex items-center justify-center transition-colors z-10"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 w-9 h-9 rounded-full bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] flex items-center justify-center transition-colors z-10"
           aria-label="Close modal"
         >
           <span className="material-symbols-outlined text-[20px]">close</span>
         </button>
 
         {/* 1. PROJECT HEADER */}
-        <div className="border-b border-[#333441] pb-5">
+        <div className="border-b border-[#333441] pb-5 pr-10">
           <div className="flex flex-wrap items-center gap-2 mb-2.5">
             <span className="text-xs font-mono font-semibold text-[#cfbdff]">
               PROJECT {project.number}

@@ -175,11 +175,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
             {/* Direct Email Card */}
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="min-h-[76px] p-5 rounded-xl bg-[#161726]/90 border border-[#333441] shadow-md hover:border-[#cfbdff]/60 hover:bg-[#1d1f2b] transition-all duration-300 group flex items-center gap-4"
+              className="min-h-[76px] p-4 sm:p-5 rounded-xl bg-[#161726]/90 border border-[#333441] shadow-md hover:border-[#cfbdff]/60 hover:bg-[#1d1f2b] transition-all duration-300 group flex items-center gap-3.5 sm:gap-4"
               title={`Send an email to ${PERSONAL_INFO.email}`}
             >
-              <div className="w-12 h-12 rounded-lg bg-[#11121f] border border-[#282936] text-[#cfbdff] flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-[#cfbdff]/50 transition-all">
-                <span className="material-symbols-outlined text-[22px]">alternate_email</span>
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#11121f] border border-[#282936] text-[#cfbdff] flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-[#cfbdff]/50 transition-all">
+                <span className="material-symbols-outlined text-[20px] sm:text-[22px]">alternate_email</span>
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between gap-1">
@@ -194,7 +194,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                 <h3 className="text-sm sm:text-base font-medium text-[#e2e1f3] truncate mt-0.5 group-hover:text-[#cfbdff] transition-colors">
                   {PERSONAL_INFO.email}
                 </h3>
-                <span className="text-xs text-[#cbc3d5]/80 font-light block mt-0.5">
+                <span className="text-xs text-[#cbc3d5]/80 font-light block mt-0.5 truncate sm:whitespace-normal">
                   Direct inquiries, project proposals &amp; engineering opportunities
                 </span>
               </div>
@@ -205,11 +205,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
               href={PERSONAL_INFO.linkedInUrl}
               target="_blank"
               rel="noreferrer"
-              className="min-h-[76px] p-5 rounded-xl bg-[#161726]/90 border border-[#333441] shadow-md hover:border-[#66d9ca]/60 hover:bg-[#1d1f2b] transition-all duration-300 group flex items-center gap-4"
+              className="min-h-[76px] p-4 sm:p-5 rounded-xl bg-[#161726]/90 border border-[#333441] shadow-md hover:border-[#66d9ca]/60 hover:bg-[#1d1f2b] transition-all duration-300 group flex items-center gap-3.5 sm:gap-4"
               title="Open LinkedIn Profile"
             >
-              <div className="w-12 h-12 rounded-lg bg-[#11121f] border border-[#282936] text-[#66d9ca] flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-[#66d9ca]/50 transition-all">
-                <span className="material-symbols-outlined text-[22px]">share</span>
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#11121f] border border-[#282936] text-[#66d9ca] flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-[#66d9ca]/50 transition-all">
+                <span className="material-symbols-outlined text-[20px] sm:text-[22px]">share</span>
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between gap-1">
@@ -223,14 +223,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                 <h3 className="text-sm sm:text-base font-medium text-[#e2e1f3] truncate mt-0.5 group-hover:text-[#66d9ca] transition-colors">
                   {PERSONAL_INFO.linkedInHandle}
                 </h3>
-                <span className="text-xs text-[#cbc3d5]/80 font-light block mt-0.5">
+                <span className="text-xs text-[#cbc3d5]/80 font-light block mt-0.5 truncate sm:whitespace-normal">
                   Professional network, industry connections &amp; updates
                 </span>
               </div>
             </a>
 
             {/* Secondary Resume Quick Trigger (Understated) */}
-            <div className="p-5 rounded-xl bg-[#161726]/60 border border-[#282936] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="p-4 sm:p-5 rounded-xl bg-[#161726]/60 border border-[#282936] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex flex-col gap-0.5">
                 <span className="text-xs font-medium text-[#e2e1f3] flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-[16px] text-[#cfbdff]">description</span>
@@ -243,7 +243,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
               <button
                 type="button"
                 onClick={onOpenResumeModal}
-                className="min-h-[40px] px-3.5 py-2 rounded-lg bg-[#1d1f2b] border border-[#333441] text-[#cfbdff] text-xs font-semibold hover:bg-[#282936] hover:border-[#cfbdff]/40 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer"
+                className="min-h-[44px] px-3.5 py-2 rounded-lg bg-[#1d1f2b] border border-[#333441] text-[#cfbdff] text-xs font-semibold hover:bg-[#282936] hover:border-[#cfbdff]/40 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <span>View Resume</span>
                 <span className="text-xs">→</span>
@@ -251,7 +251,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
             </div>
 
             {/* Personality Card & Cosmic Note */}
-            <div className="p-5 rounded-xl bg-[#161726]/40 border border-[#282936] flex flex-col gap-2">
+            <div className="p-4 sm:p-5 rounded-xl bg-[#161726]/40 border border-[#282936] flex flex-col gap-2">
               <div className="flex items-center gap-2 text-xs font-mono text-[#948e9e]">
                 <span className="text-[#66d9ca]">●</span>
                 <span>BASED IN PUDUCHERRY, INDIA</span>
@@ -264,7 +264,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
           </div>
 
           {/* Right: Functional Message Form Panel */}
-          <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-[#161726]/90 border border-[#333441] shadow-xl backdrop-blur-md relative overflow-hidden">
+          <div className="lg:col-span-7 p-5 sm:p-6 md:p-8 rounded-2xl bg-[#161726]/90 border border-[#333441] shadow-xl backdrop-blur-md relative overflow-hidden">
             {/* Subtle Star Detail */}
             <div className="absolute top-4 right-5 text-xs text-[#cfbdff]/40 pointer-events-none font-mono select-none">
               ✦ ✦ ✦

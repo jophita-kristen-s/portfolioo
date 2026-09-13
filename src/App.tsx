@@ -22,12 +22,12 @@ export function App() {
   const [resumeModalOpen, setResumeModalOpen] = useState<boolean>(false);
 
   return (
-    <div className="min-h-screen cosmic-gradient text-[#e2e1f3] flex flex-col w-full selection:bg-[#9c7cf6] selection:text-[#320082]">
+    <div className="min-h-screen cosmic-gradient text-[#e2e1f3] flex flex-col w-full max-w-full overflow-x-hidden selection:bg-[#9c7cf6] selection:text-[#320082]">
       {/* Sticky Navigation Header */}
       <Navigation onOpenResumeModal={() => setResumeModalOpen(true)} />
 
       {/* Main Single-Page Vertical Flow: All 14 Sections Stacked Vertically */}
-      <main className="w-full pt-20 flex flex-col">
+      <main className="w-full max-w-full overflow-x-hidden pt-20 flex flex-col">
         {/* Section 1: Home / Hero */}
         <HeroSection onOpenResumeModal={() => setResumeModalOpen(true)} />
 

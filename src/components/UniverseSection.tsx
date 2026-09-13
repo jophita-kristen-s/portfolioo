@@ -82,7 +82,7 @@ export const UniverseSection: React.FC = () => {
           </div>
 
           {/* Right: Dynamic Central Inspection Hub */}
-          <div className="lg:col-span-5 relative p-6 sm:p-8 rounded-2xl bg-[#282936]/90 border border-[#494553]/70 backdrop-blur-xl shadow-2xl min-h-[380px] flex flex-col justify-between">
+          <div className="lg:col-span-5 relative p-5 sm:p-6 md:p-8 rounded-2xl bg-[#282936]/90 border border-[#494553]/70 backdrop-blur-xl shadow-2xl min-h-[340px] sm:min-h-[380px] flex flex-col justify-between">
             {/* Top Bar with category & handwritten label */}
             <div className="flex items-center justify-between">
               <span className="px-3 py-1 rounded-full bg-[#9c7cf6]/20 border border-[#9c7cf6]/30 text-[#cfbdff] text-[11px] font-semibold uppercase tracking-wider">

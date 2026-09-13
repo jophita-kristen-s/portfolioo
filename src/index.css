@@ -13,6 +13,9 @@
     scroll-behavior: smooth;
     background-color: #11121f;
     color: #e2e1f3;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 
   /* Material symbols helper */

@@ -130,31 +130,31 @@ export const SkillsSection: React.FC = () => {
           {SKILL_CATEGORIES.map((cat) => (
             <div
               key={cat.id}
-              className="p-6 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-xl hover:border-[#494553] transition-all duration-300 flex flex-col justify-between"
+              className="p-4 sm:p-6 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-xl hover:border-[#494553] transition-all duration-300 flex flex-col justify-between"
             >
               <div className="flex flex-col gap-4">
                 
                 {/* Category Header with Subtle Constellation Accent */}
                 <div className="flex items-center justify-between border-b border-[#282936] pb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[#cfbdff] text-sm font-bold">✦</span>
-                    <h3 className="text-sm font-mono font-semibold tracking-wider text-[#e2e1f3] uppercase">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="text-[#cfbdff] text-sm font-bold shrink-0">✦</span>
+                    <h3 className="text-xs sm:text-sm font-mono font-semibold tracking-wider text-[#e2e1f3] uppercase truncate">
                       {cat.title}
                     </h3>
                   </div>
-                  <span className="text-[11px] font-mono text-[#948e9e] px-2 py-0.5 rounded bg-[#11121f] border border-[#282936]">
+                  <span className="text-[11px] font-mono text-[#948e9e] px-2 py-0.5 rounded bg-[#11121f] border border-[#282936] shrink-0">
                     {cat.skills.length}
                   </span>
                 </div>
 
                 {/* Skill Chips Cluster - Strict Equal Visual Weight Across Every Skill */}
-                <div className="flex flex-wrap gap-2 pt-1">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-1">
                   {cat.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#11121f] border border-[#333441] hover:border-[#cfbdff]/50 hover:bg-[#282936] text-xs font-mono text-[#e2e1f3] transition-colors cursor-default shadow-sm"
+                      className="group inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#11121f] border border-[#333441] hover:border-[#cfbdff]/50 hover:bg-[#282936] text-xs font-mono text-[#e2e1f3] transition-colors cursor-default shadow-sm break-words"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#66d9ca]/70 group-hover:bg-[#66d9ca] transition-colors"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#66d9ca]/70 group-hover:bg-[#66d9ca] transition-colors shrink-0"></span>
                       <span>{skill}</span>
                     </span>
                   ))}

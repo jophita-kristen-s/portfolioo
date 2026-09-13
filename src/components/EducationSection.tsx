@@ -29,7 +29,7 @@ export const EducationSection: React.FC = () => {
           {EDUCATION_DATA.map((edu, idx) => (
             <div
               key={`${edu.institution}-${edu.degree}`}
-              className="p-6 sm:p-7 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-[#cfbdff]/50 transition-all duration-300"
+              className="p-5 sm:p-7 rounded-2xl bg-[#1d1f2b]/90 border border-[#333441] shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-[#cfbdff]/50 transition-all duration-300"
             >
               {/* Top ambient highlight */}
               <div
@@ -53,7 +53,7 @@ export const EducationSection: React.FC = () => {
 
                 {/* Institution & Degree */}
                 <div>
-                  <h3 className="font-title-editorial text-xl text-[#e2e1f3] font-medium group-hover:text-[#cfbdff] transition-colors leading-snug">
+                  <h3 className="font-title-editorial text-lg sm:text-xl text-[#e2e1f3] font-medium group-hover:text-[#cfbdff] transition-colors leading-snug break-words">
                     {edu.institution}
                   </h3>
                   <p className="text-sm text-[#ffb1c3] font-medium mt-1">
