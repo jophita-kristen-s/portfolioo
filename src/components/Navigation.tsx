@@ -160,7 +160,21 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
             <img
               src={HERO_IMAGE_URL}
               alt="Jophita Kristen S Profile"
-              className="w-9 h-9 rounded-full object-cover border border-[#9c7cf6]/50 shadow-[0_0_10px_rgba(207,189,255,0.4)]"
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.dataset.triedRoot) {
+                  target.dataset.triedRoot = 'true';
+                  target.src = `${import.meta.env.BASE_URL}jk_cosmic_one.png`;
+                  return;
+                }
+                if (!target.dataset.triedAssets) {
+                  target.dataset.triedAssets = 'true';
+                  target.src = `${import.meta.env.BASE_URL}assets/jk_cosmic_one.png`;
+                  return;
+                }
+              }}
+              className="w-9 h-9 rounded-full object-cover object-[center_20%] border border-[#9c7cf6]/50 shadow-[0_0_10px_rgba(207,189,255,0.4)]"
             />
             <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#66d9ca] ring-2 ring-[#0c0d19]"></span>
           </button>

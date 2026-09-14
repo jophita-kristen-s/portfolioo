@@ -8,7 +8,7 @@ import {
   InterestScrapbook
 } from '../types';
 
-export const HERO_IMAGE_URL = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';
+export const HERO_IMAGE_URL = `${import.meta.env.BASE_URL}images/jk_cosmic_one.png`;
 
 export const PERSONAL_INFO = {
   name: 'Jophita Kristen S.',

@@ -144,11 +144,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
             <div className="relative w-full h-full rounded-t-[160px] rounded-b-xl overflow-hidden bg-[#0c0d19]">
               <img
                 src={HERO_IMAGE_URL}
-                alt="Jophita Kristen coding under an arched celestial moonlit window"
-                className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
+                alt="Jophita Kristen S - Cosmic Portrait"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.dataset.triedRoot) {
+                    target.dataset.triedRoot = 'true';
+                    target.src = `${import.meta.env.BASE_URL}jk_cosmic_one.png`;
+                    return;
+                  }
+                  if (!target.dataset.triedAssets) {
+                    target.dataset.triedAssets = 'true';
+                    target.src = `${import.meta.env.BASE_URL}assets/jk_cosmic_one.png`;
+                    return;
+                  }
+                }}
+                className="w-full h-full object-cover object-[center_20%] transform group-hover:scale-105 transition-transform duration-700"
               />
-              {/* Soft gradient overlay for depth and contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d19]/80 via-transparent to-[#0c0d19]/20 pointer-events-none"></div>
+              {/* Soft gradient overlay for subtle contrast behind location badge */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d19]/40 via-transparent to-transparent pointer-events-none"></div>
 
               {/* Minimalist Location Stamp */}
               <div className="absolute bottom-3 inset-x-3 px-3 py-1.5 rounded-lg bg-[#0c0d19]/80 border border-[#333441]/70 backdrop-blur-md shadow-md flex items-center justify-between">
