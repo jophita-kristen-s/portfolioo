@@ -79,9 +79,9 @@ TECHNICAL SKILLS
 ==================================================
 SELECTED ENGINEERING PROJECTS
 ==================================================
-1. Explainable AI for Diabetic Retinopathy Screening (SIH 2026 Nominee)
+1. Explainable AI for Diabetic Retinopathy Screening (SIH 2026 — Project in Development)
 Technologies: MATLAB, Simulink, ResNet-50, Grad-CAM
-Automated retinal screening and lesion localization pipeline with visual heatmaps for accessible clinical triage.
+Developing an automated retinal screening and lesion localization pipeline with visual heatmaps for accessible clinical triage as part of participation in Smart India Hackathon 2026.
 
 2. Smart Hospital AI — CareFlow + MediCareConnect
 Technologies: Node.js, Express, MongoDB, REST APIs
@@ -369,14 +369,14 @@ ${CERTIFICATIONS_DATA.map(
                           Explainable AI for Diabetic Retinopathy Screening
                         </span>
                         <span className="text-slate-500 font-mono text-[11px]">
-                          SIH 2026 Nominee
+                          SIH 2026 • IN DEVELOPMENT
                         </span>
                       </div>
                       <div className="text-[11px] text-slate-600 font-medium">
                         Technologies: MATLAB, Simulink, ResNet-50, Grad-CAM, Data Augmentation
                       </div>
                       <p className="text-slate-700 mt-1 leading-normal">
-                        Developed an automated clinical triage pipeline for retinal fundus imaging. Integrated Grad-CAM activation mapping to highlight microaneurysms and hemorrhages, validating model explainability for ophthalmological diagnostics.
+                        Developing an automated clinical triage pipeline for retinal fundus imaging as part of participation in Smart India Hackathon 2026. Integrated Grad-CAM activation mapping to highlight microaneurysms and hemorrhages, validating model explainability for ophthalmological diagnostics.
                       </p>
                     </div>
 

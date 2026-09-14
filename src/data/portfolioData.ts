@@ -166,8 +166,8 @@ export const ALL_PROJECTS: Project[] = [
     id: 'dr-screening',
     number: '01',
     title: 'Explainable AI for Diabetic Retinopathy Screening',
-    subtitle: 'Rural Healthcare Triage with MATLAB & Simulink',
-    description: 'An explainable screening pipeline for diabetic retinopathy in rural healthcare triage, incorporating lesion detection and Level 0–4 severity grading.',
+    subtitle: 'SIH 2026 — Project in Development | Rural Healthcare Triage with MATLAB & Simulink',
+    description: 'An explainable screening pipeline for diabetic retinopathy in rural healthcare triage, incorporating lesion detection and Level 0–4 severity grading. Currently developing and refining this solution for SIH 2026.',
     category: 'ai-ml',
     badgeCategory: 'SIH 2026',
     bannerTitle: 'DIABETIC RETINOPATHY',
@@ -175,14 +175,14 @@ export const ALL_PROJECTS: Project[] = [
     bannerSubtext: 'MATLAB • Simulink • Grad-CAM',
     iconName: 'visibility',
     tags: ['MATLAB', 'Simulink', 'Explainable AI', 'Grad-CAM', 'Computer Vision'],
-    statusLabel: 'SIH 2026 Nominee',
-    eventOrContext: 'Smart India Hackathon 2026',
+    statusLabel: 'SIH 2026 • IN DEVELOPMENT',
+    eventOrContext: 'Smart India Hackathon 2026 — Participating Project',
     teamSize: '6-member team',
     problem: 'Rural primary health centers lack on-site ophthalmologists for early diabetic retinopathy screening, leading to preventable vision loss and non-explainable black-box triage.',
     solution: 'Engineered an explainable screening workflow in MATLAB and Simulink that assesses fundus image quality, localizes microaneurysms and exudates, assigns clinical severity stages (Level 0–4), and renders Grad-CAM feature heatmaps.',
     contribution: {
       role: 'ML & Signal Processing Engineer',
-      team: '6-member team (Smart India Hackathon 2026 Nominee)',
+      team: '6-member team (Smart India Hackathon 2026 — Participating Project)',
       summaryLine: 'Image preprocessing • Lesion localization • Simulink severity staging • Grad-CAM heatmaps',
       contributions: [
         'Image quality assessment & illumination enhancement preprocessing in MATLAB',
@@ -200,7 +200,7 @@ export const ALL_PROJECTS: Project[] = [
       'Level 0–4 clinical NPDR severity staging',
       'Automated diagnostic screening report generation'
     ],
-    longOverview: 'Developed as part of a 6-member team for Smart India Hackathon 2026, this system provides an explainable AI workflow for diabetic retinopathy screening tailored for rural healthcare settings. Built using MATLAB and Simulink, it takes retinal fundus imagery through rigorous preprocessing, detects microaneurysms, exudates, and hemorrhages, assigns clinical severity from Level 0 to Level 4, visualizes localized decision regions via Grad-CAM, and generates automated diagnostic reports. Note: System designed as an engineering prototype; not clinically deployed or medically validated.',
+    longOverview: 'Developing this project as part of a 6-member team in participation for Smart India Hackathon 2026, this system provides an explainable AI workflow for diabetic retinopathy screening tailored for rural healthcare settings. Built using MATLAB and Simulink, it takes retinal fundus imagery through rigorous preprocessing, detects microaneurysms, exudates, and hemorrhages, assigns clinical severity from Level 0 to Level 4, visualizes localized decision regions via Grad-CAM, and generates automated diagnostic reports. Note: System designed as an engineering prototype in active development; not clinically deployed or medically validated.',
     technicalHighlights: [
       'Built with MATLAB and Simulink for signal and image processing routines',
       'Dual-phase preprocessing pipeline for retinal illumination and vessel contrast enhancement',
