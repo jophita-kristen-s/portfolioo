@@ -113,7 +113,7 @@ export const EDUCATION_DATA: EducationItem[] = [
   {
     institution: "Women's Engineering College, Lawspet, Puducherry",
     degree: 'B.Tech in Information Science & Engineering',
-    period: '2022 — 2026',
+    period: '2023 — 2027',
     location: 'Lawspet, Puducherry',
     grade: '8.99',
     gradeLabel: 'Overall CGPA',
@@ -360,9 +360,12 @@ export const ALL_PROJECTS: Project[] = [
       'Camera-based capture workflow with product catalog database matching',
       'Identified limitations & active testing: flat non-overlapping layouts, lighting sensitivity, and ongoing catalog validation'
     ],
-    githubRepoType: 'private',
+    githubUrl: 'https://github.com/jophita-kristen-s/Scanline.git',
+    githubRepoType: 'public',
     evidence: {
-      repoStatus: 'coming-soon',
+      githubUrl: 'https://github.com/jophita-kristen-s/Scanline.git',
+      readmeUrl: 'https://github.com/jophita-kristen-s/Scanline#readme',
+      repoStatus: 'available',
       demoStatus: 'unavailable'
     }
   },
