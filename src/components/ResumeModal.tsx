@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FileText, Check, Copy, Download, Minimize2, Maximize2, X } from 'lucide-react';
 import {
   PERSONAL_INFO,
   EDUCATION_DATA,
@@ -95,9 +96,9 @@ Automated resume parsing pipeline computing TF-IDF representations and cosine si
 Technologies: Python, Flask, Google Earth Engine, GIS
 Geospatial monitoring application utilizing Google Earth Engine and Flask to evaluate multi-temporal satellite data for land encroachments.
 
-5. Scanline — Document Scanner & OCR Engine
-Technologies: Python, OpenCV, Tesseract OCR
-Document image preprocessing pipeline performing edge detection, perspective correction, and optical character recognition.
+5. Scanline — Browser-Based Smart Checkout & Multi-Item Detection
+Technologies: Camera Capture API, Object Detection Model, Product Catalog Database
+Browser-based smart checkout tool that scans items laid out on a flat surface and automatically calculates total prices without barcode scanners or manual entry. (In Testing)
 
 6. SSE Real-Time Messaging Architecture
 Technologies: Python, Flask, Server-Sent Events (SSE), EventSource API
@@ -158,7 +159,7 @@ ${CERTIFICATIONS_DATA.map(
           {/* Document Identity */}
           <div className="flex items-center gap-2.5">
             <span className="w-8 h-8 rounded-lg bg-[#1d1f2b] border border-[#333441] text-[#cfbdff] flex items-center justify-center text-sm">
-              <span className="material-symbols-outlined text-[18px]">description</span>
+              <FileText className="w-4 h-4 text-[#cfbdff] shrink-0" aria-hidden="true" />
             </span>
             <div className="flex flex-col">
               <span className="text-sm font-semibold text-[#e2e1f3]">
@@ -203,11 +204,13 @@ ${CERTIFICATIONS_DATA.map(
               type="button"
               onClick={handleCopyText}
               title="Copy plain-text formatted resume to clipboard"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#1d1f2b] hover:bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] text-xs font-medium border border-[#333441] transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#1d1f2b] hover:bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] text-xs font-medium border border-[#333441] transition-all min-h-[44px] sm:min-h-0 cursor-pointer"
             >
-              <span className="material-symbols-outlined text-[15px] text-[#cfbdff]">
-                {copied ? 'check' : 'content_copy'}
-              </span>
+              {copied ? (
+                <Check className="w-3.5 h-3.5 text-[#66d9ca] shrink-0" aria-hidden="true" />
+              ) : (
+                <Copy className="w-3.5 h-3.5 text-[#cfbdff] shrink-0" aria-hidden="true" />
+              )}
               <span>{copied ? 'Copied' : 'Copy Text'}</span>
             </button>
 
@@ -216,9 +219,9 @@ ${CERTIFICATIONS_DATA.map(
               type="button"
               onClick={handleDownload}
               title="Save clean, standard PDF via system print dialog"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] text-[#66d9ca] hover:text-[#66d9ca] text-xs font-semibold border border-[#333441] hover:border-[#66d9ca]/50 transition-all shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] text-[#66d9ca] hover:text-[#66d9ca] text-xs font-semibold border border-[#333441] hover:border-[#66d9ca]/50 transition-all shadow-xs min-h-[44px] sm:min-h-0 cursor-pointer"
             >
-              <span className="material-symbols-outlined text-[15px]">download</span>
+              <Download className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
               <span>Download PDF</span>
             </button>
 
@@ -227,22 +230,24 @@ ${CERTIFICATIONS_DATA.map(
               type="button"
               onClick={() => setIsFullscreen(!isFullscreen)}
               title={isFullscreen ? 'Exit full screen' : 'Expand full screen'}
-              className="w-8 h-8 rounded-lg bg-[#1d1f2b] hover:bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] flex items-center justify-center transition-colors border border-[#333441]"
+              className="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-[#1d1f2b] hover:bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] flex items-center justify-center transition-colors border border-[#333441] min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 cursor-pointer"
               aria-label="Toggle Fullscreen"
             >
-              <span className="material-symbols-outlined text-[18px]">
-                {isFullscreen ? 'fullscreen_exit' : 'fullscreen'}
-              </span>
+              {isFullscreen ? (
+                <Minimize2 className="w-4 h-4 shrink-0" aria-hidden="true" />
+              ) : (
+                <Maximize2 className="w-4 h-4 shrink-0" aria-hidden="true" />
+              )}
             </button>
 
             {/* Close */}
             <button
               type="button"
               onClick={onClose}
-              className="w-8 h-8 rounded-lg bg-[#1d1f2b] hover:bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] flex items-center justify-center transition-colors border border-[#333441]"
+              className="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-[#1d1f2b] hover:bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] flex items-center justify-center transition-colors border border-[#333441] min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 cursor-pointer"
               aria-label="Close resume preview"
             >
-              <span className="material-symbols-outlined text-[18px]">close</span>
+              <X className="w-4 h-4 shrink-0" aria-hidden="true" />
             </button>
           </div>
         </div>

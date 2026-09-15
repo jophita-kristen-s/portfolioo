@@ -1,21 +1,35 @@
 import React, { useState } from 'react';
+import { 
+  Code, 
+  Cpu, 
+  Globe, 
+  Database, 
+  Puzzle, 
+  Palette, 
+  Rocket, 
+  Compass, 
+  Sparkles, 
+  CheckCircle2, 
+  ArrowUpRight 
+} from 'lucide-react';
 import { UNIVERSE_NODES } from '../data/portfolioData';
 
 export const UniverseSection: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const activeNode = UNIVERSE_NODES[selectedIndex];
 
-  const getIconForId = (id: string) => {
+  const renderIconForId = (id: string) => {
+    const props = { className: "w-5 h-5 shrink-0", "aria-hidden": "true" as const };
     switch (id) {
-      case 'code': return 'code';
-      case 'ai': return 'neurology';
-      case 'web': return 'public';
-      case 'data': return 'database';
-      case 'puzzles': return 'extension';
-      case 'creativity': return 'palette';
-      case 'projects-universe': return 'rocket_launch';
-      case 'curiosity': return 'explore';
-      default: return 'stars';
+      case 'code': return <Code {...props} />;
+      case 'ai': return <Cpu {...props} />;
+      case 'web': return <Globe {...props} />;
+      case 'data': return <Database {...props} />;
+      case 'puzzles': return <Puzzle {...props} />;
+      case 'creativity': return <Palette {...props} />;
+      case 'projects-universe': return <Rocket {...props} />;
+      case 'curiosity': return <Compass {...props} />;
+      default: return <Sparkles {...props} />;
     }
   };
 
@@ -28,7 +42,7 @@ export const UniverseSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center gap-1.5">
           <div className="inline-flex items-center gap-1.5 text-[#ffb1c3] text-xs font-semibold uppercase tracking-widest">
-            <span className="material-symbols-outlined text-[15px]">stars</span>
+            <Sparkles className="w-4 h-4 text-[#ffb1c3] shrink-0" aria-hidden="true" />
             <span>Constellation of Passions</span>
           </div>
           <h2 className="font-headline-sm text-2xl sm:text-3xl text-[#e2e1f3] italic font-normal">
@@ -61,9 +75,7 @@ export const UniverseSection: React.FC = () => {
                       isSelected ? 'bg-[#333441] text-[#cfbdff]' : 'bg-[#11121f] text-[#66d9ca]'
                     }`}
                   >
-                    <span className="material-symbols-outlined text-[19px]">
-                      {getIconForId(node.id)}
-                    </span>
+                    {renderIconForId(node.id)}
                   </div>
                   <div className="flex flex-col min-w-0">
                     <div className="flex items-center gap-1.5">
@@ -122,19 +134,17 @@ export const UniverseSection: React.FC = () => {
             {/* Micro Note Footer */}
             <div className="pt-3 border-t border-[#333441]/70 bg-[#0c0d19]/60 p-3 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[#cbc3d5]">
               <div className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[#66d9ca] text-[16px]">
-                  verified
-                </span>
+                <CheckCircle2 className="w-4 h-4 text-[#66d9ca] shrink-0" aria-hidden="true" />
                 <span className="text-xs">
                   {activeNode.footer}
                 </span>
               </div>
               <a
                 href="#projects"
-                className="text-[#cfbdff] hover:text-[#66d9ca] text-[11px] font-semibold uppercase tracking-wider flex items-center gap-1 transition-colors"
+                className="text-[#cfbdff] hover:text-[#66d9ca] text-[11px] font-semibold uppercase tracking-wider flex items-center gap-1 transition-colors min-h-[44px]"
               >
                 <span>View Projects</span>
-                <span className="material-symbols-outlined text-[13px]">arrow_outward</span>
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
               </a>
             </div>
           </div>

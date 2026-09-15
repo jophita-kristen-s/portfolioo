@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Puzzle, Delete } from 'lucide-react';
 
 const INITIAL_BOARD: (number | null)[][] = [
   [1, null, 3, null],
@@ -122,7 +123,7 @@ export const SudokuSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-[#282936] pb-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#66d9ca] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[15px]">extension</span>
+              <Puzzle className="w-4 h-4 text-[#66d9ca] shrink-0" aria-hidden="true" />
               <span>Mind Sharpener</span>
             </div>
             <h2 className="font-headline-sm text-2xl sm:text-3xl text-[#e2e1f3] mt-1 font-normal">
@@ -199,9 +200,9 @@ export const SudokuSection: React.FC = () => {
               type="button"
               onClick={() => handleNumberInput(null)}
               title="Clear Cell"
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#191b27] hover:bg-[#282936] text-[#ffb1c3] font-semibold text-xs border border-[#333441] flex items-center justify-center transition-all min-h-[44px] min-w-[44px]"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#191b27] hover:bg-[#282936] text-[#ffb1c3] font-semibold text-xs border border-[#333441] flex items-center justify-center transition-all min-h-[44px] min-w-[44px] cursor-pointer"
             >
-              <span className="material-symbols-outlined text-[20px]">backspace</span>
+              <Delete className="w-5 h-5 shrink-0" aria-hidden="true" />
             </button>
           </div>
 

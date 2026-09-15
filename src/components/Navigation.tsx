@@ -1,4 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import {
+  Menu,
+  X,
+  Sparkles,
+  Moon,
+  FileText,
+  Home,
+  User,
+  GraduationCap,
+  Terminal,
+  Code,
+  Trophy,
+  Users,
+  ShieldCheck,
+  Palette,
+  Puzzle,
+  Mail,
+  ChevronRight
+} from 'lucide-react';
 import { HERO_IMAGE_URL } from '../data/portfolioData';
 
 interface NavigationProps {
@@ -101,10 +120,10 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
           <button
             type="button"
             onClick={onOpenResumeModal}
-            className="text-sm tracking-wide transition-all py-1 px-3 rounded-md text-[#e2e1f3] hover:text-[#cfbdff] bg-[#1d1f2b]/70 border border-[#333441] hover:border-[#cfbdff]/40 hover:bg-[#282936] flex items-center gap-1.5 cursor-pointer"
+            className="text-sm tracking-wide transition-all py-1.5 px-3 rounded-md text-[#e2e1f3] hover:text-[#cfbdff] bg-[#1d1f2b]/70 border border-[#333441] hover:border-[#cfbdff]/40 hover:bg-[#282936] flex items-center gap-1.5 cursor-pointer"
             title="View Resume"
           >
-            <span className="material-symbols-outlined text-[15px] text-[#cfbdff]">description</span>
+            <FileText className="w-3.5 h-3.5 text-[#cfbdff] shrink-0" aria-hidden="true" />
             <span>Resume</span>
           </button>
 
@@ -123,29 +142,31 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
         </nav>
 
         {/* Action Controls & Avatar */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Celestial Stardust Mode Toggle */}
           <button
             type="button"
             onClick={() => setStardustActive(!stardustActive)}
             title={stardustActive ? "Celestial Glow Active" : "Subtle Mode"}
             aria-label="Toggle Celestial Theme"
-            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+            className={`w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center transition-all cursor-pointer ${
               stardustActive
                 ? 'bg-[#282936] text-[#66d9ca] shadow-[0_0_12px_rgba(102,217,202,0.3)]'
                 : 'bg-[#1d1f2b]/60 text-[#cbc3d5] hover:text-[#e2e1f3]'
             }`}
           >
-            <span className="material-symbols-outlined text-[20px]">
-              {stardustActive ? 'stars' : 'nightlight'}
-            </span>
+            {stardustActive ? (
+              <Sparkles className="w-5 h-5 text-[#66d9ca] shrink-0" aria-hidden="true" />
+            ) : (
+              <Moon className="w-5 h-5 text-[#cbc3d5] shrink-0" aria-hidden="true" />
+            )}
           </button>
 
           {/* Let's Connect CTA Button */}
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, 'contact')}
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm shadow-[0_4px_16px_rgba(156,124,246,0.35)] hover:shadow-[0_8px_24px_rgba(156,124,246,0.55)] hover:-translate-y-0.5 transition-all duration-300"
+            className="hidden sm:inline-flex items-center justify-center px-4 py-2 min-h-[44px] rounded-lg bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm shadow-[0_4px_16px_rgba(156,124,246,0.35)] hover:shadow-[0_8px_24px_rgba(156,124,246,0.55)] hover:-translate-y-0.5 transition-all duration-300"
           >
             Let's Connect
           </a>
@@ -155,7 +176,8 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
             type="button"
             onClick={onOpenResumeModal}
             title="View Jophita's Profile & Resume"
-            className="relative rounded-full focus:outline-none focus:ring-2 focus:ring-[#cfbdff]"
+            aria-label="View Profile and Resume"
+            className="relative rounded-full focus:outline-none focus:ring-2 focus:ring-[#cfbdff] cursor-pointer min-w-[40px] min-h-[40px] flex items-center justify-center"
           >
             <img
               src={HERO_IMAGE_URL}
@@ -163,6 +185,11 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
               referrerPolicy="no-referrer"
               onError={(e) => {
                 const target = e.currentTarget;
+                if (!target.dataset.triedImages) {
+                  target.dataset.triedImages = 'true';
+                  target.src = `${import.meta.env.BASE_URL}images/jk_cosmic_one.png`;
+                  return;
+                }
                 if (!target.dataset.triedRoot) {
                   target.dataset.triedRoot = 'true';
                   target.src = `${import.meta.env.BASE_URL}jk_cosmic_one.png`;
@@ -176,19 +203,21 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
               }}
               className="w-9 h-9 rounded-full object-cover object-[center_20%] border border-[#9c7cf6]/50 shadow-[0_0_10px_rgba(207,189,255,0.4)]"
             />
-            <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#66d9ca] ring-2 ring-[#0c0d19]"></span>
+            <span className="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 rounded-full bg-[#66d9ca] ring-2 ring-[#0c0d19]"></span>
           </button>
 
           {/* Mobile menu toggle */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden w-10 h-10 rounded-lg flex items-center justify-center bg-[#1d1f2b] text-[#e2e1f3] hover:text-[#cfbdff]"
-            aria-label="Toggle menu"
+            className="lg:hidden w-11 h-11 min-w-[44px] min-h-[44px] rounded-lg flex items-center justify-center bg-[#1d1f2b] text-[#e2e1f3] hover:text-[#cfbdff] transition-colors cursor-pointer"
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
-            <span className="material-symbols-outlined text-[24px]">
-              {mobileMenuOpen ? 'close' : 'menu'}
-            </span>
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 shrink-0" aria-hidden="true" />
+            ) : (
+              <Menu className="w-6 h-6 shrink-0" aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>
@@ -204,31 +233,37 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
           />
 
           {/* Drawer content */}
-          <div className="relative z-50 lg:hidden bg-[#0c0d19]/95 backdrop-blur-2xl border-b border-[#282936] px-5 sm:px-6 py-4 flex flex-col gap-2 max-h-[calc(100vh-5rem)] overflow-y-auto animate-in slide-in-from-top-2 duration-200 shadow-2xl">
+          <div className="relative z-50 lg:hidden bg-[#0c0d19]/95 backdrop-blur-2xl border-b border-[#282936] px-4 sm:px-6 py-4 flex flex-col gap-1 max-h-[calc(100vh-5rem)] overflow-y-auto animate-in slide-in-from-top-2 duration-200 shadow-2xl">
             {[
-              { id: 'home', label: 'Home' },
-              { id: 'about', label: 'About' },
-              { id: 'education', label: 'Education' },
-              { id: 'skills', label: 'Skills' },
-              { id: 'projects', label: 'Projects' },
-              { id: 'achievements', label: 'Achievements' },
-              { id: 'leadership', label: 'Leadership' },
-              { id: 'certifications', label: 'Certifications' },
-              { id: 'universe', label: 'Explore Universe' },
-              { id: 'interests', label: 'Interests' },
-              { id: 'sudoku', label: 'Interactive Sudoku' },
-              { id: 'contact', label: 'Contact' }
-            ].map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={(e) => handleNavClick(e, item.id)}
-                className="text-base text-[#e2e1f3] hover:text-[#cfbdff] min-h-[44px] flex items-center justify-between border-b border-[#1d1f2b] px-1 active:bg-[#1d1f2b]/40 rounded-sm"
-              >
-                <span>{item.label}</span>
-                <span className="material-symbols-outlined text-[18px] text-[#948e9e]">arrow_forward</span>
-              </a>
-            ))}
+              { id: 'home', label: 'Home', icon: Home },
+              { id: 'about', label: 'About', icon: User },
+              { id: 'education', label: 'Education', icon: GraduationCap },
+              { id: 'skills', label: 'Skills', icon: Terminal },
+              { id: 'projects', label: 'Projects', icon: Code },
+              { id: 'achievements', label: 'Achievements', icon: Trophy },
+              { id: 'leadership', label: 'Leadership', icon: Users },
+              { id: 'certifications', label: 'Certifications', icon: ShieldCheck },
+              { id: 'universe', label: 'Explore Universe', icon: Sparkles },
+              { id: 'interests', label: 'Interests', icon: Palette },
+              { id: 'sudoku', label: 'Interactive Sudoku', icon: Puzzle },
+              { id: 'contact', label: 'Contact', icon: Mail }
+            ].map((item) => {
+              const ItemIcon = item.icon;
+              return (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={(e) => handleNavClick(e, item.id)}
+                  className="text-sm sm:text-base text-[#e2e1f3] hover:text-[#cfbdff] min-h-[44px] flex items-center justify-between border-b border-[#1d1f2b]/80 px-2 active:bg-[#1d1f2b]/40 rounded-lg transition-colors"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <ItemIcon className="w-4 h-4 text-[#cfbdff] shrink-0" aria-hidden="true" />
+                    <span className="truncate">{item.label}</span>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-[#948e9e] shrink-0 ml-2" aria-hidden="true" />
+                </a>
+              );
+            })}
             <div className="pt-3 pb-2 flex flex-col sm:flex-row gap-3">
               <button
                 type="button"
@@ -238,7 +273,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
                 }}
                 className="w-full min-h-[44px] flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-[#1d1f2b] border border-[#cfbdff]/40 text-[#cfbdff] text-sm font-semibold hover:bg-[#282936] transition-colors cursor-pointer"
               >
-                <span className="material-symbols-outlined text-[18px]">description</span>
+                <FileText className="w-4 h-4 shrink-0 text-[#cfbdff]" aria-hidden="true" />
                 <span>View Resume</span>
               </button>
               <a

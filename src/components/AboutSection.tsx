@@ -1,4 +1,5 @@
 import React from 'react';
+import { User, Cpu, Brain, Palette } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ export const AboutSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#cfbdff] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px]">account_circle</span>
+              <User className="w-4 h-4 text-[#cfbdff] shrink-0" aria-hidden="true" />
               <span>Genesis &amp; Philosophy</span>
             </div>
             <h2 className="font-headline-lg text-3xl md:text-4xl lg:text-5xl text-[#e2e1f3] mt-1 font-normal">
@@ -61,7 +62,7 @@ export const AboutSection: React.FC = () => {
             {/* Pillar 1 */}
             <div className="p-5 rounded-xl bg-[#282936]/80 border border-[#333441] hover:border-[#cfbdff]/50 transition-all flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-[#11121f] text-[#cfbdff] flex items-center justify-center shrink-0">
-                <span className="material-symbols-outlined text-[22px]">memory</span>
+                <Cpu className="w-5 h-5 text-[#cfbdff] shrink-0" aria-hidden="true" />
               </div>
               <div>
                 <h3 className="text-base font-semibold text-[#e2e1f3]">Analytical Rigor</h3>
@@ -74,7 +75,7 @@ export const AboutSection: React.FC = () => {
             {/* Pillar 2 */}
             <div className="p-5 rounded-xl bg-[#282936]/80 border border-[#333441] hover:border-[#66d9ca]/50 transition-all flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-[#11121f] text-[#66d9ca] flex items-center justify-center shrink-0">
-                <span className="material-symbols-outlined text-[22px]">psychology</span>
+                <Brain className="w-5 h-5 text-[#66d9ca] shrink-0" aria-hidden="true" />
               </div>
               <div>
                 <h3 className="text-base font-semibold text-[#e2e1f3]">Explainable AI</h3>
@@ -87,7 +88,7 @@ export const AboutSection: React.FC = () => {
             {/* Pillar 3 */}
             <div className="p-5 rounded-xl bg-[#282936]/80 border border-[#333441] hover:border-[#ffb1c3]/50 transition-all flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-[#11121f] text-[#ffb1c3] flex items-center justify-center shrink-0">
-                <span className="material-symbols-outlined text-[22px]">palette</span>
+                <Palette className="w-5 h-5 text-[#ffb1c3] shrink-0" aria-hidden="true" />
               </div>
               <div>
                 <h3 className="text-base font-semibold text-[#e2e1f3]">Aesthetic Polymathy</h3>

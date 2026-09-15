@@ -7,8 +7,9 @@ import {
   CertificationItem,
   InterestScrapbook
 } from '../types';
+import heroPortraitImg from '../assets/jk_cosmic_one.png';
 
-export const HERO_IMAGE_URL = `${import.meta.env.BASE_URL}images/jk_cosmic_one.png`;
+export const HERO_IMAGE_URL = heroPortraitImg || `${import.meta.env.BASE_URL}images/jk_cosmic_one.png`;
 
 export const PERSONAL_INFO = {
   name: 'Jophita Kristen S.',
@@ -322,40 +323,42 @@ export const ALL_PROJECTS: Project[] = [
     id: 'scanline',
     number: '04',
     title: 'Scanline',
-    subtitle: 'Document Edge Detection & OCR Pipeline',
-    description: 'A document image processing and optical character recognition pipeline developed with Python, OpenCV, and Tesseract OCR. Implements document contour detection, perspective correction, and text extraction from document scans.',
+    subtitle: 'Browser-Based Smart Checkout & Multi-Item Detection',
+    description: 'Scanline is a browser-based smart checkout tool that uses camera-based item detection to identify multiple products placed on a flat surface, match them against a product catalog, and automatically calculate the total price without barcode scanning or manual entry.',
     category: 'ai-ml',
-    badgeCategory: 'Computer Vision & OCR',
+    badgeCategory: 'Computer Vision',
     bannerTitle: 'SCANLINE',
-    bannerDetail: 'Document Preprocessing & OCR',
-    bannerSubtext: 'Python • OpenCV • Tesseract OCR',
-    iconName: 'document_scanner',
-    tags: ['Python', 'OpenCV', 'Tesseract OCR', 'Image Processing'],
-    statusLabel: 'Engineered Pipeline',
+    bannerDetail: 'Smart Checkout & Multi-Item Detection',
+    bannerSubtext: 'Camera Capture • Item Detection • Auto-Pricing',
+    iconName: 'shopping_cart_checkout',
+    tags: ['Camera Capture API', 'Multi-Item Detection', 'Product Catalog', 'Automated Pricing'],
+    statusLabel: 'In Testing',
     teamSize: 'Solo Project',
-    problem: 'Scanned and photographed documents often suffer from skewed angles, irregular borders, and variable lighting that degrade text extraction accuracy.',
-    solution: 'Engineered an image preprocessing pipeline using OpenCV for edge detection and perspective transformation, followed by Tesseract OCR for text extraction.',
+    problem: 'Traditional retail checkouts rely on tedious manual barcode scanning or manual price entry, creating checkout bottlenecks when handling multiple items.',
+    solution: 'Developing a browser-based smart checkout tool that scans items laid out on a flat surface via a camera feed, detects multiple items simultaneously, matches them against a product catalog, and automatically calculates the total price without barcode scanning.',
     contribution: {
       role: 'Developer (Solo Project)',
       team: 'Solo Project',
-      summaryLine: 'OpenCV image preprocessing • Perspective correction • Tesseract OCR text extraction',
+      summaryLine: 'Browser-based camera scanning • Multi-item detection • Automated price calculation',
       contributions: [
-        'Implemented image preprocessing routines including grayscale conversion, Gaussian blur, and Canny edge detection',
-        'Applied contour detection and perspective transformation to obtain rectified document scans',
-        'Integrated Tesseract OCR engine for text extraction from processed document images'
+        'Developed and tested the browser-based camera scanning workflow for flat surface item layouts',
+        'Implemented the multi-item detection and price-calculation workflow without barcode scanners or manual entry',
+        'Worked on product identification and product catalog integration (currently in active testing and refinement)'
       ]
     },
     features: [
-      'Document edge detection and contour isolation using OpenCV',
-      'Four-point perspective transformation for rectified document orientation',
-      'Adaptive thresholding for stroke clarity and noise reduction',
-      'Optical character recognition via Tesseract'
+      'Single-shot multi-item detection from flat, non-overlapping surface layouts',
+      'Automatic price calculation with no barcode scanner or manual entry',
+      'Runs directly in-browser using standard webcam or mobile camera feed',
+      'Product catalog lookup and automated itemized price calculation',
+      'Active development & testing: validating detection accuracy under variable lighting and expanding catalog coverage'
     ],
-    longOverview: 'Scanline is a document scanning and text extraction utility developed in Python using OpenCV and Tesseract OCR. The pipeline detects document contours from raw input images, applies a four-point perspective transform to rectify skewed angles, enhances image contrast, and extracts text using Tesseract.',
+    longOverview: 'Scanline is a browser-based smart checkout tool that scans items laid out on a flat surface and automatically calculates the total price — no barcode scanner, no manual entry. The user lays out items on a flat surface and scans them using a webcam or phone camera; the system detects each item individually, identifies detected items against a product catalog/database, looks up prices, and calculates the total bill automatically.\n\nProject Status: Currently under active testing and development ("In Testing"). Accuracy, lighting resilience, and catalog coverage are actively being refined, and it is not yet ready for production use. Planned roadmap additions include handling overlapping/occluded items, expanded catalog coverage, handwritten price recognition, and receipt exports.',
     technicalHighlights: [
-      'Canny edge detection and contour analysis to locate document perimeters',
-      'Perspective warping to produce flattened top-down document scans',
-      'Tesseract OCR integration for downstream text recognition'
+      'Single-shot multi-item detection pipeline running in the browser',
+      'Automated price aggregation and total bill calculation without barcode scanning',
+      'Camera-based capture workflow with product catalog database matching',
+      'Identified limitations & active testing: flat non-overlapping layouts, lighting sensitivity, and ongoing catalog validation'
     ],
     githubRepoType: 'private',
     evidence: {

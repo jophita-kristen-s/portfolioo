@@ -1,4 +1,5 @@
 import React from 'react';
+import { X, UserCheck, Code, Github, ExternalLink, FileText, Check } from 'lucide-react';
 import { ALL_PROJECTS } from '../data/portfolioData';
 
 interface ProjectModalProps {
@@ -42,10 +43,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 sm:top-5 sm:right-5 w-9 h-9 rounded-full bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] flex items-center justify-center transition-colors z-10"
+          className="absolute top-3 right-3 sm:top-5 sm:right-5 w-11 h-11 sm:w-9 sm:h-9 rounded-full bg-[#282936] text-[#cbc3d5] hover:text-[#e2e1f3] flex items-center justify-center transition-colors z-10 cursor-pointer"
           aria-label="Close modal"
         >
-          <span className="material-symbols-outlined text-[20px]">close</span>
+          <X className="w-5 h-5 shrink-0" aria-hidden="true" />
         </button>
 
         {/* 1. PROJECT HEADER */}
@@ -103,7 +104,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
           <div className="p-4 sm:p-5 rounded-xl bg-[#11121f]/95 border border-[#cfbdff]/30 shadow-md">
             <div className="flex items-center justify-between pb-3 border-b border-[#2d2e40] mb-3">
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#cfbdff] font-bold">
-                <span className="material-symbols-outlined text-[16px] text-[#cfbdff]">person_check</span>
+                <UserCheck className="w-4 h-4 text-[#cfbdff] shrink-0" aria-hidden="true" />
                 <span>MY CONTRIBUTION</span>
               </div>
               <span className="text-[11px] text-[#948e9e] font-mono">Personal vs. Team Scope</span>
@@ -137,7 +138,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
               <div className="space-y-1.5">
                 {contributions.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-[#cbc3d5]">
-                    <span className="text-[#66d9ca] font-bold mt-0.5">✓</span>
+                    <Check className="w-4 h-4 text-[#66d9ca] font-bold mt-0.5 shrink-0" aria-hidden="true" />
                     <span className="leading-snug">{item}</span>
                   </div>
                 ))}
@@ -192,7 +193,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
           <div className="p-4 sm:p-5 rounded-xl bg-[#11121f] border border-[#333441]">
             <div className="flex items-center justify-between pb-3 border-b border-[#282936] mb-3">
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#66d9ca] font-bold">
-                <span className="material-symbols-outlined text-[16px]">code</span>
+                <Code className="w-4 h-4 text-[#66d9ca] shrink-0" aria-hidden="true" />
                 <span>EVIDENCE</span>
               </div>
               <span className="text-[11px] text-[#948e9e] font-mono">
@@ -208,7 +209,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-semibold transition-colors min-h-[44px]"
                 >
-                  <span>GitHub Repository ↗</span>
+                  <Github className="w-3.5 h-3.5 text-[#cfbdff] shrink-0" aria-hidden="true" />
+                  <span>GitHub Repository</span>
+                  <ExternalLink className="w-3 h-3 text-[#948e9e] shrink-0" aria-hidden="true" />
                 </a>
               )}
 
@@ -225,7 +228,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-semibold transition-colors min-h-[44px]"
                     >
-                      <span>Technical README ↗</span>
+                      <FileText className="w-3.5 h-3.5 text-[#cfbdff] shrink-0" aria-hidden="true" />
+                      <span>Technical README</span>
+                      <ExternalLink className="w-3 h-3 text-[#948e9e] shrink-0" aria-hidden="true" />
                     </a>
                   )}
 
@@ -236,7 +241,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-semibold transition-colors min-h-[44px]"
                     >
-                      <span>Figma Design ↗</span>
+                      <span>Figma Design</span>
+                      <ExternalLink className="w-3 h-3 text-[#948e9e] shrink-0" aria-hidden="true" />
                     </a>
                   )}
 
@@ -247,7 +253,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ projectId, onClose }
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#66d9ca]/20 hover:bg-[#66d9ca]/30 border border-[#66d9ca]/40 text-[#66d9ca] text-xs font-semibold transition-colors min-h-[44px]"
                     >
-                      <span>Live Demo ↗</span>
+                      <span>Live Demo</span>
+                      <ExternalLink className="w-3 h-3 text-[#66d9ca] shrink-0" aria-hidden="true" />
                     </a>
                   )}
                 </>

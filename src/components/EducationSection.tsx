@@ -1,4 +1,5 @@
 import React from 'react';
+import { GraduationCap, MapPin } from 'lucide-react';
 import { EDUCATION_DATA } from '../data/portfolioData';
 
 export const EducationSection: React.FC = () => {
@@ -12,7 +13,7 @@ export const EducationSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#66d9ca] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px]">school</span>
+              <GraduationCap className="w-4 h-4 text-[#66d9ca] shrink-0" aria-hidden="true" />
               <span>Academic Trajectory</span>
             </div>
             <h2 className="font-headline-lg text-3xl md:text-4xl text-[#e2e1f3] mt-1 font-normal">
@@ -60,7 +61,7 @@ export const EducationSection: React.FC = () => {
                     {edu.degree}
                   </p>
                   <div className="flex items-center gap-1.5 text-xs text-[#948e9e] mt-1">
-                    <span className="material-symbols-outlined text-[14px]">pin_drop</span>
+                    <MapPin className="w-3.5 h-3.5 text-[#948e9e] shrink-0" aria-hidden="true" />
                     <span>{edu.location}</span>
                   </div>
                 </div>

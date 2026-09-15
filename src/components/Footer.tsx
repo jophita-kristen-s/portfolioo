@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUp } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
@@ -65,7 +66,7 @@ export const Footer: React.FC = () => {
             className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#1d1f2b] text-[#cfbdff] hover:bg-[#282936] text-xs font-semibold border border-[#333441] transition-all min-h-[44px] cursor-pointer"
           >
             <span>Top of Orbit</span>
-            <span className="material-symbols-outlined text-[16px]">arrow_upward</span>
+            <ArrowUp className="w-4 h-4 shrink-0" aria-hidden="true" />
           </button>
         </div>
 

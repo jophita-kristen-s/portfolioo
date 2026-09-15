@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { Palette, Volume2, Headphones } from 'lucide-react';
 import { INTERESTS_SCRAPBOOK } from '../data/portfolioData';
 
 export const InterestsSection: React.FC = () => {
@@ -69,7 +70,7 @@ export const InterestsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#ffb1c3] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[15px]">palette</span>
+              <Palette className="w-4 h-4 text-[#ffb1c3] shrink-0" aria-hidden="true" />
               <span>Offline Frequency</span>
             </div>
             <h2 className="font-headline-sm text-2xl sm:text-3xl text-[#e2e1f3] mt-1 font-normal">
@@ -84,15 +85,17 @@ export const InterestsSection: React.FC = () => {
             <button
               type="button"
               onClick={toggleAmbientSound}
-              className={`px-3.5 py-1.5 rounded-full border flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 shrink-0 ${
+              className={`min-h-[44px] px-3.5 py-1.5 rounded-full border flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 shrink-0 cursor-pointer ${
                 isPlayingAmbient
                   ? 'bg-[#9c7cf6] text-[#11121f] border-[#cfbdff] shadow-[0_0_12px_rgba(156,124,246,0.4)]'
                   : 'bg-[#1d1f2b] text-[#cbc3d5] border-[#333441] hover:text-[#e2e1f3]'
               }`}
             >
-              <span className="material-symbols-outlined text-[15px]">
-                {isPlayingAmbient ? 'equalizer' : 'headphones'}
-              </span>
+              {isPlayingAmbient ? (
+                <Volume2 className="w-4 h-4 shrink-0" aria-hidden="true" />
+              ) : (
+                <Headphones className="w-4 h-4 shrink-0" aria-hidden="true" />
+              )}
               <span>{isPlayingAmbient ? 'Cosmic Lo-Fi: ON' : 'Play Ambient'}</span>
             </button>
           </div>

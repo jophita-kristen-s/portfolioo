@@ -1,4 +1,5 @@
 import React from 'react';
+import { Code, UserCheck, ArrowRight, ExternalLink, FileText, Check } from 'lucide-react';
 import { ALL_PROJECTS, FEATURED_PROJECT_IDS } from '../data/portfolioData';
 
 interface FeaturedProjectSectionProps {
@@ -27,7 +28,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#282936] pb-6">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#ffb1c3] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px]">code</span>
+              <Code className="w-4 h-4 shrink-0 text-[#ffb1c3]" aria-hidden="true" />
               <span>Engineering Evidence &amp; Repositories</span>
             </div>
             <h2 className="font-headline-lg text-3xl md:text-4xl lg:text-5xl text-[#e2e1f3] mt-1 font-normal">
@@ -35,7 +36,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
             </h2>
           </div>
           <p className="text-sm md:text-base text-[#cbc3d5] max-w-lg font-light">
-            Six engineering systems across clinical triage, healthcare management, candidate intelligence, geospatial monitoring, document OCR, and real-time streaming.
+            Six engineering systems across clinical triage, healthcare management, candidate intelligence, geospatial monitoring, smart checkout, and real-time streaming.
           </p>
         </div>
 
@@ -114,7 +115,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                   <div className="p-3.5 sm:p-4 rounded-xl bg-[#11121f]/95 border border-[#cfbdff]/30 space-y-2.5 shadow-sm">
                     <div className="flex items-center justify-between gap-2 border-b border-[#282936] pb-2">
                       <div className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#cfbdff]">
-                        <span className="material-symbols-outlined text-[16px]">person_check</span>
+                        <UserCheck className="w-4 h-4 text-[#cfbdff] shrink-0" aria-hidden="true" />
                         <span>MY CONTRIBUTION</span>
                       </div>
                       <span className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-[#282936] text-[#cbc3d5] border border-[#373846]">
@@ -136,7 +137,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                     <div className="space-y-1.5 pt-1 border-t border-[#282936]/60">
                       {contributions.slice(0, 3).map((item, idx) => (
                         <div key={idx} className="flex items-start gap-2 text-xs text-[#cbc3d5]">
-                          <span className="text-[#66d9ca] font-bold mt-0.5 text-[11px]">✓</span>
+                          <Check className="w-3.5 h-3.5 text-[#66d9ca] shrink-0 mt-0.5" aria-hidden="true" />
                           <span className="leading-snug">{item}</span>
                         </div>
                       ))}
@@ -163,10 +164,11 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
                         title="View GitHub Repository"
                       >
-                        <span>GitHub ↗</span>
+                        <span>GitHub</span>
+                        <ExternalLink className="w-3 h-3 text-[#948e9e] shrink-0" aria-hidden="true" />
                       </a>
                     ) : null}
 
@@ -181,10 +183,12 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                             href={project.evidence.readmeUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
                             title="View Project README"
                           >
-                            <span>README ↗</span>
+                            <FileText className="w-3.5 h-3.5 text-[#cfbdff] shrink-0" aria-hidden="true" />
+                            <span>README</span>
+                            <ExternalLink className="w-3 h-3 text-[#948e9e] shrink-0" aria-hidden="true" />
                           </a>
                         ) : null}
 
@@ -193,10 +197,11 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                             href={project.liveDemoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#66d9ca]/20 hover:bg-[#66d9ca]/30 border border-[#66d9ca]/40 text-[#66d9ca] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#66d9ca]/20 hover:bg-[#66d9ca]/30 border border-[#66d9ca]/40 text-[#66d9ca] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
                             title="View Live Demo"
                           >
-                            <span>Live Demo ↗</span>
+                            <span>Live Demo</span>
+                            <ExternalLink className="w-3 h-3 text-[#66d9ca] shrink-0" aria-hidden="true" />
                           </a>
                         ) : null}
                       </>
@@ -216,7 +221,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                     className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] hover:brightness-110 text-[#11121f] text-xs font-bold transition-all shadow-md shadow-[#9c7cf6]/20 cursor-pointer min-h-[44px] w-full sm:w-auto"
                   >
                     <span>View project</span>
-                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
                   </button>
                 </div>
 

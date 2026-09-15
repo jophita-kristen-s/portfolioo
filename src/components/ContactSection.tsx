@@ -1,4 +1,15 @@
 import React, { useState } from 'react';
+import { 
+  Radio, 
+  Mail, 
+  Linkedin, 
+  ExternalLink, 
+  FileText, 
+  Check, 
+  AlertCircle, 
+  Loader2, 
+  Send 
+} from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 // ============================================================================
@@ -149,7 +160,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 border-b border-[#282936] pb-6">
           <div>
             <div className="inline-flex items-center gap-2 text-[#cfbdff] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px] text-[#cfbdff]">satellite_alt</span>
+              <Radio className="w-4 h-4 text-[#cfbdff] shrink-0" aria-hidden="true" />
               <span>GET IN TOUCH ✦ OPEN TRANSMISSION</span>
             </div>
             <h2 className="font-headline-lg text-3xl sm:text-4xl md:text-5xl text-[#e2e1f3] mt-2 font-normal tracking-tight">
@@ -179,7 +190,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
               title={`Send an email to ${PERSONAL_INFO.email}`}
             >
               <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#11121f] border border-[#282936] text-[#cfbdff] flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-[#cfbdff]/50 transition-all">
-                <span className="material-symbols-outlined text-[20px] sm:text-[22px]">alternate_email</span>
+                <Mail className="w-5 h-5 text-[#cfbdff] shrink-0" aria-hidden="true" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between gap-1">
@@ -209,16 +220,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
               title="Open LinkedIn Profile"
             >
               <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-[#11121f] border border-[#282936] text-[#66d9ca] flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-[#66d9ca]/50 transition-all">
-                <span className="material-symbols-outlined text-[20px] sm:text-[22px]">share</span>
+                <Linkedin className="w-5 h-5 text-[#66d9ca] shrink-0" aria-hidden="true" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between gap-1">
                   <span className="text-[11px] font-mono uppercase tracking-wider text-[#948e9e]">
                     LinkedIn
                   </span>
-                  <span className="material-symbols-outlined text-[16px] text-[#948e9e] group-hover:text-[#66d9ca] transition-colors">
-                    open_in_new
-                  </span>
+                  <ExternalLink className="w-4 h-4 text-[#948e9e] group-hover:text-[#66d9ca] transition-colors shrink-0" aria-hidden="true" />
                 </div>
                 <h3 className="text-sm sm:text-base font-medium text-[#e2e1f3] truncate mt-0.5 group-hover:text-[#66d9ca] transition-colors">
                   {PERSONAL_INFO.linkedInHandle}
@@ -233,7 +242,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
             <div className="p-4 sm:p-5 rounded-xl bg-[#161726]/60 border border-[#282936] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex flex-col gap-0.5">
                 <span className="text-xs font-medium text-[#e2e1f3] flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[16px] text-[#cfbdff]">description</span>
+                  <FileText className="w-4 h-4 text-[#cfbdff] shrink-0" aria-hidden="true" />
                   <span>Curriculum Vitae</span>
                 </span>
                 <span className="text-xs text-[#cbc3d5]/80 font-light">
@@ -283,7 +292,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
             {submitted ? (
               <div className="py-12 flex flex-col items-center text-center gap-4 animate-in fade-in duration-300">
                 <div className="w-16 h-16 rounded-full bg-[#66d9ca]/20 text-[#66d9ca] flex items-center justify-center border border-[#66d9ca]/40">
-                  <span className="material-symbols-outlined text-[32px]">check</span>
+                  <Check className="w-8 h-8 text-[#66d9ca] shrink-0" aria-hidden="true" />
                 </div>
                 <h3 className="font-title-editorial text-2xl text-[#e2e1f3]">
                   Message Sent Successfully!
@@ -307,9 +316,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
               <form onSubmit={handleSubmit} noValidate className="mt-6 flex flex-col gap-4">
                 {errorMessage && (
                   <div className="p-3.5 rounded-xl bg-[#ffb4ab]/10 border border-[#ffb4ab]/30 text-[#ffb4ab] text-xs sm:text-sm flex items-start gap-2.5 animate-in fade-in">
-                    <span className="material-symbols-outlined text-[18px] shrink-0 text-[#ffb4ab] mt-0.5">
-                      error
-                    </span>
+                    <AlertCircle className="w-4 h-4 text-[#ffb4ab] shrink-0 mt-0.5" aria-hidden="true" />
                     <span className="leading-relaxed">{errorMessage}</span>
                   </div>
                 )}
@@ -340,7 +347,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                     />
                     {formErrors.name && (
                       <span className="text-xs text-[#ffb4ab] flex items-center gap-1 mt-0.5 animate-in fade-in">
-                        <span className="material-symbols-outlined text-[14px]">error</span>
+                        <AlertCircle className="w-3.5 h-3.5 text-[#ffb4ab] shrink-0" aria-hidden="true" />
                         {formErrors.name}
                       </span>
                     )}
@@ -371,7 +378,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                     />
                     {formErrors.email && (
                       <span className="text-xs text-[#ffb4ab] flex items-center gap-1 mt-0.5 animate-in fade-in">
-                        <span className="material-symbols-outlined text-[14px]">error</span>
+                        <AlertCircle className="w-3.5 h-3.5 text-[#ffb4ab] shrink-0" aria-hidden="true" />
                         {formErrors.email}
                       </span>
                     )}
@@ -403,7 +410,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                   ></textarea>
                   {formErrors.message && (
                     <span className="text-xs text-[#ffb4ab] flex items-center gap-1 mt-0.5 animate-in fade-in">
-                      <span className="material-symbols-outlined text-[14px]">error</span>
+                      <AlertCircle className="w-3.5 h-3.5 text-[#ffb4ab] shrink-0" aria-hidden="true" />
                       {formErrors.message}
                     </span>
                   )}
@@ -415,9 +422,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
                   disabled={sending}
                   className="min-h-[48px] mt-2 py-3 px-6 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm sm:text-base flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[#9c7cf6]/30 transition-all duration-300 disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  <span className={`material-symbols-outlined text-[18px] ${sending ? 'animate-spin' : ''}`}>
-                    {sending ? 'sync' : 'send'}
-                  </span>
+                  {sending ? (
+                    <Loader2 className="w-4 h-4 animate-spin shrink-0" aria-hidden="true" />
+                  ) : (
+                    <Send className="w-4 h-4 shrink-0" aria-hidden="true" />
+                  )}
                   <span>{sending ? 'Sending message...' : 'Send Message'}</span>
                 </button>
               </form>

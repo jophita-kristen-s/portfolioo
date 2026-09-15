@@ -1,4 +1,5 @@
 import React from 'react';
+import { Users } from 'lucide-react';
 import { LEADERSHIP_DATA } from '../data/portfolioData';
 
 export const LeadershipSection: React.FC = () => {
@@ -13,7 +14,7 @@ export const LeadershipSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-[#282936] pb-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#cfbdff] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[15px]">groups</span>
+              <Users className="w-4 h-4 text-[#cfbdff] shrink-0" aria-hidden="true" />
               <span>CAMPUS &amp; COMMUNITY INITIATIVES</span>
             </div>
             <h2 className="font-headline-sm text-xl sm:text-2xl text-[#e2e1f3] mt-1 font-normal tracking-tight">

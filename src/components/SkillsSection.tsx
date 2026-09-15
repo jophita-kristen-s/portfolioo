@@ -1,4 +1,5 @@
 import React from 'react';
+import { Terminal } from 'lucide-react';
 
 interface SkillCategory {
   id: string;
@@ -111,7 +112,7 @@ export const SkillsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#282936] pb-6">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#cfbdff] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px]">terminal</span>
+              <Terminal className="w-4 h-4 text-[#cfbdff] shrink-0" aria-hidden="true" />
               <span>ENGINEERING REPERTOIRE</span>
             </div>
             <h2 className="font-headline-lg text-3xl md:text-4xl lg:text-5xl text-[#e2e1f3] mt-1 font-normal tracking-tight">

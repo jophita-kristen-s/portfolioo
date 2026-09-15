@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowRight, FileText, ChevronDown } from 'lucide-react';
 import { HERO_IMAGE_URL } from '../data/portfolioData';
 
 interface HeroSectionProps {
@@ -85,7 +86,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] text-[#11121f] font-semibold text-sm sm:text-base shadow-lg shadow-[#9c7cf6]/25 hover:shadow-[#9c7cf6]/40 hover:-translate-y-0.5 transition-all duration-300 min-h-[44px] w-full sm:w-auto"
             >
               <span>View My Work</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
             </a>
 
             <button
@@ -93,7 +94,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               onClick={onOpenResumeModal}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-sm sm:text-base font-semibold shadow-md hover:-translate-y-0.5 transition-all duration-300 min-h-[44px] w-full sm:w-auto cursor-pointer"
             >
-              <span className="material-symbols-outlined text-[18px] text-[#cfbdff]">description</span>
+              <FileText className="w-4 h-4 text-[#cfbdff] shrink-0" aria-hidden="true" />
               <span>View Resume</span>
             </button>
           </div>
@@ -148,6 +149,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 referrerPolicy="no-referrer"
                 onError={(e) => {
                   const target = e.currentTarget;
+                  if (!target.dataset.triedImages) {
+                    target.dataset.triedImages = 'true';
+                    target.src = `${import.meta.env.BASE_URL}images/jk_cosmic_one.png`;
+                    return;
+                  }
                   if (!target.dataset.triedRoot) {
                     target.dataset.triedRoot = 'true';
                     target.src = `${import.meta.env.BASE_URL}jk_cosmic_one.png`;
@@ -202,9 +208,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
             {/* Float chevron */}
             <div className="mt-1 transform group-hover:translate-y-1 transition-transform">
-              <span className="material-symbols-outlined text-[18px] text-[#cfbdff]/70 group-hover:text-[#cfbdff]">
-                keyboard_arrow_down
-              </span>
+              <ChevronDown className="w-4 h-4 text-[#cfbdff]/70 group-hover:text-[#cfbdff] shrink-0" aria-hidden="true" />
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ShieldCheck, GraduationCap, Brain, Presentation, CheckCircle2 } from 'lucide-react';
 import { CERTIFICATIONS_DATA } from '../data/portfolioData';
 
 export const CertificationsSection: React.FC = () => {
@@ -13,7 +14,7 @@ export const CertificationsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-[#282936] pb-4">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#66d9ca] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[15px]">verified_user</span>
+              <ShieldCheck className="w-4 h-4 text-[#66d9ca] shrink-0" aria-hidden="true" />
               <span>ACCREDITATIONS &amp; WORKSHOPS</span>
             </div>
             <h2 className="font-headline-sm text-xl sm:text-2xl text-[#e2e1f3] mt-1 font-normal tracking-tight">
@@ -40,9 +41,13 @@ export const CertificationsSection: React.FC = () => {
               {/* Left: Credential Icon & Details */}
               <div className="flex items-center gap-3.5 min-w-0">
                 <div className="w-10 h-10 rounded-lg bg-[#11121f] border border-[#282936] text-[#66d9ca] flex items-center justify-center shrink-0 group-hover:border-[#66d9ca]/50 transition-colors">
-                  <span className="material-symbols-outlined text-[20px]">
-                    {cert.type === 'Certification' ? 'school' : cert.type === 'Training' ? 'psychology' : 'co_present'}
-                  </span>
+                  {cert.type === 'Certification' ? (
+                    <GraduationCap className="w-5 h-5 shrink-0" aria-hidden="true" />
+                  ) : cert.type === 'Training' ? (
+                    <Brain className="w-5 h-5 shrink-0" aria-hidden="true" />
+                  ) : (
+                    <Presentation className="w-5 h-5 shrink-0" aria-hidden="true" />
+                  )}
                 </div>
 
                 <div className="flex flex-col min-w-0">
@@ -62,9 +67,7 @@ export const CertificationsSection: React.FC = () => {
                 <span className="px-2.5 py-1 rounded-md bg-[#11121f] text-[11px] font-mono text-[#cfbdff] border border-[#282936]">
                   {cert.type || 'Program'}
                 </span>
-                <span className="material-symbols-outlined text-[#66d9ca] text-[16px]">
-                  verified
-                </span>
+                <CheckCircle2 className="w-4 h-4 text-[#66d9ca] shrink-0" aria-hidden="true" />
               </div>
             </div>
           ))}

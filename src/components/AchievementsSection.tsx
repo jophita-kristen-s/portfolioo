@@ -1,4 +1,5 @@
 import React from 'react';
+import { Trophy, Award, Banknote } from 'lucide-react';
 import { ACHIEVEMENTS_DATA } from '../data/portfolioData';
 
 export const AchievementsSection: React.FC = () => {
@@ -31,7 +32,7 @@ export const AchievementsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#282936] pb-5">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#ffb1c3] text-xs font-semibold uppercase tracking-widest">
-              <span className="material-symbols-outlined text-[16px]">military_tech</span>
+              <Trophy className="w-4 h-4 text-[#ffb1c3] shrink-0" aria-hidden="true" />
               <span>HONORS &amp; RECOGNITION</span>
             </div>
             <h2 className="font-headline-lg text-3xl md:text-4xl text-[#e2e1f3] mt-1 font-normal tracking-tight">
@@ -76,11 +77,15 @@ export const AchievementsSection: React.FC = () => {
                   {/* Top Bar: Placement Chip + Year */}
                   <div className="flex items-center justify-between gap-2">
                     <span
-                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-mono font-semibold border ${badgeColor}`}
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono font-semibold border ${badgeColor}`}
                     >
-                      <span className="material-symbols-outlined text-[14px]">
-                        {isGrant ? 'payments' : isFirstPlace || isSecondPlace ? 'emoji_events' : 'verified'}
-                      </span>
+                      {isGrant ? (
+                        <Banknote className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                      ) : isFirstPlace || isSecondPlace ? (
+                        <Trophy className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                      ) : (
+                        <Award className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                      )}
                       <span>{item.badge}</span>
                     </span>
 
