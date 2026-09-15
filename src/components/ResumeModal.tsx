@@ -18,6 +18,8 @@ interface ResumeModalProps {
   onClose: () => void;
 }
 
+const RESUME_PDF_URL = `${import.meta.env.BASE_URL}resume/Jophita_Kristen_S_Resume.pdf`;
+
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   const [viewMode, setViewMode] = useState<'document' | 'text'>('document');
@@ -41,11 +43,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   }, [isOpen, isFullscreen, onClose]);
 
   if (!isOpen) return null;
-
-  // Real download / print action triggering browser PDF export
-  const handleDownload = () => {
-    window.print();
-  };
 
   const generatePlainTextResume = () => {
     return `${PERSONAL_INFO.name.toUpperCase()}
@@ -214,16 +211,16 @@ ${CERTIFICATIONS_DATA.map(
               <span>{copied ? 'Copied' : 'Copy Text'}</span>
             </button>
 
-            {/* Download Resume / Print PDF */}
-            <button
-              type="button"
-              onClick={handleDownload}
-              title="Save clean, standard PDF via system print dialog"
+            {/* Download Resume PDF */}
+            <a
+              href={RESUME_PDF_URL}
+              download="Jophita_Kristen_S_Resume.pdf"
+              title="Download Jophita Kristen S. Resume PDF"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] text-[#66d9ca] hover:text-[#66d9ca] text-xs font-semibold border border-[#333441] hover:border-[#66d9ca]/50 transition-all shadow-xs min-h-[44px] sm:min-h-0 cursor-pointer"
             >
               <Download className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-              <span>Download PDF</span>
-            </button>
+              <span>Download Resume</span>
+            </a>
 
             {/* Fullscreen Toggle */}
             <button
@@ -516,13 +513,13 @@ ${CERTIFICATIONS_DATA.map(
           </div>
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={handleDownload}
-              className="px-4 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] text-[#cfbdff] text-xs font-semibold border border-[#333441] transition-colors"
+            <a
+              href={RESUME_PDF_URL}
+              download="Jophita_Kristen_S_Resume.pdf"
+              className="px-4 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] text-[#cfbdff] text-xs font-semibold border border-[#333441] transition-colors inline-flex items-center justify-center min-h-[44px] sm:min-h-0 cursor-pointer"
             >
               Download PDF
-            </button>
+            </a>
             <button
               type="button"
               onClick={onClose}
