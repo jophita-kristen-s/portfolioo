@@ -5,7 +5,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative w-full px-4 md:px-8 lg:px-12 py-20 bg-[#11121f]"
+      className="relative w-full px-4 md:px-8 lg:px-12 py-20 bg-[#020617]/35 border-t border-[#1e2238]/60 backdrop-blur-[1px]"
     >
       <div className="max-w-[1280px] mx-auto flex flex-col gap-12">
         {/* Section Header */}

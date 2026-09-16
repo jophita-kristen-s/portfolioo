@@ -149,7 +149,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResumeModa
   return (
     <section
       id="contact"
-      className="relative w-full px-4 md:px-8 lg:px-12 py-20 bg-[#0c0d19] border-t border-[#1d1f2b] overflow-hidden"
+      className="relative w-full px-4 md:px-8 lg:px-12 py-20 bg-[#020617]/45 border-t border-[#1e2238]/60 overflow-hidden backdrop-blur-[1px]"
     >
       {/* Subtle Cosmic Ambience Background Accents */}
       <div className="absolute top-1/4 left-[-10%] w-[380px] h-[380px] rounded-full bg-[#9c7cf6]/5 blur-[120px] pointer-events-none" />

@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="footer" className="w-full bg-[#0c0d19] border-t border-[#1d1f2b] pt-16 pb-12 px-4 md:px-8 lg:px-12">
+    <footer id="footer" className="w-full bg-[#020617]/80 border-t border-[#1e2238]/60 pt-16 pb-12 px-4 md:px-8 lg:px-12 backdrop-blur-[2px]">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-12">
         {/* Top Tier: Brand, Navigation & Socials */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">

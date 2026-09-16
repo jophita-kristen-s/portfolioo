@@ -70,7 +70,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenResumeModal }) => 
   }, []);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-[#0c0d19]/80 backdrop-blur-xl border-b border-[#282936]/60 shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+    <header className="fixed top-0 inset-x-0 z-50 bg-[#020617]/75 backdrop-blur-xl border-b border-[#1e2238]/60 shadow-[0_4px_30px_rgba(2,6,23,0.7)]">
       <div className="h-20 max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between gap-4">
         
         {/* Brand / Logo */}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CosmicBackground } from './components/cosmic/CosmicBackground';
 import { Navigation } from './components/Navigation';
 import { HeroSection } from './components/HeroSection';
 import { UniverseSection } from './components/UniverseSection';
@@ -22,12 +23,15 @@ export function App() {
   const [resumeModalOpen, setResumeModalOpen] = useState<boolean>(false);
 
   return (
-    <div className="min-h-screen cosmic-gradient text-[#e2e1f3] flex flex-col w-full max-w-full overflow-x-hidden selection:bg-[#9c7cf6] selection:text-[#320082]">
+    <div className="min-h-screen text-[#e2e1f3] flex flex-col w-full max-w-full overflow-x-hidden relative selection:bg-[#9c7cf6] selection:text-[#320082]">
+      {/* Global Realistic Deep-Space Cosmic Background System */}
+      <CosmicBackground />
+
       {/* Sticky Navigation Header */}
       <Navigation onOpenResumeModal={() => setResumeModalOpen(true)} />
 
       {/* Main Single-Page Vertical Flow: All 14 Sections Stacked Vertically */}
-      <main className="w-full max-w-full overflow-x-hidden pt-20 flex flex-col">
+      <main className="relative z-10 w-full max-w-full overflow-x-hidden pt-20 flex flex-col">
         {/* Section 1: Home / Hero */}
         <HeroSection onOpenResumeModal={() => setResumeModalOpen(true)} />
 

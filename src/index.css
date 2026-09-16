@@ -5,13 +5,25 @@
     --font-playfair: 'Playfair Display', serif;
     --font-jakarta: 'Plus Jakarta Sans', sans-serif;
     --font-caveat: 'Caveat', cursive;
+
+    /* Cosmic Deep Space Design Tokens */
+    --cosmic-base-dark: #020617;
+    --cosmic-base-midnight: #030822;
+    --cosmic-base-deep: #050b2e;
+    --cosmic-base-navy: #07113d;
+    --cosmic-purple-deep: #2e0854;
+    --cosmic-violet: #6b21a8;
+    --cosmic-magenta: #c026d3;
+    --cosmic-blue-electric: #1d4ed8;
+    --cosmic-cyan-cool: #06b6d4;
+    --cosmic-lavender: #cfbdff;
   }
 
   html, body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    background-color: #11121f;
+    background-color: #020617;
     color: #e2e1f3;
     overflow-x: hidden;
     width: 100%;
@@ -72,9 +84,9 @@
 }
 
 .cosmic-gradient {
-  background-color: #11121f;
+  background-color: #020617;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(156, 124, 246, 0.15), rgba(17, 18, 31, 0) 70%),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(156, 124, 246, 0.15), rgba(2, 6, 23, 0) 70%),
     radial-gradient(circle at 85% 30%, rgba(102, 217, 202, 0.08), transparent 45%),
     radial-gradient(circle at 15% 75%, rgba(255, 177, 195, 0.06), transparent 45%);
 }
@@ -95,6 +107,58 @@
 
 .animate-subtle-pulse {
   animation: pulse-subtle 4s ease-in-out infinite;
+}
+
+/* Authentic Astrophotography Cosmic Keyframes */
+@keyframes radiant-star-pulse {
+  0%, 100% {
+    opacity: 0.82;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.18);
+  }
+}
+
+@keyframes galaxy-slow-drift {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-galaxy-slow {
+  animation: galaxy-slow-drift 320s linear infinite;
+  transform-origin: 200px 200px;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(14px, -20px, 0);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 18s ease-in-out infinite;
+}
+
+@keyframes orbit-slow-svg {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 200;
+  }
+}
+
+.animate-orbit-slow-svg {
+  animation: orbit-slow-svg 80s linear infinite;
 }
 
 /* Professional Print Styles for Resume */

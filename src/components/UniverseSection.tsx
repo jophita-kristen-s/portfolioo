@@ -36,7 +36,7 @@ export const UniverseSection: React.FC = () => {
   return (
     <section
       id="universe"
-      className="relative w-full px-4 md:px-8 lg:px-12 py-10 sm:py-12 bg-[#0c0d19]/60 border-t border-b border-[#1d1f2b]"
+      className="relative w-full px-4 md:px-8 lg:px-12 py-10 sm:py-12 bg-[#020617]/35 border-t border-b border-[#1e2238]/60 backdrop-blur-[1px]"
     >
       <div className="max-w-[1280px] mx-auto flex flex-col gap-6 sm:gap-7">
         {/* Section Header */}

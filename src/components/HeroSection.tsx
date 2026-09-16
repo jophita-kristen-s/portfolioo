@@ -28,15 +28,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
       id="home"
       className="relative w-full overflow-hidden px-4 md:px-8 lg:px-12 pt-6 sm:pt-8 md:pt-10 pb-16 lg:pb-24"
     >
-      {/* Subtle atmospheric stardust glows in background */}
-      <div className="absolute top-8 left-1/4 w-80 sm:w-96 h-80 sm:h-96 bg-[#9c7cf6]/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-      <div className="absolute bottom-12 right-12 w-72 sm:w-80 h-72 sm:h-80 bg-[#ffb1c3]/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-
-      {/* Tiny scattered ambient stars */}
-      <div className="absolute top-16 left-12 w-1.5 h-1.5 rounded-full bg-[#cfbdff]/60 pointer-events-none animate-pulse"></div>
-      <div className="absolute top-28 right-1/3 w-1 h-1 rounded-full bg-[#66d9ca]/50 pointer-events-none"></div>
-      <div className="absolute bottom-24 left-1/5 w-1 h-1 rounded-full bg-[#ffb1c3]/50 pointer-events-none animate-pulse"></div>
-
       <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         {/* Main Column: Strictly Structured Visual Reading Path (WHO → WHAT → PROOF → ACTION) */}
@@ -132,8 +123,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
             </svg>
           </div>
 
-          {/* Outer Frame: Elegant Arched Window with Understated Cosmic Details */}
-          <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] aspect-[4/5] rounded-t-[170px] rounded-b-2xl p-2.5 bg-[#282936]/40 border border-[#494553]/50 shadow-2xl backdrop-blur-md group">
+          {/* Outer Frame: Elegant Arched Window with Luminous Cosmic Glow matching reference */}
+          <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] aspect-[4/5] rounded-t-[170px] rounded-b-2xl p-2.5 bg-[#03071e]/30 border border-[#60a5fa]/60 shadow-[0_0_40px_rgba(37,99,235,0.35)] backdrop-blur-md group">
             
             {/* Corner Constellation Glow Nodes */}
             <span className="absolute top-3 left-3 w-2 h-2 rounded-full bg-[#cfbdff]/80 shadow-[0_0_8px_#9c7cf6]"></span>

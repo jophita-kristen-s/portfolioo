@@ -6,7 +6,7 @@ export const EducationSection: React.FC = () => {
   return (
     <section
       id="education"
-      className="relative w-full px-4 md:px-8 lg:px-12 py-12 sm:py-14 bg-[#0c0d19]/80 border-t border-[#1d1f2b]"
+      className="relative w-full px-4 md:px-8 lg:px-12 py-12 sm:py-14 bg-[#020617]/40 border-t border-[#1e2238]/60 backdrop-blur-[1px]"
     >
       <div className="max-w-[1280px] mx-auto flex flex-col gap-8 sm:gap-10">
         {/* Header */}

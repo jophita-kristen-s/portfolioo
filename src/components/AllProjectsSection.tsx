@@ -6,7 +6,7 @@ interface AllProjectsSectionProps {
 
 export const AllProjectsSection: React.FC<AllProjectsSectionProps> = () => {
   return (
-    <section id="other-projects" className="w-full px-4 md:px-8 lg:px-12 py-8 sm:py-10 bg-[#0c0d19]/60 border-b border-[#1d1f2b]">
+    <section id="other-projects" className="w-full px-4 md:px-8 lg:px-12 py-8 sm:py-10 bg-[#020617]/35 border-b border-[#1e2238]/60 backdrop-blur-[1px]">
       <div className="max-w-[1280px] mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 sm:p-6 rounded-xl bg-[#11121f]/70 border border-[#282936]">
         <div className="flex flex-col gap-1 max-w-2xl">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#948e9e]">
