@@ -167,30 +167,34 @@ export const ALL_PROJECTS: Project[] = [
     id: 'dr-screening',
     number: '01',
     title: 'Explainable AI for Diabetic Retinopathy Screening',
-    subtitle: 'SIH 2026 — Project in Development | Rural Healthcare Triage with MATLAB & Simulink',
-    description: 'An explainable screening pipeline for diabetic retinopathy in rural healthcare triage, incorporating lesion detection and Level 0–4 severity grading. Currently developing and refining this solution for SIH 2026.',
+    subtitle: 'Rural Healthcare Triage · MATLAB & Simulink',
+    description: 'An explainable screening pipeline for diabetic retinopathy in rural healthcare triage, incorporating lesion detection and Level 0–4 severity grading.',
     category: 'ai-ml',
-    badgeCategory: 'SIH 2026',
+    badgeCategory: 'AI / COMPUTER VISION',
+    statusLabel: 'IN DEVELOPMENT',
     bannerTitle: 'DIABETIC RETINOPATHY',
     bannerDetail: 'Level 0–4 Severity Grading',
     bannerSubtext: 'MATLAB • Simulink • Grad-CAM',
     iconName: 'visibility',
     tags: ['MATLAB', 'Simulink', 'Explainable AI', 'Grad-CAM', 'Computer Vision'],
-    statusLabel: 'SIH 2026 • IN DEVELOPMENT',
     eventOrContext: 'Smart India Hackathon 2026 — Participating Project',
     teamSize: '6-member team',
     problem: 'Rural primary health centers lack on-site ophthalmologists for early diabetic retinopathy screening, leading to preventable vision loss and non-explainable black-box triage.',
     solution: 'Engineered an explainable screening workflow in MATLAB and Simulink that assesses fundus image quality, localizes microaneurysms and exudates, assigns clinical severity stages (Level 0–4), and renders Grad-CAM feature heatmaps.',
+    workflowPreview: [
+      'Image Preprocessing & Illumination Enhancement',
+      'Microaneurysm & Exudate Localization',
+      'Simulink Level 0–4 Severity Staging',
+      'Grad-CAM Interpretability Heatmaps'
+    ],
     contribution: {
       role: 'ML & Signal Processing Engineer',
       team: '6-member team (Smart India Hackathon 2026 — Participating Project)',
       summaryLine: 'Image preprocessing • Lesion localization • Simulink severity staging • Grad-CAM heatmaps',
       contributions: [
-        'Image quality assessment & illumination enhancement preprocessing in MATLAB',
+        'Image quality assessment and illumination enhancement preprocessing in MATLAB',
         'Lesion feature extraction for microaneurysm and exudate localization',
-        'Simulink workflow design for Level 0–4 clinical severity staging',
-        'Grad-CAM heatmap feature attribution visualization for clinical interpretability',
-        'Automated diagnostic summary generation for health workers'
+        'Simulink workflow design for Level 0–4 clinical severity staging'
       ],
       teamContext: 'Dataset curation, clinical protocol research, and validation review were conducted collaboratively with team members.'
     },
@@ -225,17 +229,22 @@ export const ALL_PROJECTS: Project[] = [
     subtitle: 'Integrated Patient Portal & Hospital Management Ecosystem',
     description: 'Integrated healthcare management ecosystem combining a patient portal (CareFlow) and central hospital administration dashboard (MediCareConnect).',
     category: 'web-app',
-    badgeCategory: 'Full-Stack Ecosystem',
+    badgeCategory: 'FULL-STACK / HEALTHCARE',
+    statusLabel: 'ENGINEERED SYSTEM',
     bannerTitle: 'SMART HOSPITAL AI',
     bannerDetail: 'CareFlow + MediCareConnect',
     bannerSubtext: 'Node.js • Express • MongoDB • REST APIs',
     iconName: 'local_hospital',
     tags: ['Node.js', 'Express', 'MongoDB', 'REST APIs', 'JWT'],
-    statusLabel: 'Team of 5',
-    eventOrContext: 'Engineering Project',
     teamSize: '5-member team',
     problem: 'Fragmented hospital intake records, uncoordinated patient scheduling, and siloed administrative records create operational bottlenecks across facilities.',
     solution: 'Unified healthcare ecosystem providing modular RESTful APIs for patient record intake, appointment scheduling, and structured bed occupancy tracking.',
+    workflowPreview: [
+      'CareFlow Patient Portal Intake',
+      'MediCareConnect Central Admin',
+      'Node & Express REST API Services',
+      'MongoDB Document Store & JWT Auth'
+    ],
     contribution: {
       role: 'Backend Developer & API Testing',
       team: '5-member team',
@@ -275,27 +284,33 @@ export const ALL_PROJECTS: Project[] = [
     number: '03',
     title: 'ResuMatch Ultra',
     subtitle: 'Resume Parsing & Skill-Matching Analytics Engine',
-    description: 'An automated resume analysis pipeline that parses resume text, computes TF-IDF vector representations, and calculates cosine similarity match scores against job requirements to identify skill proficiencies and gaps.',
+    description: 'An automated resume analysis pipeline that parses resume text, computes TF-IDF representations, and calculates cosine similarity match scores against job criteria.',
     category: 'ai-ml',
-    badgeCategory: 'AI Job Intelligence',
+    badgeCategory: 'AI / NLP',
+    statusLabel: 'SOLO PROJECT',
     bannerTitle: 'RESUMATCH ULTRA',
     bannerDetail: 'Skill Gap & Semantic Match',
     bannerSubtext: 'Python • Scikit-learn • TF-IDF',
     iconName: 'badge',
     tags: ['Python', 'Scikit-learn', 'TF-IDF', 'Cosine Similarity', 'NLP'],
-    statusLabel: 'Engineered System',
     teamSize: 'Solo Project',
     problem: 'Job candidates struggle to identify missing competencies for target roles, while hiring teams face manual, inconsistent resume screening.',
     solution: 'Implemented text extraction and TF-IDF vectorization with cosine similarity in Python and Scikit-learn to benchmark resumes against role requirements and deliver structured skill gap breakdowns.',
+    workflowPreview: [
+      'Document Text Parsing & Normalization',
+      'TF-IDF Feature Vector Matrix',
+      'Cosine Similarity Alignment Metric',
+      'Structured Skill Gap Analysis Report'
+    ],
     contribution: {
-      role: 'Lead Developer (Solo Project)',
+      role: 'Lead Developer / Solo Project',
       team: 'Solo Project',
       summaryLine: 'Document text extraction • TF-IDF vectorization • Cosine similarity scoring • Skill gap breakdown',
       contributions: [
         'Document text extraction and token normalization routines in Python',
         'TF-IDF vectorization pipeline transforming unstructured resume and job description text',
         'Cosine similarity calculation measuring candidate-to-role semantic alignment',
-        'Structured skill gap output reporting categorized proficiencies'
+        'Structured skill gap breakdown isolating matching proficiencies and missing competencies'
       ]
     },
     features: [
@@ -320,30 +335,93 @@ export const ALL_PROJECTS: Project[] = [
     }
   },
   {
-    id: 'scanline',
+    id: 'encrowatch',
     number: '04',
+    title: 'EncroWatch',
+    subtitle: 'Geospatial Encroachment Monitoring for Puducherry',
+    description: 'A geospatial encroachment monitoring application analyzing multi-temporal satellite imagery to detect land cover changes, monitor municipal boundaries, and support civic incident reporting.',
+    category: 'web-app',
+    badgeCategory: 'GIS / GOVTECH',
+    statusLabel: 'TEAM PROJECT',
+    bannerTitle: 'ENCROWATCH',
+    bannerDetail: 'Puducherry Geospatial Audit',
+    bannerSubtext: 'Python • Flask • Google Earth Engine',
+    iconName: 'map',
+    tags: ['Python', 'Flask', 'Google Earth Engine', 'GIS', 'Satellite Imagery'],
+    teamSize: '5-member team',
+    problem: 'Civic authorities lack an automated remote-sensing workflow to detect, catalog, and respond to unauthorized municipal and coastal land encroachments across Puducherry.',
+    solution: 'Engineered a Python and Flask backend integrated with Google Earth Engine to access and process satellite imagery, evaluate land cover changes over time, and log civic encroachment reports.',
+    workflowPreview: [
+      'Google Earth Engine Ingestion',
+      'Multi-Temporal Spectral Comparison',
+      'Municipal Boundary Delta Detection',
+      'Incident Audit Report Generation'
+    ],
+    contribution: {
+      role: 'Backend & Geospatial Analysis Developer',
+      team: '5-member team',
+      summaryLine: 'Flask backend services • Google Earth Engine API • Satellite imagery processing • Incident reporting',
+      contributions: [
+        'Flask backend services and endpoints for geospatial queries',
+        'Google Earth Engine API integration to ingest and process multi-temporal satellite data for Puducherry',
+        'Spatial comparison logic to identify land cover shifts across monitored zones',
+        'Structured incident reporting and audit logging workflows for municipal audits'
+      ],
+      teamContext: 'Frontend interface, GIS boundary datasets, and municipal field validation were developed collaboratively with fellow team members.'
+    },
+    features: [
+      'Google Earth Engine integration for multi-temporal satellite imagery analysis',
+      'Flask web service handling spatial data queries and incident records',
+      'Land cover change detection across municipal and coastal zones',
+      'Structured encroachment audit logging and incident documentation'
+    ],
+    longOverview: 'EncroWatch was engineered with a 5-member team to assist civic administration in monitoring and cataloging land boundary encroachments across the Union Territory of Puducherry. Built using Python, Flask, and Google Earth Engine, the system processes satellite imagery and geospatial data to identify unauthorized developments, evaluate temporal vegetative and land cover shifts, and support structured civic audit reporting.',
+    technicalHighlights: [
+      'Google Earth Engine API integration for processing remote sensing and satellite data collections',
+      'Flask application architecture managing spatial queries and incident record persistence',
+      'Temporal imagery comparison workflows isolating changes against baseline municipal zone boundaries'
+    ],
+    githubUrl: 'https://github.com/jophita-kristen-s/EncroWatch.git',
+    githubRepoType: 'public',
+    evidence: {
+      githubUrl: 'https://github.com/jophita-kristen-s/EncroWatch.git',
+      readmeUrl: 'https://github.com/jophita-kristen-s/EncroWatch#readme',
+      repoStatus: 'available',
+      demoStatus: 'unavailable'
+    }
+  },
+  {
+    id: 'scanline',
+    number: '05',
     title: 'Scanline',
     subtitle: 'Browser-Based Smart Checkout & Multi-Item Detection',
-    description: 'Scanline is a browser-based smart checkout tool that uses camera-based item detection to identify multiple products placed on a flat surface, match them against a product catalog, and automatically calculate the total price without barcode scanning or manual entry.',
+    description: 'A browser-based smart checkout tool that uses camera-based item detection to identify multiple products placed on a flat surface, match them against a catalog, and calculate total price without barcodes.',
     category: 'ai-ml',
-    badgeCategory: 'Computer Vision',
+    badgeCategory: 'COMPUTER VISION / TESTING',
+    statusLabel: 'IN TESTING',
+    statusNote: 'Currently under active testing and refinement. Not yet production-ready.',
     bannerTitle: 'SCANLINE',
     bannerDetail: 'Smart Checkout & Multi-Item Detection',
     bannerSubtext: 'Camera Capture • Item Detection • Auto-Pricing',
     iconName: 'shopping_cart_checkout',
     tags: ['Camera Capture API', 'Multi-Item Detection', 'Product Catalog', 'Automated Pricing'],
-    statusLabel: 'In Testing',
     teamSize: 'Solo Project',
     problem: 'Traditional retail checkouts rely on tedious manual barcode scanning or manual price entry, creating checkout bottlenecks when handling multiple items.',
     solution: 'Developing a browser-based smart checkout tool that scans items laid out on a flat surface via a camera feed, detects multiple items simultaneously, matches them against a product catalog, and automatically calculates the total price without barcode scanning.',
+    workflowPreview: [
+      'Browser Camera Feed Capture',
+      'Simultaneous Multi-Item Detection',
+      'Product Catalog Price Lookup',
+      'Instant Total Bill Computation'
+    ],
     contribution: {
-      role: 'Developer (Solo Project)',
-      team: 'Solo Project',
+      role: 'Developer / Solo Project',
+      team: 'Solo Project (In Active Testing)',
       summaryLine: 'Browser-based camera scanning • Multi-item detection • Automated price calculation',
       contributions: [
-        'Developed and tested the browser-based camera scanning workflow for flat surface item layouts',
-        'Implemented the multi-item detection and price-calculation workflow without barcode scanners or manual entry',
-        'Worked on product identification and product catalog integration (currently in active testing and refinement)'
+        'Browser-based camera scanning workflow for flat surface item layouts',
+        'Multi-item detection and automated price-calculation pipeline without barcode scanners',
+        'Product identification and product catalog integration in active testing and refinement'
       ]
     },
     features: [
@@ -370,58 +448,61 @@ export const ALL_PROJECTS: Project[] = [
     }
   },
   {
-    id: 'encrowatch',
-    number: '05',
-    title: 'EncroWatch',
-    subtitle: 'Geospatial Encroachment Monitoring for Puducherry',
-    description: 'A geospatial encroachment monitoring application for the Puducherry region built with Python, Flask, and Google Earth Engine. Analyzes multi-temporal satellite imagery to detect land cover changes, monitor municipal boundaries, and support civic incident reporting.',
+    id: 'sse-realtime-messaging',
+    number: '06',
+    title: 'SSE Real-Time Messaging App',
+    subtitle: 'Lightweight Unidirectional Streaming via Python & Flask',
+    description: 'A real-time messaging application delivering persistent low-latency server-to-client message streaming over standard HTTP connections using Server-Sent Events (SSE).',
     category: 'web-app',
-    badgeCategory: 'GovTech GIS',
-    bannerTitle: 'ENCROWATCH',
-    bannerDetail: 'Puducherry Geospatial Audit',
-    bannerSubtext: 'Python • Flask • Google Earth Engine',
-    iconName: 'map',
-    tags: ['Python', 'Flask', 'Google Earth Engine', 'GIS', 'Satellite Imagery'],
-    statusLabel: 'Team of 5',
-    teamSize: '5-member team',
-    problem: 'Civic authorities lack an automated remote-sensing workflow to detect, catalog, and respond to unauthorized municipal and coastal land encroachments across Puducherry.',
-    solution: 'Engineered a Python and Flask backend integrated with Google Earth Engine to access and process satellite imagery, evaluate land cover changes over time, and log civic encroachment reports.',
+    badgeCategory: 'REAL-TIME SYSTEMS',
+    statusLabel: 'COMPLETED',
+    bannerTitle: 'SSE MESSAGING APP',
+    bannerDetail: 'Server-Sent Events Stream',
+    bannerSubtext: 'Python • Flask • Server-Sent Events (SSE)',
+    iconName: 'send_time_extension',
+    tags: ['Python', 'Flask', 'Server-Sent Events (SSE)', 'EventSource API'],
+    teamSize: 'Solo Project',
+    problem: 'Full-duplex WebSockets introduce excessive server state complexity, persistent socket daemon overhead, and firewall traversal friction when an application only needs server-to-client streaming.',
+    solution: 'Engineered a lightweight real-time stream using Python, Flask, and Server-Sent Events (SSE) over standard HTTP connections with built-in automatic client reconnection and event dispatching.',
+    workflowPreview: [
+      'Flask Streaming HTTP Service',
+      'text/event-stream Protocol Pipeline',
+      'Browser EventSource API Client',
+      'Automatic Reconnect & Stream Lifecycle'
+    ],
     contribution: {
-      role: 'Backend & Geospatial Analysis Developer',
-      team: '5-member team',
-      summaryLine: 'Flask backend services • Google Earth Engine API integration • Satellite imagery processing • Incident reporting',
+      role: 'Backend Developer / Solo Project',
+      team: 'Solo Project',
+      summaryLine: 'Flask streaming backend • text/event-stream response protocol • EventSource client • Connection lifecycle',
       contributions: [
-        'Developed Flask backend services and endpoints for geospatial queries',
-        'Integrated Google Earth Engine API to ingest and process multi-temporal satellite data for Puducherry',
-        'Implemented spatial comparison logic to identify land cover shifts across monitored zones',
-        'Built structured incident reporting and logging workflows for municipal audits'
-      ],
-      teamContext: 'Frontend interface, GIS boundary datasets, and municipal field validation were developed collaboratively with fellow team members.'
+        'Flask streaming server utilizing text/event-stream HTTP response protocol',
+        'Browser-native EventSource API integration with automatic reconnection handling',
+        'Generator-based event streaming and connection lifecycle management'
+      ]
     },
     features: [
-      'Google Earth Engine integration for multi-temporal satellite imagery analysis',
-      'Flask web service handling spatial data queries and incident records',
-      'Land cover change detection across municipal and coastal zones',
-      'Structured encroachment audit logging and incident documentation'
+      'Server-Sent Events (SSE) stream implementation over standard HTTP',
+      'Browser-native EventSource API integration with automatic reconnection',
+      'Lightweight unidirectional transport without WebSocket daemon overhead',
+      'Live message streaming and event dispatching'
     ],
-    longOverview: 'EncroWatch was engineered with a 5-member team to assist civic administration in monitoring and cataloging land boundary encroachments across the Union Territory of Puducherry. Built using Python, Flask, and Google Earth Engine, the system processes satellite imagery and geospatial data to identify unauthorized developments, evaluate temporal vegetative and land cover shifts, and support structured civic audit reporting.',
+    longOverview: 'Engineered to examine alternatives to WebSockets for real-time applications where server-to-client broadcast is the primary requirement. Built using Python, Flask, and Server-Sent Events (SSE), establishing a persistent HTTP connection with automatic reconnection handling and event stream parsing.',
     technicalHighlights: [
-      'Google Earth Engine API integration for processing remote sensing and satellite data collections',
-      'Flask application architecture managing spatial queries and incident record persistence',
-      'Temporal imagery comparison workflows isolating changes against baseline municipal zone boundaries'
+      'Configured text/event-stream headers and Python generator yield functions for streaming data',
+      'Client-side EventSource API integration handling reconnections and message events'
     ],
-    githubUrl: 'https://github.com/jophita-kristen-s/EncroWatch.git',
+    githubUrl: 'https://github.com/jophita-kristen-s/sse.git',
     githubRepoType: 'public',
     evidence: {
-      githubUrl: 'https://github.com/jophita-kristen-s/EncroWatch.git',
-      readmeUrl: 'https://github.com/jophita-kristen-s/EncroWatch#readme',
+      githubUrl: 'https://github.com/jophita-kristen-s/sse.git',
+      readmeUrl: 'https://github.com/jophita-kristen-s/sse#readme',
       repoStatus: 'available',
       demoStatus: 'unavailable'
     }
   },
   {
     id: 'voter-epic',
-    number: '06',
+    number: '07',
     title: 'Voter EPIC Extraction Pipeline',
     subtitle: 'Multi-Pass OCR & Watermark Handling for Electoral Cards',
     description: 'An automated document processing pipeline designed to parse voter identity cards (EPIC) across degraded scans. Features multi-pass OCR, watermark detection and filtering, degraded-scan contrast normalization, and systematic OCR error debugging.',
@@ -749,54 +830,6 @@ export const ALL_PROJECTS: Project[] = [
     ],
     githubUrl: 'https://github.com/jophita-kristen-s/Customer-Satisfaction-Prediction-.git',
     githubRepoType: 'public'
-  },
-  {
-    id: 'sse-realtime-messaging',
-    number: '18',
-    title: 'SSE Real-Time Messaging App',
-    subtitle: 'Lightweight Unidirectional Streaming via Python & Flask',
-    description: 'A real-time messaging application engineered with Python, Flask, and Server-Sent Events (SSE). Delivers persistent low-latency server-to-client message streaming over standard HTTP connections without the overhead of full duplex WebSockets.',
-    category: 'web-app',
-    badgeCategory: 'Real-Time Systems',
-    bannerTitle: 'SSE MESSAGING APP',
-    bannerDetail: 'Server-Sent Events Stream',
-    bannerSubtext: 'Python • Flask • Server-Sent Events (SSE)',
-    iconName: 'send_time_extension',
-    tags: ['Python', 'Flask', 'Server-Sent Events (SSE)', 'EventSource API'],
-    statusLabel: 'Real-Time System',
-    teamSize: 'Solo Project',
-    problem: 'Full-duplex WebSockets introduce excessive server state complexity, persistent socket daemon overhead, and firewall traversal friction when an application only needs server-to-client streaming.',
-    solution: 'Engineered a lightweight real-time stream using Python, Flask, and Server-Sent Events (SSE) over standard HTTP connections with built-in automatic client reconnection and event dispatching.',
-    contribution: {
-      role: 'Backend Developer (Solo Project)',
-      team: 'Solo Project',
-      summaryLine: 'Flask streaming backend • text/event-stream response protocol • EventSource client • Connection lifecycle',
-      contributions: [
-        'Flask streaming server utilizing text/event-stream HTTP response protocol',
-        'Generator-based event streaming and real-time message dispatching',
-        'Browser EventSource API integration with automatic reconnection handling',
-        'Stateless, low-overhead unidirectional broadcast pipeline'
-      ]
-    },
-    features: [
-      'Server-Sent Events (SSE) stream implementation over standard HTTP',
-      'Browser-native EventSource API integration with automatic reconnection',
-      'Lightweight unidirectional transport without WebSocket daemon overhead',
-      'Live message streaming and event dispatching'
-    ],
-    longOverview: 'Engineered to examine alternatives to WebSockets for real-time applications where server-to-client broadcast is the primary requirement. Built using Python, Flask, and Server-Sent Events (SSE), establishing a persistent HTTP connection with automatic reconnection handling and event stream parsing.',
-    technicalHighlights: [
-      'Configured text/event-stream headers and Python generator yield functions for streaming data',
-      'Client-side EventSource API integration handling reconnections and message events'
-    ],
-    githubUrl: 'https://github.com/jophita-kristen-s/sse.git',
-    githubRepoType: 'public',
-    evidence: {
-      githubUrl: 'https://github.com/jophita-kristen-s/sse.git',
-      readmeUrl: 'https://github.com/jophita-kristen-s/sse#readme',
-      repoStatus: 'available',
-      demoStatus: 'unavailable'
-    }
   }
 ];
 

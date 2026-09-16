@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, UserCheck, ArrowRight, ExternalLink, FileText, Check } from 'lucide-react';
+import { Code, UserCheck, ArrowRight, ExternalLink, FileText, Check, Layers, AlertCircle } from 'lucide-react';
 import { ALL_PROJECTS, FEATURED_PROJECT_IDS } from '../data/portfolioData';
 
 interface FeaturedProjectSectionProps {
@@ -29,14 +29,14 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
           <div>
             <div className="inline-flex items-center gap-1.5 text-[#ffb1c3] text-xs font-semibold uppercase tracking-widest">
               <Code className="w-4 h-4 shrink-0 text-[#ffb1c3]" aria-hidden="true" />
-              <span>Engineering Evidence &amp; Repositories</span>
+              <span>Engineering Evidence &amp; Architecture</span>
             </div>
             <h2 className="font-headline-lg text-3xl md:text-4xl lg:text-5xl text-[#e2e1f3] mt-1 font-normal">
               Featured Projects
             </h2>
           </div>
-          <p className="text-sm md:text-base text-[#cbc3d5] max-w-lg font-light">
-            Six engineering systems across clinical triage, healthcare management, candidate intelligence, geospatial monitoring, smart checkout, and real-time streaming.
+          <p className="text-sm md:text-base text-[#cbc3d5] max-w-lg font-light leading-relaxed">
+            Six engineering systems spanning explainable clinical screening, healthcare administration, candidate analytics, regional GIS monitoring, smart retail checkout, and real-time streaming.
           </p>
         </div>
 
@@ -50,6 +50,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
             const summaryLine = project.contribution?.summaryLine;
             const contributions = project.contribution?.contributions || [];
             const teamContext = project.contribution?.teamContext;
+            const workflow = project.workflowPreview || [];
 
             return (
               <div
@@ -61,7 +62,7 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
 
                 <div className="flex flex-col gap-4 sm:gap-5 relative z-10">
                   
-                  {/* Top Header Row: Number, Category, Status Badge */}
+                  {/* Top Header Row: Number, Category (Left), Status Badge (Right) */}
                   <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#282936] pb-3">
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-xs sm:text-sm font-bold text-[#cfbdff]">
@@ -73,7 +74,15 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                       </span>
                     </div>
 
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#66d9ca]/10 border border-[#66d9ca]/30 text-[#66d9ca] text-[11px] font-semibold uppercase tracking-wider">
+                    <span
+                      className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold uppercase tracking-wider border ${
+                        project.statusLabel === 'IN TESTING'
+                          ? 'bg-[#ffb1c3]/15 border-[#ffb1c3]/30 text-[#ffb1c3]'
+                          : project.statusLabel === 'IN DEVELOPMENT'
+                          ? 'bg-[#e0bb66]/15 border-[#e0bb66]/30 text-[#e0bb66]'
+                          : 'bg-[#66d9ca]/10 border-[#66d9ca]/30 text-[#66d9ca]'
+                      }`}
+                    >
                       {project.statusLabel}
                     </span>
                   </div>
@@ -92,6 +101,29 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                   <p className="text-xs sm:text-sm text-[#cbc3d5] font-light leading-relaxed">
                     {project.description}
                   </p>
+
+                  {/* Architecture / Pipeline Workflow Preview (if available) */}
+                  {workflow.length > 0 && (
+                    <div className="p-3 rounded-xl bg-[#11121f]/70 border border-[#282936]">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-[#948e9e] font-semibold mb-2 flex items-center gap-1.5">
+                        <Layers className="w-3.5 h-3.5 text-[#66d9ca]" aria-hidden="true" />
+                        <span>CORE ARCHITECTURE PIPELINE</span>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                        {workflow.map((step, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-[#181928] border border-[#2d2e40] text-[11px] text-[#cbc3d5]"
+                          >
+                            <span className="w-4 h-4 rounded-full bg-[#9c7cf6]/20 text-[#cfbdff] font-mono text-[10px] font-bold flex items-center justify-center shrink-0">
+                              {idx + 1}
+                            </span>
+                            <span className="truncate leading-tight">{step}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Compact Technology List */}
                   <div>
@@ -148,11 +180,18 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                         Team context: {teamContext}
                       </div>
                     )}
+
+                    {project.statusNote && (
+                      <div className="pt-2 border-t border-[#282936] flex items-start gap-1.5 text-[11px] text-[#ffb1c3] leading-snug">
+                        <AlertCircle className="w-3.5 h-3.5 shrink-0 mt-0.5 text-[#ffb1c3]" aria-hidden="true" />
+                        <span>{project.statusNote}</span>
+                      </div>
+                    )}
                   </div>
 
                 </div>
 
-                {/* Card Footer: EVIDENCE & "View project" Action */}
+                {/* Card Footer: EVIDENCE & "View Details →" Action */}
                 <div className="pt-5 mt-5 border-t border-[#282936] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 relative z-10">
                   {/* Evidence Links */}
                   <div className="flex flex-wrap items-center gap-2">
@@ -164,10 +203,11 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
-                        title="View GitHub Repository"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[44px] sm:min-h-0 focus-visible:ring-2 focus-visible:ring-[#cfbdff] focus-visible:outline-none"
+                        title={`View GitHub Repository for ${project.title}`}
+                        aria-label={`View GitHub repository for ${project.title}`}
                       >
-                        <span>GitHub</span>
+                        <span>View Repository</span>
                         <ExternalLink className="w-3 h-3 text-[#948e9e] shrink-0" aria-hidden="true" />
                       </a>
                     ) : null}
@@ -183,8 +223,9 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                             href={project.evidence.readmeUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
-                            title="View Project README"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#282936] hover:bg-[#373846] border border-[#494553] text-[#e2e1f3] hover:text-[#cfbdff] text-xs font-medium transition-colors min-h-[44px] sm:min-h-0 focus-visible:ring-2 focus-visible:ring-[#cfbdff] focus-visible:outline-none"
+                            title={`View Technical README for ${project.title}`}
+                            aria-label={`View technical README for ${project.title}`}
                           >
                             <FileText className="w-3.5 h-3.5 text-[#cfbdff] shrink-0" aria-hidden="true" />
                             <span>README</span>
@@ -197,8 +238,9 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                             href={project.liveDemoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#66d9ca]/20 hover:bg-[#66d9ca]/30 border border-[#66d9ca]/40 text-[#66d9ca] text-xs font-medium transition-colors min-h-[38px] sm:min-h-0"
-                            title="View Live Demo"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#66d9ca]/20 hover:bg-[#66d9ca]/30 border border-[#66d9ca]/40 text-[#66d9ca] text-xs font-medium transition-colors min-h-[44px] sm:min-h-0 focus-visible:ring-2 focus-visible:ring-[#cfbdff] focus-visible:outline-none"
+                            title={`View Live Demo for ${project.title}`}
+                            aria-label={`View live demo for ${project.title}`}
                           >
                             <span>Live Demo</span>
                             <ExternalLink className="w-3 h-3 text-[#66d9ca] shrink-0" aria-hidden="true" />
@@ -214,13 +256,14 @@ export const FeaturedProjectSection: React.FC<FeaturedProjectSectionProps> = ({ 
                     )}
                   </div>
 
-                  {/* Primary Action: "View project" */}
+                  {/* Primary Action: "View Details →" */}
                   <button
                     type="button"
                     onClick={() => onOpenProjectModal(project.id)}
-                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] hover:brightness-110 text-[#11121f] text-xs font-bold transition-all shadow-md shadow-[#9c7cf6]/20 cursor-pointer min-h-[44px] w-full sm:w-auto"
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#9c7cf6] to-[#6847bf] hover:brightness-110 text-[#11121f] text-xs font-bold transition-all shadow-md shadow-[#9c7cf6]/20 cursor-pointer min-h-[44px] w-full sm:w-auto focus-visible:ring-2 focus-visible:ring-[#cfbdff] focus-visible:outline-none"
+                    aria-label={`View full architecture and technical details for ${project.title}`}
                   >
-                    <span>View project</span>
+                    <span>View Details</span>
                     <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
                   </button>
                 </div>

@@ -56,6 +56,8 @@ export interface Project {
   solution?: string;
   contribution?: ProjectContribution;
   evidence?: ProjectEvidence;
+  workflowPreview?: string[];
+  statusNote?: string;
 }
 
 export interface EducationItem {
