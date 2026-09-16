@@ -82,7 +82,7 @@ Technologies: MATLAB, Simulink, ResNet-50, Grad-CAM
 Developing an automated retinal screening and lesion localization pipeline with visual heatmaps for accessible clinical triage as part of participation in Smart India Hackathon 2026.
 
 2. Smart Hospital AI — CareFlow + MediCareConnect
-Technologies: Node.js, Express, MongoDB, REST APIs
+Technologies: Node.js, Express, PostgreSQL, Sequelize, REST APIs
 Healthcare management ecosystem providing modular RESTful APIs for patient intake, appointment scheduling, and record management.
 
 3. ResuMatch Ultra — Candidate Scoring Pipeline
@@ -392,10 +392,10 @@ ${CERTIFICATIONS_DATA.map(
                         </span>
                       </div>
                       <div className="text-[11px] text-slate-600 font-medium">
-                        Technologies: Node.js, Express, MongoDB, REST APIs, JWT
+                        Technologies: Node.js, Express, PostgreSQL, Sequelize, REST APIs, JWT
                       </div>
                       <p className="text-slate-700 mt-1 leading-normal">
-                        Engineered healthcare backend services providing modular RESTful APIs for patient intake, appointment scheduling, and admission tracking with MongoDB document storage.
+                        Engineered healthcare backend services providing modular RESTful APIs for patient intake, appointment scheduling, and admission tracking with PostgreSQL and Sequelize persistence.
                       </p>
                     </div>
 

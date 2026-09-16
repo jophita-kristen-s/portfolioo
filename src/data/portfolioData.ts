@@ -233,9 +233,9 @@ export const ALL_PROJECTS: Project[] = [
     statusLabel: 'ENGINEERED SYSTEM',
     bannerTitle: 'SMART HOSPITAL AI',
     bannerDetail: 'CareFlow + MediCareConnect',
-    bannerSubtext: 'Node.js • Express • MongoDB • REST APIs',
+    bannerSubtext: 'Node.js • Express • PostgreSQL • Sequelize • REST APIs',
     iconName: 'local_hospital',
-    tags: ['Node.js', 'Express', 'MongoDB', 'REST APIs', 'JWT'],
+    tags: ['Node.js', 'Express', 'PostgreSQL', 'Sequelize', 'REST APIs', 'JWT'],
     teamSize: '5-member team',
     problem: 'Fragmented hospital intake records, uncoordinated patient scheduling, and siloed administrative records create operational bottlenecks across facilities.',
     solution: 'Unified healthcare ecosystem providing modular RESTful APIs for patient record intake, appointment scheduling, and structured bed occupancy tracking.',
@@ -243,15 +243,15 @@ export const ALL_PROJECTS: Project[] = [
       'CareFlow Patient Portal Intake',
       'MediCareConnect Central Admin',
       'Node & Express REST API Services',
-      'MongoDB Document Store & JWT Auth'
+      'PostgreSQL Database & JWT Auth'
     ],
     contribution: {
       role: 'Backend Developer & API Testing',
       team: '5-member team',
-      summaryLine: 'Backend REST APIs • MongoDB schema design • Authentication & routing • End-to-end API testing',
+      summaryLine: 'Backend REST APIs • PostgreSQL & Sequelize schema design • Authentication & routing • End-to-end API testing',
       contributions: [
         'Backend REST API architecture and endpoints using Node.js and Express',
-        'Database schema design and document modeling in MongoDB for patient records',
+        'Relational database schema design and ORM modeling with PostgreSQL and Sequelize for patient records',
         'User authentication handling and protected route middleware',
         'Comprehensive API validation and request-response integration testing'
       ],
@@ -259,14 +259,14 @@ export const ALL_PROJECTS: Project[] = [
     },
     features: [
       'Modular REST API endpoints for patient records and appointments',
-      'Document-oriented database persistence in MongoDB',
+      'Relational database persistence with PostgreSQL and Sequelize ORM',
       'Role-based administrative and staff access control',
       'Structured intake and admission status tracking'
     ],
-    longOverview: 'A full-scale hospital management ecosystem built with a 5-member team. The platform combines CareFlow (the patient portal) and MediCareConnect (the administrative hospital dashboard) to organize intake, appointments, and facility records. My core contribution centered on backend architecture with Node.js and Express, database schema design in MongoDB, authentication handling, and end-to-end REST API testing.',
+    longOverview: 'A full-scale hospital management ecosystem built with a 5-member team. The platform combines CareFlow (the patient portal) and MediCareConnect (the administrative hospital dashboard) to organize intake, appointments, and facility records. My core contribution centered on backend architecture with Node.js and Express, relational database schema design using PostgreSQL and Sequelize, authentication handling, and end-to-end REST API testing.',
     technicalHighlights: [
       'Engineered backend endpoints using Node.js and Express services',
-      'Structured MongoDB document schemas for flexible record storage',
+      'Structured relational schemas and data models using PostgreSQL and Sequelize ORM',
       'Implemented secure JWT authentication and route protection middleware',
       'Validated API contracts with systematic integration testing'
     ],
